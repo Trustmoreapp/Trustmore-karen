@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia da sua página · Trustmore</title>
+<meta name="description" content="Como divulgar sua página Trustmore, pedir avaliações, aprovar comentários e editar seu perfil — com mensagens prontas pra copiar.">
+<meta name="theme-color" content="#071633">
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --navy-900: #071633;
+    --navy-800: #0c2050;
+    --gold-600: #d99a2b;
+    --gold-400: #fbd97a;
+    --ink: #1F2937;
+    --grey: #6b7280;
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --border: #e8e6e1;
+    --sand: #f3ece1;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; scroll-behavior: smooth;
+  }
+  a { color: var(--navy-800); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  .top { background: linear-gradient(160deg, #071633 0%, #0c2050 55%, #12305c 100%); color: #fff; padding: 22px 0 44px; }
+  .brand { display: flex; align-items: center; gap: 9px; margin-bottom: 30px; text-decoration: none; color: #fff; }
+  .brand svg { width: 28px; height: 28px; }
+  .brand span { font-size: 15px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .eyebrow { font-size: 12.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-400); margin: 0 0 12px; }
+  .top h1 { margin: 0 0 14px; font-size: 32px; line-height: 1.2; font-weight: 800; }
+  .top p { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.82); }
+
+  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; margin: -26px 0 30px; position: relative; box-shadow: 0 18px 36px -26px rgba(7,22,51,0.35); }
+  .toc p { margin: 0 0 8px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-600); }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { font-size: 15px; line-height: 1.9; }
+  .toc a { text-decoration: none; font-weight: 600; }
+
+  section.step { padding: 8px 0 26px; }
+  .step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .num { width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; background: var(--navy-900); color: var(--gold-400); font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .step h2 { margin: 0; font-size: 22px; color: var(--navy-900); line-height: 1.25; }
+  .step > p, .step li { font-size: 15.5px; line-height: 1.65; color: var(--ink); }
+  .step ul { padding-left: 20px; margin: 8px 0 14px; }
+  .step li { margin-bottom: 6px; }
+  .muted { color: var(--grey) !important; font-size: 14px !important; }
+
+  .msg { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--gold-600); border-radius: 12px; padding: 14px 16px; margin: 12px 0; }
+  .msg-label { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey); margin: 0 0 6px; }
+  .msg-text { margin: 0 0 10px; font-size: 15px; line-height: 1.6; white-space: pre-line; }
+  .copy-btn { border: none; cursor: pointer; background: var(--navy-900); color: #fff; font-weight: 700; font-size: 13.5px; padding: 9px 14px; border-radius: 10px; }
+  .copy-btn.done { background: #15803d; }
+
+  .tip { background: var(--sand); border-radius: 14px; padding: 14px 16px; margin: 12px 0; font-size: 14.5px; line-height: 1.6; }
+  .tip b { color: var(--navy-900); }
+
+  .bonus { background: linear-gradient(160deg, #071633 0%, #12305c 100%); color: #fff; border-radius: 20px; padding: 26px 22px; margin: 10px 0 30px; }
+  .bonus .eyebrow { margin-bottom: 8px; }
+  .bonus h2 { margin: 0 0 14px; font-size: 23px; }
+  .bonus ol { margin: 0; padding-left: 20px; }
+  .bonus li { font-size: 15px; line-height: 1.65; margin-bottom: 12px; color: rgba(255,255,255,0.9); }
+  .bonus li b { color: var(--gold-400); }
+
+  .help { text-align: center; padding: 10px 0 46px; }
+  .help p { color: var(--grey); font-size: 15px; margin: 0 0 14px; }
+  .btn-wa { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #ffe08a 0%, #d99a2b 100%); color: #1a1200; font-weight: 700; text-decoration: none; padding: 14px 22px; border-radius: 14px; }
+
+  footer { background: var(--sand); padding: 20px 0; font-size: 13px; color: var(--grey); text-align: center; }
+
+  @media (max-width: 600px) {
+    .top h1 { font-size: 26px; }
+    .step h2 { font-size: 19px; }
+    .bonus h2 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://trustmore.app/">
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#d99a2b"/><ellipse cx="14" cy="18" rx="2.2" ry="3" fill="#3b2412"/><ellipse cx="26" cy="18" rx="2.2" ry="3" fill="#3b2412"/><path d="M12 24 Q20 31 28 24" stroke="#3b2412" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+      <span>Trustmore</span>
+    </a>
+    <p class="eyebrow">Guia da sua página</p>
+    <h1>Sua página está no ar. Agora é fazer ela trabalhar por você.</h1>
+    <p>Em 5 minutos de leitura você aprende a divulgar seu link, juntar avaliações e deixar seu perfil sempre atualizado. Tem mensagens prontas pra copiar.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="toc">
+    <p>Neste guia</p>
+    <ol>
+      <li><a href="#links">Seus 2 links: pra que serve cada um</a></li>
+      <li><a href="#avaliacoes">Como pedir avaliações (com mensagem pronta)</a></li>
+      <li><a href="#aprovar">Como aprovar ou descartar comentários</a></li>
+      <li><a href="#divulgar">Onde divulgar seu link</a></li>
+      <li><a href="#perfil">Como editar seu perfil</a></li>
+      <li><a href="#bonus">Bônus: 5 dicas pra juntar mais avaliações</a></li>
+    </ol>
+  </nav>
+
+  <section class="step" id="links">
+    <div class="step-head"><div class="num">1</div><h2>Seus 2 links: pra que serve cada um</h2></div>
+    <p>No e-mail de "Sua página está no ar" você recebeu os seus links. Guarde esse e-mail. Os dois que você vai usar no dia a dia são:</p>
+    <ul>
+      <li><b>Link público</b> (trustmore.app/seunome): é a sua vitrine, e é o único link que você manda pras pessoas. Serve pra tudo: quem ainda não te conhece vê suas avaliações, e quem já te contratou deixa a avaliação dele ali mesmo, no botão <b>"Deixar avaliação"</b>.</li>
+      <li><b>Sua área (painel):</b> é onde você aprova comentários e edita seu perfil. <b>Esse é só seu, não compartilhe.</b> Salve nos favoritos do celular.</li>
+    </ul>
+    <div class="tip"><b>Dica:</b> no painel tem um botão "Copiar" do lado do seu link público. Se perder o e-mail, é só abrir o painel pelos favoritos.</div>
+  </section>
+
+  <section class="step" id="avaliacoes">
+    <div class="step-head"><div class="num">2</div><h2>Como pedir avaliações</h2></div>
+    <p>Comece pelos clientes que já gostam do seu trabalho. Mande o seu <b>link público</b> com uma mensagem curta e pessoal: na sua página, o cliente toca em <b>"Deixar avaliação"</b> e escreve em menos de 1 minuto. Copie, cole no WhatsApp e troque o que está entre colchetes.</p>
+
+    <div class="msg">
+      <p class="msg-label">Português</p>
+      <p class="msg-text" id="m-pt">Oi, [nome]! Tudo bem? Fiquei muito feliz em trabalhar pra você 😊
+Estou montando minha página de avaliações e sua opinião ia me ajudar muito. É só abrir minha página e tocar em "Deixar avaliação", leva menos de 1 minuto:
+[cole aqui seu link público]
+Muito obrigado(a)!</p>
+      <button class="copy-btn" data-target="m-pt">Copiar mensagem</button>
+    </div>
+
+    <div class="msg">
+      <p class="msg-label">English</p>
+      <p class="msg-text" id="m-en">Hi [name]! It was a pleasure working for you 😊
+I'm building my reviews page and your feedback would help me a lot. Just open my page and tap "Deixar avaliação" (Leave a review), it takes less than a minute:
+[paste your public link here]
+Thank you so much!</p>
+      <button class="copy-btn" data-target="m-en">Copiar mensagem</button>
+    </div>
+
+    <div class="msg">
+      <p class="msg-label">Nederlands</p>
+      <p class="msg-text" id="m-nl">Hoi [naam]! Fijn dat ik voor je mocht werken 😊
+Ik ben mijn reviewpagina aan het opbouwen en jouw mening zou me echt helpen. Open gewoon mijn pagina en tik op "Deixar avaliação" (Review achterlaten), het duurt minder dan een minuut:
+[plak hier je publieke link]
+Heel erg bedankt!</p>
+      <button class="copy-btn" data-target="m-nl">Copiar mensagem</button>
+    </div>
+
+    <div class="tip"><b>Importante:</b> peça avaliações só pra clientes de verdade, e deixe cada um escrever do jeito dele. Avaliação inventada ou "combinada" tira a confiança, que é justamente o que sua página vende.</div>
+  </section>
+
+  <section class="step" id="aprovar">
+    <div class="step-head"><div class="num">3</div><h2>Como aprovar ou descartar comentários</h2></div>
+    <ul>
+      <li>Abra <b>sua área (painel)</b> e role até <b>"Comentários"</b>.</li>
+      <li>Toque em <b>"Aprovar e publicar"</b> pra o comentário aparecer no seu link. Em poucos segundos ele já está no ar.</li>
+      <li>Toque em <b>"Descartar"</b> se não quiser publicar.</li>
+      <li>Chegou avaliação nova e não apareceu? Toque em <b>"Atualizar lista"</b>.</li>
+    </ul>
+    <p class="muted">Nada vai pro ar sem você aprovar. Você sempre decide o que aparece.</p>
+  </section>
+
+  <section class="step" id="divulgar">
+    <div class="step-head"><div class="num">4</div><h2>Onde divulgar seu link</h2></div>
+    <ul>
+      <li><b>Status do WhatsApp:</b> poste o link com uma frase tipo "Veja o que meus clientes dizem sobre meu trabalho ⭐".</li>
+      <li><b>Bio do Instagram e do Facebook:</b> cole seu link público.</li>
+      <li><b>Resposta pra cliente novo:</b> quando alguém pedir orçamento, mande junto: "Aqui você vê as avaliações de quem já trabalhou comigo: [seu link]".</li>
+      <li><b>Grupos de serviços:</b> ao oferecer seu trabalho em grupos de WhatsApp ou Facebook, coloque o link no final.</li>
+      <li><b>Cartão de visita ou panfleto:</b> o link é curto, cabe em qualquer lugar.</li>
+    </ul>
+    <div class="tip"><b>Sabia?</b> Sua página tem um botão de idioma no topo. Quem não fala português pode ler tudo em inglês, holandês, espanhol e mais 7 idiomas.</div>
+  </section>
+
+  <section class="step" id="perfil">
+    <div class="step-head"><div class="num">5</div><h2>Como editar seu perfil</h2></div>
+    <ul>
+      <li>No painel, em <b>"Meu perfil"</b>, você muda nome, serviço, cidade, WhatsApp, idiomas e sua biografia.</li>
+      <li>Toque em <b>"Salvar alterações"</b>. A mudança aparece no seu link público em instantes.</li>
+      <li>Quer trocar a <b>foto de perfil ou a de fundo</b>? Chama a gente no WhatsApp e mande a foto nova.</li>
+    </ul>
+  </section>
+
+  <section class="bonus" id="bonus">
+    <p class="eyebrow">Bônus · 100 primeiros clientes</p>
+    <h2>5 dicas pra juntar mais avaliações (e mais clientes)</h2>
+    <ol>
+      <li><b>Peça na hora certa.</b> O melhor momento é logo depois do serviço, enquanto o cliente ainda está satisfeito. No mesmo dia, de preferência.</li>
+      <li><b>Comece pelas 5 primeiras.</b> Mande o link pros clientes mais fiéis primeiro. Com 4 ou 5 avaliações, sua página já passa muito mais confiança.</li>
+      <li><b>Lembre uma vez, sem insistir.</b> Se o cliente não respondeu, um lembrete gentil depois de 2 ou 3 dias resolve. Mais que isso cansa.</li>
+      <li><b>Mostre antes de falar de preço.</b> Quando alguém pedir orçamento, mande seu link primeiro. Quem chega no preço já confiando em você negocia menos.</li>
+      <li><b>Agradeça quem avaliou.</b> Um "obrigado(a) pela avaliação!" fortalece a relação, e cliente bem tratado indica você pros amigos.</li>
+    </ol>
+  </section>
+
+  <div class="help">
+    <p>Ficou alguma dúvida? A gente te ajuda.</p>
+    <a class="btn-wa" id="waHelp" href="#" target="_blank" rel="noopener">Falar com a Trustmore no WhatsApp</a>
+  </div>
+</main>
+
+<footer>Trustmore · trustmore.app</footer>
+
+<script>
+  const msg = "Olá! Estou com uma dúvida sobre a minha página da Trustmore 😊";
+  document.getElementById("waHelp").href = "https://wa.me/31687678875?text=" + encodeURIComponent(msg);
+  document.querySelectorAll(".copy-btn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const text = document.getElementById(btn.dataset.target).innerText.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (e) {
+        const ta = document.createElement("textarea");
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); } catch (e2) {}
+        ta.remove();
+      }
+      const old = btn.textContent;
+      btn.textContent = "Copiado ✓"; btn.classList.add("done");
+      setTimeout(() => { btn.textContent = old; btn.classList.remove("done"); }, 1800);
+    });
+  });
+</script>
+</body>
+</html>
