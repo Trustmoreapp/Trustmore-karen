@@ -7,7 +7,7 @@
 <meta name="description" content="Uma página profissional e personalizada pra prestadores de serviço mostrarem suas avaliações reais e conquistarem novos clientes.">
 <meta name="theme-color" content="#011f59">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Trustmore · Sua página de avaliações">
+<meta property="og:title" content="Empresas têm o Google pra mostrar avaliações. E você? · Trustmore">
 <meta property="og:description" content="Sua página de avaliações pronta em minutos. Pagamento único de €18,90 — sem mensalidade.">
 <meta property="og:locale" content="pt_BR">
 
@@ -379,6 +379,24 @@
     .hero-ctas .btn, .cta-final .ctas .btn { width: 100%; }
     .price-value { font-size: 40px; }
   }
+
+  /* ---- Problema / antes x depois ---- */
+  .problem { padding: 62px 0 10px; }
+  .problem .block-head { max-width: 680px; }
+  .problem .block-head h2 { font-size: 28px; line-height: 1.25; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; margin: 0 auto; }
+  .compare-card { border-radius: 16px; padding: 22px 22px; }
+  .compare-card .tag { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 10px; }
+  .compare-card p.quote { margin: 0; font-size: 16px; line-height: 1.5; font-weight: 600; }
+  .compare-before { background: #f1f0ed; border: 1px dashed #c9c5bd; color: #6b7280; }
+  .compare-before .tag { color: #9ca3af; }
+  .compare-after { background: var(--navy-900); color: #fff; box-shadow: 0 20px 40px -24px rgba(7,22,51,0.6); }
+  .compare-after .tag { color: var(--gold-400); }
+  .compare-after .stars { color: var(--star-yellow); letter-spacing: 2px; margin-bottom: 6px; }
+  @media (max-width: 760px) {
+    .compare { grid-template-columns: 1fr; }
+    .problem .block-head h2 { font-size: 23px; }
+  }
 </style>
 </head>
 <body>
@@ -399,8 +417,8 @@
   <div class="wrap">
     <div class="hero-text">
       <p class="hero-eyebrow">Promoção de lançamento · só para os 100 primeiros</p>
-      <h1>Transforme a confiança de quem já te contratou em <em>novos clientes</em>.</h1>
-      <p class="lead">Uma página profissional, só sua, com suas avaliações reais — pronta pra compartilhar no WhatsApp, nas redes ou no boca a boca, e passar confiança antes mesmo do primeiro "oi". Você preenche um formulário rápido e ela fica no ar em poucos minutos.</p>
+      <h1>Empresas têm o Google pra mostrar avaliações. <em>E você?</em></h1>
+      <p class="lead">Restaurante, oficina, salão: todo negócio sério tem suas estrelas no Google — e é por isso que ganha a confiança de quem nunca comprou lá. Você, que trabalha por conta própria, merece a mesma vitrine. Por isso criamos a Trustmore: sua página de avaliações, pronta em minutos.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" id="ctaHero" href="https://pay.kiwify.com.br/14MUXcn" target="_blank" rel="noopener">
           Garantir minha página — €18,90
@@ -416,6 +434,27 @@
     </div>
   </div>
 </header>
+
+<section class="problem">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">O problema</p>
+      <h2>O problema não é o seu trabalho. É que ninguém consegue ver o quanto ele é bom.</h2>
+      <p>Quem procura uma faxineira, uma manicure ou um personal recebe vários contatos e decide em segundos. Escolhe quem parece mais confiável — nem sempre quem faz o melhor trabalho. Sem avaliações pra mostrar, você depende só da sua palavra.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-card compare-before">
+        <p class="tag">Antes</p>
+        <p class="quote">"Pode confiar, eu faço um ótimo trabalho."</p>
+      </div>
+      <div class="compare-card compare-after">
+        <p class="tag">Com a Trustmore</p>
+        <div class="stars">★★★★★</div>
+        <p class="quote">Um link com as avaliações reais de quem já te contratou — que convence sozinho.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="block">
   <div class="wrap">
