@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#011f59">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Trustmore · Sua página de avaliações">
-<meta property="og:description" content="Transforme a confiança de quem já te contratou em novos clientes.">
+<meta property="og:description" content="Sua página de avaliações pronta em minutos. Pagamento único de €18,90 — sem mensalidade.">
 <meta property="og:locale" content="pt_BR">
 
 <style>
@@ -334,6 +334,51 @@
     .nav .btn span.long { display: none; }
     .nav .btn span.short { display: inline !important; }
   }
+
+  /* ---- Pricing ---- */
+  .price-card {
+    max-width: 440px; margin: 0 auto;
+    background: var(--card); border: 2px solid var(--gold-600);
+    border-radius: 20px; padding: 30px 26px; text-align: center;
+    box-shadow: 0 24px 48px -28px rgba(7,22,51,0.35);
+  }
+  .price-badge {
+    display: inline-block; background: var(--navy-900); color: var(--gold-400);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px; margin-bottom: 16px;
+  }
+  .price-value { font-size: 46px; font-weight: 800; color: var(--navy-900); line-height: 1; }
+  .price-sub { font-size: 14px; color: var(--grey); margin: 8px 0 20px; }
+  .price-list { list-style: none; padding: 0; margin: 0 0 24px; text-align: left; }
+  .price-list li { font-size: 14.5px; color: var(--ink); padding: 7px 0 7px 28px; position: relative; border-bottom: 1px solid var(--border); }
+  .price-list li:last-child { border-bottom: none; }
+  .price-list li::before { content: "✓"; position: absolute; left: 4px; color: var(--gold-600); font-weight: 900; }
+  .price-card .btn { width: 100%; }
+  .price-note { font-size: 12.5px; color: var(--grey); margin: 14px 0 0; line-height: 1.5; }
+
+  /* ---- FAQ ---- */
+  .faq { max-width: 720px; margin: 0 auto; }
+  .faq details {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px 20px; margin-bottom: 10px;
+  }
+  .faq summary {
+    cursor: pointer; font-size: 15.5px; font-weight: 700; color: var(--navy-900);
+    list-style: none; display: flex; justify-content: space-between; gap: 12px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--gold-600); font-weight: 800; font-size: 20px; line-height: 1; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: var(--grey); }
+  .faq a { color: var(--navy-800); font-weight: 700; }
+
+  .cta-final .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-final .note { font-size: 12.5px; color: rgba(255,255,255,0.55); margin: 18px 0 0; }
+
+  @media (max-width: 760px) {
+    .hero-ctas .btn, .cta-final .ctas .btn { width: 100%; }
+    .price-value { font-size: 40px; }
+  }
 </style>
 </head>
 <body>
@@ -344,9 +389,8 @@
       <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#d99a2b"/><ellipse cx="14" cy="18" rx="2.2" ry="3" fill="#3b2412"/><ellipse cx="26" cy="18" rx="2.2" ry="3" fill="#3b2412"/><path d="M12 24 Q20 31 28 24" stroke="#3b2412" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
       <span>Trustmore</span>
     </div>
-    <a class="btn btn-gold" id="ctaNav" href="#" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.29-1.39a9.9 9.9 0 0 0 4.7 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23a8.3 8.3 0 0 1-4.2-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23h.03Zm-3.06 4.2c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.63.78-.77.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
-      <span class="long">Falar com a Trustmore</span><span style="display:none;" class="short">Falar</span>
+    <a class="btn btn-gold" id="ctaNav" href="https://pay.kiwify.com.br/14MUXcn" target="_blank" rel="noopener">
+      <span class="long">Garantir minha página</span><span style="display:none;" class="short">Garantir</span>
     </a>
   </div>
 </nav>
@@ -354,17 +398,16 @@
 <header class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <p class="hero-eyebrow">Trustmore</p>
+      <p class="hero-eyebrow">Promoção de lançamento · só para os 100 primeiros</p>
       <h1>Transforme a confiança de quem já te contratou em <em>novos clientes</em>.</h1>
-      <p class="lead">Uma página profissional, só sua, com suas avaliações reais — pronta pra você compartilhar no WhatsApp, nas redes ou no boca a boca, e passar confiança antes mesmo do primeiro "oi".</p>
+      <p class="lead">Uma página profissional, só sua, com suas avaliações reais — pronta pra compartilhar no WhatsApp, nas redes ou no boca a boca, e passar confiança antes mesmo do primeiro "oi". Você preenche um formulário rápido e ela fica no ar em poucos minutos.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold" id="ctaHero" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.29-1.39a9.9 9.9 0 0 0 4.7 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23a8.3 8.3 0 0 1-4.2-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23h.03Zm-3.06 4.2c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.63.78-.77.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
-          Quero a minha página
+        <a class="btn btn-gold" id="ctaHero" href="https://pay.kiwify.com.br/14MUXcn" target="_blank" rel="noopener">
+          Garantir minha página — €18,90
         </a>
-        <a class="btn btn-outline" href="#como-funciona">Como funciona</a>
+        <a class="btn btn-outline" href="https://trustmore.app/gabriel/" target="_blank" rel="noopener">Ver uma página de exemplo</a>
       </div>
-      <p class="hero-note">Resposta rápida pelo WhatsApp · sem compromisso</p>
+      <p class="hero-note">Pagamento único · sem mensalidade · página no ar em poucos minutos</p>
     </div>
     <div class="hero-mockup">
       <div class="phone">
@@ -378,14 +421,14 @@
   <div class="wrap">
     <div class="block-head">
       <p class="eyebrow">O que você recebe</p>
-      <h2>Tudo pronto pra você começar a usar no mesmo dia.</h2>
-      <p>Você não precisa mexer em nada técnico — a gente entrega sua página personalizada e funcionando.</p>
+      <h2>Tudo pronto pra você começar a usar hoje mesmo.</h2>
+      <p>Você não precisa entender nada de tecnologia — sua página é criada automaticamente, com a sua cara.</p>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="check">✓</div>
         <h3>Página só sua</h3>
-        <p>Com sua foto, seu texto e sua identidade — pronta pra usar assim que fechar.</p>
+        <p>Com sua foto, seu texto e sua identidade — no ar poucos minutos depois de você preencher o formulário.</p>
       </div>
       <div class="benefit-card">
         <div class="check">✓</div>
@@ -420,23 +463,23 @@
   <div class="wrap">
     <div class="block-head">
       <p class="eyebrow">Como funciona</p>
-      <h2>Três passos, e sua página está no ar.</h2>
+      <h2>Três passos, e sua página está no ar em minutos.</h2>
     </div>
     <div class="steps-row">
       <div class="step">
         <div class="num">1</div>
-        <h3>Você manda seus dados</h3>
-        <p>Nome, serviço, cidade, WhatsApp, uma foto sua e uma imagem de fundo.</p>
+        <h3>Garanta sua página</h3>
+        <p>Pagamento único e seguro pela Kiwify. Na hora, você recebe por e-mail o link do formulário.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
-        <h3>A gente monta tudo</h3>
-        <p>Sua página já sai pronta, personalizada e publicada.</p>
+        <h3>Preencha em 3 minutos</h3>
+        <p>Nome, serviço, cidade, WhatsApp, uma foto sua e, se quiser, uma imagem de fundo.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
-        <h3>Você compartilha o link</h3>
-        <p>E começa a receber e mostrar suas avaliações reais.</p>
+        <h3>Sua página entra no ar</h3>
+        <p>Em poucos minutos o link chega no seu e-mail. É só compartilhar e começar a juntar avaliações.</p>
       </div>
     </div>
   </div>
@@ -461,14 +504,77 @@
   </div>
 </section>
 
+<section class="block how-bg" id="preco">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">Investimento</p>
+      <h2>Um cliente novo já paga sua página.</h2>
+      <p>Pagamento único, sem mensalidade. Todo cliente que vier depois é lucro.</p>
+    </div>
+    <div class="price-card">
+      <span class="price-badge">Valor de lançamento</span>
+      <div class="price-value">€18,90</div>
+      <p class="price-sub">pagamento único</p>
+      <ul class="price-list">
+        <li>Sua página personalizada no ar em minutos</li>
+        <li>Avaliações reais, aprovadas por você</li>
+        <li>Botão de WhatsApp e tradução automática</li>
+        <li>Painel próprio pra editar quando quiser</li>
+        <li>Seu link: trustmore.app/seunome</li>
+      </ul>
+      <a class="btn btn-gold" href="https://pay.kiwify.com.br/14MUXcn" target="_blank" rel="noopener">Garantir minha página</a>
+      <p class="price-note">Valor válido para os 100 primeiros clientes. Depois desse grupo, o preço sobe.<br>Valor final para quem mora na Holanda, com impostos incluídos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="duvidas">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Tem mensalidade?</summary>
+        <p>Não. É um pagamento único de €18,90 e a página é sua — sem cobrança todo mês.</p>
+      </details>
+      <details>
+        <summary>Preciso entender de tecnologia?</summary>
+        <p>Não. Você só preenche um formulário rápido e a página é criada sozinha. Depois, tudo se ajusta pelo celular, num painel simples.</p>
+      </details>
+      <details>
+        <summary>E se alguém deixar uma avaliação ruim?</summary>
+        <p>Nenhuma avaliação aparece na sua página sem você aprovar antes. Você decide o que fica no ar.</p>
+      </details>
+      <details>
+        <summary>Posso mudar minhas informações depois?</summary>
+        <p>Pode. Pelo seu painel você atualiza texto, serviço, cidade e WhatsApp quando quiser.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo demora pra ficar pronta?</summary>
+        <p>Normalmente poucos minutos depois de você enviar o formulário. O link chega direto no seu e-mail.</p>
+      </details>
+      <details>
+        <summary>Ainda tenho dúvida. Posso falar com alguém?</summary>
+        <p>Claro. <a class="js-wa" href="#" target="_blank" rel="noopener">Chama a gente no WhatsApp</a> que a gente responde.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="cta-final">
   <div class="wrap">
     <h2>Pronto pra ter a sua?</h2>
-    <p>Manda uma mensagem agora e a gente te explica tudo — sem compromisso.</p>
-    <a class="btn btn-gold" id="ctaFinal" href="#" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.29-1.39a9.9 9.9 0 0 0 4.7 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23a8.3 8.3 0 0 1-4.2-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23h.03Zm-3.06 4.2c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.63.78-.77.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
-      Falar com a Trustmore agora
-    </a>
+    <p>Garanta a sua pelo valor de lançamento — só para os 100 primeiros clientes.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" id="ctaFinal" href="https://pay.kiwify.com.br/14MUXcn" target="_blank" rel="noopener">Garantir minha página — €18,90</a>
+      <a class="btn btn-outline js-wa" href="#" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.29-1.39a9.9 9.9 0 0 0 4.7 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23a8.3 8.3 0 0 1-4.2-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23h.03Zm-3.06 4.2c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.63.78-.77.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
+        Tirar dúvida no WhatsApp
+      </a>
+    </div>
+    <p class="note">Pagamento único · sem mensalidade</p>
   </div>
 </section>
 
@@ -489,11 +595,9 @@
 
 <script>
   const BRAND_WHATSAPP = "31687678875";
-  const msg = "Olá! Vi a página da Trustmore e quero criar a minha página de avaliações 😊";
+  const msg = "Olá! Vi a página da Trustmore e tenho uma dúvida antes de garantir a minha 😊";
   const href = `https://wa.me/${BRAND_WHATSAPP}?text=${encodeURIComponent(msg)}`;
-  ["ctaNav", "ctaHero", "ctaFinal"].forEach(id => {
-    document.getElementById(id).href = href;
-  });
+  document.querySelectorAll(".js-wa").forEach(a => { a.href = href; });
 </script>
 
 </body>
