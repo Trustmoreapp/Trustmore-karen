@@ -638,6 +638,32 @@
   const msg = "Olá! Vi a página da Trustmore e tenho uma dúvida antes de garantir a minha 😊";
   const href = `https://wa.me/${BRAND_WHATSAPP}?text=${encodeURIComponent(msg)}`;
   document.querySelectorAll(".js-wa").forEach(a => { a.href = href; });
+
+  // Origem da visita (ex.: trustmore.app/?origem=fb-brasileiros-amsterdam).
+  // Guarda por 30 dias neste navegador e repassa pro checkout da Kiwify
+  // (src + utm_source), pra saber de onde veio cada venda.
+  (function () {
+    var KEY = "tm_origem", DIAS = 30, p = new URLSearchParams(location.search);
+    var o = p.get("origem") || p.get("utm_source") || p.get("src");
+    try {
+      if (o) {
+        o = String(o).toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 60);
+        if (o) localStorage.setItem(KEY, JSON.stringify({ o: o, t: Date.now() }));
+      } else {
+        var s = JSON.parse(localStorage.getItem(KEY) || "null");
+        if (s && s.o && Date.now() - s.t < DIAS * 864e5) o = s.o;
+      }
+    } catch (e) {}
+    if (!o) return;
+    document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function (el) {
+      try {
+        var u = new URL(el.href);
+        u.searchParams.set("src", o);
+        u.searchParams.set("utm_source", o);
+        el.href = u.toString();
+      } catch (e) {}
+    });
+  })();
 </script>
 
 </body>
