@@ -50,15 +50,27 @@
     padding: 28px 20px 56px;
   }
   .brand-tag {
-    text-align: center;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #fbd97a;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.45);
-    margin-bottom: 22px;
+    text-decoration: none;
+    background: rgba(7,22,51,0.68);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(251,217,122,0.7);
+    border-radius: 999px;
+    padding: 7px 13px;
+    margin: -7px 0 24px;
+    box-shadow: 0 6px 16px -8px rgba(0,0,0,0.5);
   }
+  .brand-tag:hover, .brand-tag:active { background: rgba(7,22,51,0.88); }
+  .brand-tag .brand-star { font-size: 13px; line-height: 1; }
 
   /* ---- Seletor de idioma ---- */
   .lang-switch {
@@ -369,7 +381,7 @@
     </select>
   </div>
 
-  <div class="brand-tag" id="brandTag">Trustmore</div>
+  <a class="brand-tag" href="https://trustmore.app/?origem=pagina-cliente" target="_blank" rel="noopener" translate="no" aria-label="Conheça a Trustmore"><span class="brand-star">★</span><span id="brandTag">Trustmore</span></a>
 
   <div class="hero">
     <div class="avatar" id="avatar"><!-- iniciais ou foto via JS --></div>
