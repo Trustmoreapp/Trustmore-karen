@@ -226,6 +226,8 @@
   }
   .review-stars { color: var(--star-yellow); font-size: 14px; letter-spacing: 1px; margin-bottom: 6px; }
   .review-text { font-size: 14.5px; line-height: 1.5; color: var(--ink); margin: 0 0 8px; }
+  .reviews-note { font-size: 12px; line-height: 1.5; color: rgba(255,255,255,0.78); text-align: center; margin: 14px 4px 0; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+  .reviews-note a { color: #fbd97a; font-weight: 700; }
   .review-meta { font-size: 12.5px; color: var(--grey); }
   .star-ic { color: var(--star-yellow); }
 
@@ -405,6 +407,7 @@
   <div class="section">
     <div class="section-title"><span data-i18n>Avaliações de clientes</span></div>
     <div id="reviewsContainer"></div>
+    <p class="reviews-note"><span data-i18n>Avaliações publicadas pelos próprios clientes. Viu algo falso ou ofensivo?</span> <a id="reportLink" href="#" target="_blank" rel="noopener"><span data-i18n>Avise a Trustmore</span></a></p>
   </div>
 
   <div class="section" id="gallerySection" style="display:none;">
@@ -469,7 +472,7 @@
     reviewFormUrl: "https://docs.google.com/forms/d/e/{{REVIEW_FORM_ID}}/viewform",
 
     // Link da planilha (aba "Publicado") como CSV — é de onde a página busca
-    // as avaliações aprovadas automaticamente. Não precisa editar isso no dia a dia.
+    // as avaliações publicadas automaticamente. Não precisa editar isso no dia a dia.
     reviewsCsvUrl: "https://docs.google.com/spreadsheets/d/{{SHEET_ID}}/gviz/tq?tqx=out:csv&sheet=Publicado",
 
     // Link da planilha (aba "Perfil") como CSV — de onde vêm as edições de
@@ -670,29 +673,63 @@
     return rows.filter(r => r.some(cell => cell.trim() !== ""));
   }
 
-  if (CONFIG.reviewsCsvUrl) {
-    fetch(CONFIG.reviewsCsvUrl, { cache: "no-store" })
-      .then(res => { if (!res.ok) throw new Error("Falha ao buscar avaliações"); return res.text(); })
-      .then(text => {
-        const rows = parseCSV(text);
-        if (rows.length <= 1) return;
+  // ------------------------------------------------------------------
+  // Avaliações abertas (desde 03/11/2026): toda avaliação nova vai pro ar
+  // na hora. A Trustmore remove só o que for falso ou ofensivo — fica
+  // gravado como "REJEITADO:<timestamp>" na aba Aprovacoes.
+  // Avaliações recebidas ANTES dessa data só aparecem se foram aprovadas.
+  // ------------------------------------------------------------------
+  const TM_OPEN_SINCE = new Date(2026, 10, 3, 0, 0, 0);
+  function tmParseTs(s) {
+    const m = String(s || "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+    return m ? new Date(+m[3], +m[1] - 1, +m[2], +m[4], +m[5], +(m[6] || 0)) : null;
+  }
+  function tmFormatDate(d) {
+    return d ? String(d.getDate()).padStart(2, "0") + "/" + String(d.getMonth() + 1).padStart(2, "0") + "/" + d.getFullYear() : "";
+  }
+  async function tmLoadReviews(sheetId) {
+    const base = "https://docs.google.com/spreadsheets/d/" + sheetId + "/gviz/tq?tqx=out:csv&sheet=";
+    const get = async name => {
+      const r = await fetch(base + encodeURIComponent(name), { cache: "no-store" });
+      if (!r.ok) throw new Error("Falha ao buscar " + name + " (" + r.status + ")");
+      return parseCSV(await r.text());
+    };
+    const [all, aprov] = await Promise.all([get("Form Responses 1"), get("Aprovacoes").catch(() => [])]);
+    if (all.length <= 1) return [];
+    const h = all[0].map(x => x.trim().toLowerCase());
+    let iTs = h.indexOf("timestamp"), iNome = h.findIndex(x => x.includes("nome")),
+        iNota = h.findIndex(x => x.startsWith("nota")), iCom = h.findIndex(x => x.startsWith("coment"));
+    if (iTs < 0) iTs = 0; if (iNome < 0) iNome = 1; if (iNota < 0) iNota = 2; if (iCom < 0) iCom = 3;
+    const approved = new Set(), rejected = new Set();
+    aprov.slice(1).forEach(r => {
+      const v = (r[1] || "").trim();
+      if (!v) return;
+      if (v.startsWith("REJEITADO:")) rejected.add(v.slice(10)); else approved.add(v);
+    });
+    return all.slice(1).map(c => {
+      const ts = (c[iTs] || "").trim();
+      const when = tmParseTs(ts);
+      const n = parseInt(c[iNota], 10);
+      const r = {
+        timestamp: ts, when,
+        name: (c[iNome] || "").trim() || "Cliente",
+        rating: Number.isFinite(n) ? Math.min(5, Math.max(1, n)) : 5,
+        text: (c[iCom] || "").trim(),
+        date: tmFormatDate(when),
+      };
+      r.removed = rejected.has(ts);
+      r.isNew = !!(when && when >= TM_OPEN_SINCE);
+      r.published = !r.removed && (approved.has(ts) || r.isNew);
+      r.legacyPending = !r.removed && !r.isNew && !approved.has(ts);
+      return r;
+    }).filter(r => r.timestamp && r.text).sort((a, b) => (b.when || 0) - (a.when || 0));
+  }
 
-        const header = rows[0].map(h => h.trim().toLowerCase());
-        const idxNome = header.indexOf("nome");
-        const idxNota = header.indexOf("nota");
-        const idxComentario = header.indexOf("comentario");
-        const idxData = header.indexOf("data");
-
-        const fetched = rows.slice(1).map(cols => {
-          const rating = parseInt(cols[idxNota], 10);
-          return {
-            name: (cols[idxNome] || "Cliente").trim(),
-            rating: Number.isFinite(rating) ? Math.min(5, Math.max(1, rating)) : 5,
-            text: (cols[idxComentario] || "").trim(),
-            date: (cols[idxData] || "").trim(),
-          };
-        }).filter(r => r.text !== "");
-
+  const tmSheetMatch = String(CONFIG.reviewsCsvUrl || "").match(/spreadsheets\/d\/([^/]+)/);
+  if (tmSheetMatch) {
+    tmLoadReviews(tmSheetMatch[1])
+      .then(list => {
+        const fetched = list.filter(r => r.published);
         if (fetched.length > 0) {
           latestReviews = fetched;
           refreshReviewsRender();
@@ -701,6 +738,12 @@
       .catch(err => {
         console.warn("Não foi possível carregar as avaliações da planilha:", err);
       });
+  }
+
+  const tmReportLink = document.getElementById("reportLink");
+  if (tmReportLink) {
+    const tmReportMsg = "Olá! Quero avisar sobre uma avaliação falsa ou ofensiva na página " + location.href.split("?")[0];
+    tmReportLink.href = `https://wa.me/${CONFIG.brandWhatsapp}?text=${encodeURIComponent(tmReportMsg)}`;
   }
 
   if (CONFIG.profileCsvUrl) {

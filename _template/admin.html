@@ -289,6 +289,10 @@
     color: #fff;
     border: 1px solid rgba(255,255,255,0.3);
   }
+  .tm-intro { background: #fff8e6; border: 1px solid #f3d48a; color: #6b4a0e; border-radius: 12px; padding: 12px 14px; font-size: 13.5px; line-height: 1.5; margin-bottom: 14px; }
+  .tm-subtitle { font-size: 13px; font-weight: 800; color: #6b7280; text-transform: uppercase; letter-spacing: .06em; margin: 22px 0 10px; }
+  .tm-report { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 700; color: #b45309; text-decoration: none; border: 1.5px solid #f3c27a; border-radius: 999px; padding: 6px 12px; }
+  .card-removed-tag { color: #9aa3af; font-size: 13px; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -296,7 +300,7 @@
 <div class="page">
   <div class="brand-tag">Trustmore</div>
   <h1>Área de {{NOME}}</h1>
-  <p class="subtitle">Aqui aparecem os comentários que os clientes deixaram.<br>Toque em <strong>Aprovar</strong> para publicar no seu link, ou em <strong>Descartar</strong> para não publicar.</p>
+  <p class="subtitle">Edite seu perfil e acompanhe suas avaliações.<br>As avaliações novas vão pro ar na hora. Se aparecer alguma falsa ou ofensiva, toque em <strong>Denunciar</strong>.</p>
 
   <div class="profile-box">
     <div class="profile-box-title">👤 Meu perfil</div>
@@ -360,7 +364,7 @@
 
     <div class="link-item">
       <div class="link-label">Esta página (Área do cliente)</div>
-      <div class="link-hint">É essa página aqui — guarde/favorite este link, é só com ele que você aprova os comentários e edita seu perfil.</div>
+      <div class="link-hint">É essa página aqui — guarde/favorite este link, é só com ele que você acompanha suas avaliações e edita seu perfil.</div>
       <div class="link-value" id="linkAdmin">carregando…</div>
       <div class="link-actions">
         <button type="button" class="btn-copy" data-target="linkAdmin">📋 Copiar</button>
@@ -368,7 +372,7 @@
     </div>
   </div>
 
-  <div class="section-title">💬 Comentários</div>
+  <div class="section-title">💬 Avaliações</div>
   <div id="statusMsg" class="status">Carregando comentários…</div>
   <div id="pendingContainer"></div>
 
@@ -608,32 +612,104 @@
     return parseCSV(text);
   }
 
-  function renderPending(items) {
-    if (items.length === 0) {
-      statusMsg.textContent = "";
-      pendingContainer.innerHTML = `
-        <div class="empty-state">
-          Nenhum comentário pendente por aqui.<br>
-          Quando um cliente preencher o formulário de avaliação, ele vai aparecer aqui para você aprovar.
+  // ------------------------------------------------------------------
+  // Avaliações abertas (desde 03/11/2026): toda avaliação nova vai pro ar
+  // na hora. A Trustmore remove só o que for falso ou ofensivo — fica
+  // gravado como "REJEITADO:<timestamp>" na aba Aprovacoes.
+  // Avaliações recebidas ANTES dessa data só aparecem se foram aprovadas.
+  // ------------------------------------------------------------------
+  const TM_OPEN_SINCE = new Date(2026, 10, 3, 0, 0, 0);
+  function tmParseTs(s) {
+    const m = String(s || "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+    return m ? new Date(+m[3], +m[1] - 1, +m[2], +m[4], +m[5], +(m[6] || 0)) : null;
+  }
+  function tmFormatDate(d) {
+    return d ? String(d.getDate()).padStart(2, "0") + "/" + String(d.getMonth() + 1).padStart(2, "0") + "/" + d.getFullYear() : "";
+  }
+  async function tmLoadReviews(sheetId) {
+    const base = "https://docs.google.com/spreadsheets/d/" + sheetId + "/gviz/tq?tqx=out:csv&sheet=";
+    const get = async name => {
+      const r = await fetch(base + encodeURIComponent(name), { cache: "no-store" });
+      if (!r.ok) throw new Error("Falha ao buscar " + name + " (" + r.status + ")");
+      return parseCSV(await r.text());
+    };
+    const [all, aprov] = await Promise.all([get("Form Responses 1"), get("Aprovacoes").catch(() => [])]);
+    if (all.length <= 1) return [];
+    const h = all[0].map(x => x.trim().toLowerCase());
+    let iTs = h.indexOf("timestamp"), iNome = h.findIndex(x => x.includes("nome")),
+        iNota = h.findIndex(x => x.startsWith("nota")), iCom = h.findIndex(x => x.startsWith("coment"));
+    if (iTs < 0) iTs = 0; if (iNome < 0) iNome = 1; if (iNota < 0) iNota = 2; if (iCom < 0) iCom = 3;
+    const approved = new Set(), rejected = new Set();
+    aprov.slice(1).forEach(r => {
+      const v = (r[1] || "").trim();
+      if (!v) return;
+      if (v.startsWith("REJEITADO:")) rejected.add(v.slice(10)); else approved.add(v);
+    });
+    return all.slice(1).map(c => {
+      const ts = (c[iTs] || "").trim();
+      const when = tmParseTs(ts);
+      const n = parseInt(c[iNota], 10);
+      const r = {
+        timestamp: ts, when,
+        name: (c[iNome] || "").trim() || "Cliente",
+        rating: Number.isFinite(n) ? Math.min(5, Math.max(1, n)) : 5,
+        text: (c[iCom] || "").trim(),
+        date: tmFormatDate(when),
+      };
+      r.removed = rejected.has(ts);
+      r.isNew = !!(when && when >= TM_OPEN_SINCE);
+      r.published = !r.removed && (approved.has(ts) || r.isNew);
+      r.legacyPending = !r.removed && !r.isNew && !approved.has(ts);
+      return r;
+    }).filter(r => r.timestamp && r.text).sort((a, b) => (b.when || 0) - (a.when || 0));
+  }
+  function tmCard(item, actions) {
+    return `
+        <div class="card">
+          <div class="card-stars">${"★".repeat(item.rating)}${"☆".repeat(5 - item.rating)}</div>
+          <p class="card-text">"${escapeHtml(item.text)}"</p>
+          <div class="card-meta">${escapeHtml(item.name)}${item.date ? " · " + escapeHtml(item.date) : ""}</div>
+          <div class="card-actions">${actions}</div>
         </div>`;
-      return;
+  }
+
+  function renderPending(list) {
+    statusMsg.textContent = "";
+    const published = list.filter(r => r.published);
+    const removed = list.filter(r => r.removed && r.isNew);
+    const legacy = list.filter(r => r.legacyPending);
+    const brandWa = "31687678875";
+    let html = `<div class="tm-intro">Agora as avaliações novas vão pro ar na hora, sem precisar aprovar — isso faz quem visita sua página confiar mais nelas. Se aparecer alguma falsa ou ofensiva, toque em <b>🚩 Denunciar</b> que a Trustmore analisa e remove.</div>`;
+
+    if (published.length === 0 && legacy.length === 0) {
+      html += `
+        <div class="empty-state">
+          Nenhuma avaliação por aqui ainda.<br>
+          Mande seu link de avaliação pros clientes — a avaliação aparece na sua página assim que eles enviarem.
+        </div>`;
     }
 
-    statusMsg.textContent = "";
-    pendingContainer.innerHTML = items.map((item, idx) => {
-      const rating = Math.min(5, Math.max(1, parseInt(item.nota, 10) || 5));
-      return `
-        <div class="card" data-idx="${idx}">
-          <div class="card-stars">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</div>
-          <p class="card-text">"${escapeHtml(item.comentario)}"</p>
-          <div class="card-meta">${escapeHtml(item.nome || "Cliente")}${item.data ? " · " + escapeHtml(item.data) : ""}</div>
-          <div class="card-actions">
-            <button class="btn btn-approve" data-timestamp="${escapeHtml(item.timestamp)}">✓ Aprovar e publicar</button>
-            <button class="btn btn-reject" data-timestamp="${escapeHtml(item.timestamp)}">🗑 Descartar</button>
-          </div>
-        </div>`;
-    }).join("");
+    if (published.length) {
+      html += `<div class="tm-subtitle">No ar na sua página (${published.length})</div>`;
+      html += published.map(item => {
+        const msg = `Olá! Quero denunciar uma avaliação na minha página ${CONFIG.profileUrl}\n\nNome: ${item.name}\nData: ${item.date}\nTexto: "${item.text.slice(0, 300)}"\n\nMotivo: `;
+        return tmCard(item, `<span class="card-approved-tag">✓ No ar</span><a class="tm-report" href="https://wa.me/${brandWa}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">🚩 Denunciar</a>`);
+      }).join("");
+    }
 
+    if (removed.length) {
+      html += `<div class="tm-subtitle">Removidas pela Trustmore (${removed.length})</div>`;
+      html += removed.map(item => tmCard(item, `<span class="card-removed-tag">Removida — não aparece na sua página</span>`)).join("");
+    }
+
+    if (legacy.length) {
+      html += `<div class="tm-subtitle">Antigas, aguardando sua decisão (${legacy.length})</div>`;
+      html += legacy.map(item => tmCard(item, `
+            <button class="btn btn-approve" data-timestamp="${escapeHtml(item.timestamp)}">✓ Aprovar e publicar</button>
+            <button class="btn btn-reject" data-timestamp="${escapeHtml(item.timestamp)}">🗑 Descartar</button>`)).join("");
+    }
+
+    pendingContainer.innerHTML = html;
     pendingContainer.querySelectorAll(".btn-approve").forEach(btn => {
       btn.addEventListener("click", () => approveReview(btn));
     });
@@ -701,45 +777,13 @@
   }
 
   async function loadPending() {
-    statusMsg.textContent = "Carregando comentários…";
+    statusMsg.textContent = "Carregando avaliações…";
     pendingContainer.innerHTML = "";
 
     try {
-      const [allRows, approvedRows] = await Promise.all([
-        fetchCsvRows(CONFIG.allReviewsCsvUrl),
-        fetchCsvRows(CONFIG.approvedCsvUrl).catch(() => []),
-      ]);
-
-      if (allRows.length <= 1) {
-        renderPending([]);
-        return;
-      }
-
-      const header = allRows[0].map(h => h.trim().toLowerCase());
-      const idxTimestamp = header.indexOf("timestamp");
-      const idxNome = header.indexOf("seu nome");
-      const idxNota = header.findIndex(h => h.startsWith("nota"));
-      const idxComentario = header.indexOf("comentário");
-
-      const processedTimestamps = new Set(
-        approvedRows.slice(1)
-          .map(r => (r[1] || "").trim())
-          .filter(Boolean)
-          .map(v => v.startsWith("REJEITADO:") ? v.slice("REJEITADO:".length) : v)
-      );
-
-      const all = allRows.slice(1).map(cols => ({
-        timestamp: (cols[idxTimestamp] || "").trim(),
-        nome: (cols[idxNome] || "").trim(),
-        nota: (cols[idxNota] || "").trim(),
-        comentario: (cols[idxComentario] || "").trim(),
-        data: (cols[idxTimestamp] || "").trim(),
-      })).filter(r => r.timestamp && r.comentario);
-
-      const pending = all.filter(r => !processedTimestamps.has(r.timestamp)).reverse();
-      renderPending(pending);
+      renderPending(await tmLoadReviews(CONFIG.sheetId));
     } catch (err) {
-      statusMsg.textContent = "Não foi possível carregar os comentários agora. Toque em \"Atualizar lista\" para tentar de novo.";
+      statusMsg.textContent = "Não foi possível carregar as avaliações agora. Toque em \"Atualizar lista\" para tentar de novo.";
       pendingContainer.innerHTML = "";
       console.warn(err);
     }
