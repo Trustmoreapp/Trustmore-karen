@@ -824,7 +824,7 @@ async function loadMe(){
   const d = await apiPost({a:'me', s:store.get('tm-s')});
   if (d.error) { store.set('tm-s', null); ME = null; return false; }
   ME = summarize(Object.assign(fromApi(d.pro), {status:d.pro.status, live:d.pro.live, gratis_ate:d.pro.gratis_ate, email:d.pro.email, whatsappRaw:d.pro.whatsapp}));
-  ME.media = d.pro.media || ME.media; ST = Object.assign({}, d.stats, {renova: d.pro.pago_ate || ''});
+  ME.vitalicio = !!(d.pro.live && !d.pro.gratis_ate && !d.pro.pago_ate); ME.media = d.pro.media || ME.media; ST = Object.assign({}, d.stats, {renova: d.pro.pago_ate || ''});
   ME.posts = (d.posts||[]).map(postFromApi);
   return true;
 }
@@ -1438,7 +1438,7 @@ Object.assign(T.pt, {
   r_h:'Suas avaliações', r_p:'Você não pode apagar avaliações, mas pode responder. Responder com educação, até a uma crítica, passa muita confiança.',
   r_reply:'Responder', r_edit:'Editar resposta', r_save:'Publicar resposta', r_report:'Denunciar', r_reported:'Enviado. A Trustmore vai analisar essa avaliação.', r_replied:'Resposta publicada.', r_ph:'Escreva sua resposta...', r_none:'Você ainda não tem avaliações. Use o botão "Pedir avaliação" no Início.',
   s_h:'Seu plano', s_plan:'Plano', s_plan_v:'Vitrine Trustmore · €14,90 por 30 dias, IVA incluso', s_status:'Situação', s_next:'No ar até', s_since:'Na Trustmore desde', s_manage:'Renovar por mais 30 dias', s_manage_p:'Cada pagamento deixa seu perfil no ar por 30 dias. Sem fidelidade: você renova quando quiser, e avisamos por e-mail antes de vencer.',
-  s_free:'No ar sem custo até', s_help_h:'Precisa de ajuda?', s_help_p:'Fale com a Trustmore pelo WhatsApp:', s_logout:'Sair da minha área', s_t_manage:'Protótipo: no site real, abre o pagamento para renovar por mais 30 dias.',
+  s_plan_life:'Cliente fundador · vitalício, sem mensalidade', s_life_p:'Obrigado por acreditar na Trustmore desde o começo. Seu perfil fica na vitrine sem custo, para sempre.', s_free:'No ar sem custo até', s_help_h:'Precisa de ajuda?', s_help_p:'Fale com a Trustmore pelo WhatsApp:', s_logout:'Sair da minha área', s_t_manage:'Protótipo: no site real, abre o pagamento para renovar por mais 30 dias.',
   d_demo:'Protótipo: este é um painel de exemplo com dados fictícios.',
 });
 let dTab = 0;
@@ -1527,14 +1527,14 @@ async function renderPainel(){
   if (dTab === 4) body = `
     <div class="two">
       <section class="box"><h2>${t('s_h')}</h2>
-        <dl class="dl" style="margin-top:12px"><dt>${t('s_plan')}</dt><dd>${t('s_plan_v')}</dd>
+        <dl class="dl" style="margin-top:12px"><dt>${t('s_plan')}</dt><dd>${me.vitalicio ? t('s_plan_life') : t('s_plan_v')}</dd>
           <dt>${t('s_status')}</dt><dd>${liveNow ? `<span class="pill ok">● ${t('d_live')}</span>` : `<span class="pill warn">● ${t('d_pend')}</span>`}</dd>
           ${st.renova ? `<dt>${t('s_next')}</dt><dd>${fmtDate(st.renova)}</dd>` : ''}
           ${LIVE && me.gratis_ate ? `<dt>${t('s_free')}</dt><dd>${fmtDate(me.gratis_ate)}</dd>` : ''}
           ${st.desde ? `<dt>${t('s_since')}</dt><dd>${fmtDate(st.desde)}</dd>` : ''}</dl>
         ${LIVE && !liveNow && CHECKOUT_URL ? `<a class="btn gold" style="margin-top:14px" target="_blank" rel="noopener" href="${esc(CHECKOUT_URL + (CHECKOUT_URL.includes('?')?'&':'?') + 'email=' + encodeURIComponent(me.email||''))}">${t('su_ok_btn')}</a>` : ''}
-        <button class="cta sec" id="s-manage" style="margin-top:18px">${t('s_manage')}</button>
-        <p class="hint" style="margin-top:8px">${t('s_manage_p')}</p></section>
+        ${me.vitalicio ? `<p class="hint" style="margin-top:14px">${t('s_life_p')}</p>` : `<button class="cta sec" id="s-manage" style="margin-top:18px">${t('s_manage')}</button>
+        <p class="hint" style="margin-top:8px">${t('s_manage_p')}</p>`}</section>
       <section class="box"><h2>${t('s_help_h')}</h2><p class="hint">${t('s_help_p')}</p>
         <p style="font-weight:700;font-size:18px;margin:8px 0 18px;user-select:all">+31 6 87678875</p>
         <button class="btn line" id="s-out">${t('s_logout')}</button></section>
