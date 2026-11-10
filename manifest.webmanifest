@@ -1,7 +1,7 @@
 {
   "name": "Trustmore",
   "short_name": "Trustmore",
-  "description": "Profissionais imigrantes na Europa, com avaliações de quem já contratou.",
+  "description": "Profissionais autônomos avaliados por quem já contratou.",
   "start_url": "/?app=1",
   "scope": "/",
   "display": "standalone",
