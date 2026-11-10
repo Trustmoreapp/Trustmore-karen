@@ -944,13 +944,13 @@ function renderHome(scrollTo, keep){
     <div class="assure">${t('as').map(x=>`<span>${sv(18,P.check)} ${x}</span>`).join('')}</div>
   </div></header>
 
-  <section class="band"><div class="wrap">
+  <section class="band" id="resultados"><div class="wrap" id="results"></div></section>
+
+  <section class="band alt"><div class="wrap">
     <div class="shead"><div class="eyebrow">${t('cat_eyebrow')}</div><h2>${t('cat_h2')}</h2></div>
     <div class="catgrid">${CATS.map(([k,ic])=>{const n=PROS.filter(p=>p.cat===k).length;
       return `<button class="cattile" data-c="${k}"><span class="ic">${sv(22,P[ic])}</span><b>${esc(cat(k))}</b><small>${n?nPros(n):t('soon')}</small></button>`}).join('')}</div>
   </div></section>
-
-  <section class="band alt" id="resultados"><div class="wrap" id="results"></div></section>
 
   ${POSTS.some(x=>proOf(x)) ? `<section class="band" id="trabalhos-home"><div class="wrap">
     <div class="resbar"><div><div class="eyebrow">${t('fd_eyebrow')}</div><h2>${t('fd_h2')}</h2><p class="lead" style="margin-top:6px">${t('fd_lead')}</p></div>
