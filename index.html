@@ -406,6 +406,36 @@ footer.foot .wrap{padding-block:48px 28px}
 .pill{white-space:nowrap}
 @media (max-width:640px){.dhead .btn{flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.cattile{transition:none}.card:hover,.cattile:hover{transform:none}}
+
+/* Upsell: perfil grátis -> vitrine */
+.upwrap{max-width:760px;margin:0 auto;text-align:left}
+.uphead{text-align:center}
+.uphead .okic{width:56px;height:56px;border-radius:50%;background:rgba(76,195,138,.15);color:#4cc38a;display:grid;place-items:center;margin:0 auto 12px}
+.uplink{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
+.uplink code{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;font-weight:700;color:var(--fg)}
+.upsell{margin-top:28px;border-radius:20px;background:linear-gradient(160deg,#0c2050,#071633);color:#f4f1e8;padding:28px 22px;border:1px solid rgba(251,217,122,.35);box-shadow:0 18px 40px -20px rgba(7,22,51,.6)}
+.upsell h2{color:#fff;font-size:clamp(24px,4.5vw,32px);margin:6px 0 8px}
+.upsell .lead{color:#cfd6e4;margin:0}
+.upsell .eyebrow{color:var(--gold-soft)}
+.upcmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.upcmp>div{border-radius:14px;padding:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.upcmp>div.on{background:rgba(251,217,122,.1);border-color:var(--gold-soft)}
+.upcmp b{display:block;margin-bottom:8px;color:#fff}
+.upcmp ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:14.5px;color:#dfe4ee}
+.upcmp li{display:flex;gap:8px;align-items:flex-start}
+.upcmp li svg{flex:none;margin-top:2px;color:var(--gold-soft)}
+.upcmp div:not(.on) li svg{color:#8b95a8}
+.upprice{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 14px}
+.upprice .big{font-family:var(--display);font-size:44px;font-weight:800;color:var(--gold-soft);line-height:1}
+.upprice small{color:#cfd6e4;font-size:14.5px}
+.upsell .btn.gold{width:100%;font-size:17px;padding:16px 20px}
+.upsafe{display:flex;gap:6px;align-items:center;justify-content:center;color:#aeb7c8;font-size:13.5px;margin-top:10px;text-align:center}
+.uplater{display:block;text-align:center;margin-top:14px;color:#cfd6e4;font-size:14px;text-decoration:underline}
+.ownbar{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-radius:16px;padding:18px 20px;margin:0 0 18px;background:linear-gradient(160deg,#0c2050,#071633);color:#f4f1e8;border:1px solid rgba(251,217,122,.4)}
+.ownbar b{color:#fff;font-size:17px}
+.ownbar p{margin:4px 0 0;color:#cfd6e4;font-size:14.5px;max-width:520px}
+.ownbar .btn{flex:none}
+@media (max-width:560px){.upcmp{grid-template-columns:1fr}.ownbar .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -694,7 +724,7 @@ const T2 = {
   su_langs:'Línguas que você fala', su_bio:'Sobre você', su_bio_hint:'Conte sua experiência, como trabalha e o que inclui. Até 800 caracteres.', su_srv:'Serviços que oferece', su_srv_hint:'Separe por vírgula. Ex.: Faxina residencial, Pós-obra',
   su_photo:'Sua foto', su_photo_hint:'Uma foto de rosto, com boa luz. Ajuda muito a passar confiança.', su_terms:'Confirmo que as informações são verdadeiras, que vou combinar os serviços diretamente com meus clientes e que li e aceito os <a href="/termos/" target="_blank" rel="noopener" style="text-decoration:underline">Termos de uso e a Política de privacidade</a>.', foot_legal:'Termos e privacidade',
   su_btn:'Criar meu perfil grátis', su_sending:'Enviando...', su_err:'Confira os campos: nome, e-mail e WhatsApp são obrigatórios.', su_fail:'Não foi possível enviar agora. Tente de novo em alguns minutos ou fale com a gente no WhatsApp.',
-  su_ok_h:'Seu perfil grátis está pronto!', su_ok_p:'Ele já está no ar em {link}. Mande esse link para os seus clientes deixarem avaliação. Também enviamos o link para o seu e-mail.', su_ok_btn:'Quero aparecer na vitrine', su_ok_view:'Ver meu perfil', su_up_h:'Apareça na vitrine', su_up_p:'O perfil grátis funciona pelo seu link. Na vitrine, os clientes te encontram buscando pelo serviço e pela cidade, e você ganha o feed de fotos dos seus trabalhos.', su_ig:'Instagram', su_site:'Site', su_opt:'Opcional', pg_h:'Pagamento recebido!', pg_wait:'Estamos confirmando seu pagamento e colocando seu perfil no ar...', pg_ok:'Tudo certo. Em poucos minutos seu perfil aparece na vitrine e você recebe um e-mail de confirmação.', pg_btn_painel:'Ir para minha área', pg_btn_entrar:'Entrar na minha área', su_price:'€2,99 no primeiro mês, depois €14,90 por mês. Pagamento seguro pelo Stripe. Cancele quando quiser.', su_ok_wait:'O link de pagamento ainda está sendo configurado. Entraremos em contato pelo WhatsApp.',
+  up_hi:'Pronto, {name}! Seu perfil já está no ar.', up_sub:'Mande o seu link para os clientes deixarem avaliação. Também enviamos ele para o seu e-mail.', up_copy:'Copiar link', up_copied:'Link copiado!', up_eyebrow:'Próximo passo', up_h:'Seja encontrado por quem procura o seu serviço', up_p:'Hoje, só quem recebe o seu link vê o seu perfil. Na vitrine, você aparece para quem busca o seu serviço na sua cidade.', up_free_t:'Perfil grátis', up_free:['Link próprio para divulgar','Avaliações dos seus clientes','Sua área com visitas e contatos'], up_vit_t:'Na vitrine', up_vit:['Tudo do perfil grátis','Aparece nas buscas por serviço e cidade','Feed com fotos dos seus trabalhos','Pode ativar o selo verificado e ir para o topo'], up_price:'no primeiro mês · depois €14,90/mês · sem fidelidade e sem comissão', up_btn:'Quero aparecer na vitrine por €2,99', up_safe:'Pagamento seguro pelo Stripe. Cancele quando quiser, direto na sua área.', up_later:'Agora não, continuar com o perfil grátis', own_h:'Este é o seu perfil grátis', own_p:'Ele funciona pelo seu link, mas ainda não aparece nas buscas da vitrine. Ative para ser encontrado por quem procura o seu serviço na sua cidade.', su_ok_h:'Seu perfil grátis está pronto!', su_ok_p:'Ele já está no ar em {link}. Mande esse link para os seus clientes deixarem avaliação. Também enviamos o link para o seu e-mail.', su_ok_btn:'Quero aparecer na vitrine', su_ok_view:'Ver meu perfil', su_up_h:'Apareça na vitrine', su_up_p:'O perfil grátis funciona pelo seu link. Na vitrine, os clientes te encontram buscando pelo serviço e pela cidade, e você ganha o feed de fotos dos seus trabalhos.', su_ig:'Instagram', su_site:'Site', su_opt:'Opcional', pg_h:'Pagamento recebido!', pg_wait:'Estamos confirmando seu pagamento e colocando seu perfil no ar...', pg_ok:'Tudo certo. Em poucos minutos seu perfil aparece na vitrine e você recebe um e-mail de confirmação.', pg_btn_painel:'Ir para minha área', pg_btn_entrar:'Entrar na minha área', su_price:'€2,99 no primeiro mês, depois €14,90 por mês. Pagamento seguro pelo Stripe. Cancele quando quiser.', su_ok_wait:'O link de pagamento ainda está sendo configurado. Entraremos em contato pelo WhatsApp.',
   su_demo:'Protótipo: o cadastro ainda não está ligado à planilha.', country_other:'Outro país', wa_msg:'Oi, {name}! Encontrei seu perfil na Trustmore e gostaria de um orçamento.', rev_sent:'Avaliação publicada. Obrigado por ajudar a comunidade!', rev_err:'Confira os campos e tente de novo.', reply:'Resposta de {name}' },
  en:{ other:'Other services', loading:'Loading professionals...', load_err:'Couldn’t load right now. Please try again in a few minutes.', not_found:'Profile not found or not available.',
   su_eyebrow:'Professional sign-up', su_h1:'Create your Trustmore profile', su_lead:'Free and quick: you get a profile with your own link to collect your customers’ reviews. To appear in the showcase, just activate the subscription whenever you like.',
@@ -703,7 +733,7 @@ const T2 = {
   su_langs:'Languages you speak', su_bio:'About you', su_bio_hint:'Tell customers about your experience, how you work and what’s included. Up to 800 characters.', su_srv:'Services you offer', su_srv_hint:'Separate with commas. E.g. Home cleaning, After-renovation cleaning',
   su_photo:'Your photo', su_photo_hint:'A clear photo of your face in good light. It builds a lot of trust.', su_terms:'I confirm this information is true, that I’ll arrange services directly with my customers, and that I have read and accept the <a href="/termos/#terms" target="_blank" rel="noopener" style="text-decoration:underline">Terms of use and Privacy policy</a>.', foot_legal:'Terms and privacy',
   su_btn:'Create my free profile', su_sending:'Sending...', su_err:'Please check the form: name, email and WhatsApp are required.', su_fail:'Couldn’t send right now. Please try again in a few minutes or message us on WhatsApp.',
-  su_ok_h:'Your free profile is ready!', su_ok_p:'It’s already live at {link}. Send this link to your customers so they can leave a review. We’ve also emailed it to you.', su_ok_btn:'I want to be in the showcase', su_ok_view:'View my profile', su_up_h:'Get into the showcase', su_up_p:'Your free profile works through your link. In the showcase, customers find you by service and city, and you get a feed to show photos of your work.', su_ig:'Instagram', su_site:'Website', su_opt:'Optional', pg_h:'Payment received!', pg_wait:'We’re confirming your payment and putting your profile live...', pg_ok:'All set. Your profile will appear in the showcase within a few minutes, and you’ll get a confirmation email.', pg_btn_painel:'Go to my area', pg_btn_entrar:'Log in to my area', su_price:'€2.99 for the first month, then €14.90 per month. Secure payment with Stripe. Cancel anytime.', su_ok_wait:'The payment link is still being set up. We’ll contact you on WhatsApp.',
+  up_hi:'All set, {name}! Your profile is live.', up_sub:'Send your link to customers so they can leave a review. We’ve also emailed it to you.', up_copy:'Copy link', up_copied:'Link copied!', up_eyebrow:'Next step', up_h:'Get found by people looking for your service', up_p:'Right now only people who get your link can see your profile. In the showcase, you appear to people searching for your service in your city.', up_free_t:'Free profile', up_free:['Your own link to share','Reviews from your customers','Your area with visits and contacts'], up_vit_t:'In the showcase', up_vit:['Everything in the free profile','Appear in searches by service and city','A feed with photos of your work','Option to add the verified badge and go to the top'], up_price:'for the first month · then €14.90/month · no contract, no commission', up_btn:'Get into the showcase for €2.99', up_safe:'Secure payment with Stripe. Cancel anytime from your area.', up_later:'Not now, keep my free profile', own_h:'This is your free profile', own_p:'It works through your link, but it doesn’t appear in showcase searches yet. Activate it to be found by people looking for your service in your city.', su_ok_h:'Your free profile is ready!', su_ok_p:'It’s already live at {link}. Send this link to your customers so they can leave a review. We’ve also emailed it to you.', su_ok_btn:'I want to be in the showcase', su_ok_view:'View my profile', su_up_h:'Get into the showcase', su_up_p:'Your free profile works through your link. In the showcase, customers find you by service and city, and you get a feed to show photos of your work.', su_ig:'Instagram', su_site:'Website', su_opt:'Optional', pg_h:'Payment received!', pg_wait:'We’re confirming your payment and putting your profile live...', pg_ok:'All set. Your profile will appear in the showcase within a few minutes, and you’ll get a confirmation email.', pg_btn_painel:'Go to my area', pg_btn_entrar:'Log in to my area', su_price:'€2.99 for the first month, then €14.90 per month. Secure payment with Stripe. Cancel anytime.', su_ok_wait:'The payment link is still being set up. We’ll contact you on WhatsApp.',
   su_demo:'Prototype: sign-up isn’t connected to the spreadsheet yet.', country_other:'Other country', wa_msg:'Hi {name}! I found your profile on Trustmore and would like a quote.', rev_sent:'Review posted. Thanks for helping the community!', rev_err:'Please check the form and try again.', reply:'Reply from {name}' },
  nl:{ other:'Overige diensten', loading:'Vakmensen laden...', load_err:'Laden lukt nu niet. Probeer het over een paar minuten opnieuw.', not_found:'Profiel niet gevonden of niet beschikbaar.',
   su_eyebrow:'Aanmelden als vakman', su_h1:'Maak je Trustmore-profiel', su_lead:'Gratis en snel: je krijgt een profiel met je eigen link om reviews van je klanten te verzamelen. Wil je in de etalage staan? Activeer dan het abonnement wanneer je wilt.',
@@ -712,7 +742,7 @@ const T2 = {
   su_langs:'Talen die je spreekt', su_bio:'Over jou', su_bio_hint:'Vertel over je ervaring, hoe je werkt en wat inbegrepen is. Maximaal 800 tekens.', su_srv:'Diensten die je aanbiedt', su_srv_hint:'Scheid met komma’s. Bijv. Huishoudelijke schoonmaak, Opleveringsschoonmaak',
   su_photo:'Je foto', su_photo_hint:'Een duidelijke foto van je gezicht met goed licht. Dat wekt veel vertrouwen.', su_terms:'Ik bevestig dat deze gegevens kloppen, dat ik diensten rechtstreeks met mijn klanten afspreek en dat ik de <a href="/termos/#terms" target="_blank" rel="noopener" style="text-decoration:underline">gebruiksvoorwaarden en het privacybeleid</a> heb gelezen en accepteer.', foot_legal:'Voorwaarden en privacy',
   su_btn:'Maak mijn gratis profiel', su_sending:'Versturen...', su_err:'Controleer het formulier: naam, e-mail en WhatsApp zijn verplicht.', su_fail:'Versturen lukt nu niet. Probeer het over een paar minuten opnieuw of stuur ons een WhatsApp.',
-  su_ok_h:'Je gratis profiel staat klaar!', su_ok_p:'Het staat al online op {link}. Stuur deze link naar je klanten zodat ze een review kunnen achterlaten. We hebben hem ook naar je e-mail gestuurd.', su_ok_btn:'Ik wil in de etalage', su_ok_view:'Mijn profiel bekijken', su_up_h:'Kom in de etalage', su_up_p:'Je gratis profiel werkt via je link. In de etalage vinden klanten je op dienst en stad, en krijg je een feed om foto’s van je werk te laten zien.', su_ig:'Instagram', su_site:'Website', su_opt:'Optioneel', pg_h:'Betaling ontvangen!', pg_wait:'We bevestigen je betaling en zetten je profiel online...', pg_ok:'Alles in orde. Binnen een paar minuten staat je profiel in de etalage en ontvang je een bevestiging per e-mail.', pg_btn_painel:'Naar mijn omgeving', pg_btn_entrar:'Inloggen', su_price:'€2,99 de eerste maand, daarna €14,90 per maand. Veilig betalen via Stripe. Altijd opzegbaar.', su_ok_wait:'De betaallink wordt nog ingesteld. We nemen contact met je op via WhatsApp.',
+  up_hi:'Klaar, {name}! Je profiel staat online.', up_sub:'Stuur je link naar klanten zodat ze een review kunnen achterlaten. We hebben hem ook naar je e-mail gestuurd.', up_copy:'Link kopiëren', up_copied:'Link gekopieerd!', up_eyebrow:'Volgende stap', up_h:'Word gevonden door mensen die jouw dienst zoeken', up_p:'Nu zien alleen mensen met je link je profiel. In de etalage verschijn je bij mensen die jouw dienst zoeken in jouw stad.', up_free_t:'Gratis profiel', up_free:['Je eigen link om te delen','Reviews van je klanten','Je omgeving met bezoeken en contacten'], up_vit_t:'In de etalage', up_vit:['Alles van het gratis profiel','Zichtbaar in zoekresultaten op dienst en stad','Een feed met foto’s van je werk','Mogelijkheid om de geverifieerd-badge te nemen en bovenaan te staan'], up_price:'de eerste maand · daarna €14,90/maand · geen contract, geen commissie', up_btn:'Kom in de etalage voor €2,99', up_safe:'Veilig betalen via Stripe. Altijd opzegbaar vanuit je omgeving.', up_later:'Nu niet, ik houd mijn gratis profiel', own_h:'Dit is je gratis profiel', own_p:'Het werkt via je link, maar staat nog niet in de zoekresultaten van de etalage. Activeer het om gevonden te worden door mensen die jouw dienst zoeken in jouw stad.', su_ok_h:'Je gratis profiel staat klaar!', su_ok_p:'Het staat al online op {link}. Stuur deze link naar je klanten zodat ze een review kunnen achterlaten. We hebben hem ook naar je e-mail gestuurd.', su_ok_btn:'Ik wil in de etalage', su_ok_view:'Mijn profiel bekijken', su_up_h:'Kom in de etalage', su_up_p:'Je gratis profiel werkt via je link. In de etalage vinden klanten je op dienst en stad, en krijg je een feed om foto’s van je werk te laten zien.', su_ig:'Instagram', su_site:'Website', su_opt:'Optioneel', pg_h:'Betaling ontvangen!', pg_wait:'We bevestigen je betaling en zetten je profiel online...', pg_ok:'Alles in orde. Binnen een paar minuten staat je profiel in de etalage en ontvang je een bevestiging per e-mail.', pg_btn_painel:'Naar mijn omgeving', pg_btn_entrar:'Inloggen', su_price:'€2,99 de eerste maand, daarna €14,90 per maand. Veilig betalen via Stripe. Altijd opzegbaar.', su_ok_wait:'De betaallink wordt nog ingesteld. We nemen contact met je op via WhatsApp.',
   su_demo:'Prototype: aanmelden is nog niet gekoppeld aan de spreadsheet.', country_other:'Ander land', wa_msg:'Hoi {name}! Ik vond je profiel op Trustmore en wil graag een offerte.', rev_sent:'Review geplaatst. Bedankt dat je de gemeenschap helpt!', rev_err:'Controleer het formulier en probeer het opnieuw.', reply:'Reactie van {name}' },
  es:{ other:'Otros servicios', loading:'Cargando profesionales...', load_err:'No se pudo cargar ahora. Inténtalo de nuevo en unos minutos.', not_found:'Perfil no encontrado o no disponible.',
   su_eyebrow:'Registro de profesional', su_h1:'Crea tu perfil en Trustmore', su_lead:'Gratis y en pocos minutos: tienes un perfil con tu propio enlace para reunir las reseñas de tus clientes. Para aparecer en la vitrina, activa la suscripción cuando quieras.',
@@ -721,7 +751,7 @@ const T2 = {
   su_langs:'Idiomas que hablas', su_bio:'Sobre ti', su_bio_hint:'Cuenta tu experiencia, cómo trabajas y qué incluye. Hasta 800 caracteres.', su_srv:'Servicios que ofreces', su_srv_hint:'Separa con comas. Ej.: Limpieza del hogar, Limpieza fin de obra',
   su_photo:'Tu foto', su_photo_hint:'Una foto de tu cara con buena luz. Transmite mucha confianza.', su_terms:'Confirmo que la información es verdadera, que acordaré los servicios directamente con mis clientes y que he leído y acepto los <a href="/termos/#terms" target="_blank" rel="noopener" style="text-decoration:underline">Términos de uso y la Política de privacidad</a>.', foot_legal:'Términos y privacidad',
   su_btn:'Crear mi perfil gratis', su_sending:'Enviando...', su_err:'Revisa el formulario: nombre, correo y WhatsApp son obligatorios.', su_fail:'No se pudo enviar ahora. Inténtalo en unos minutos o escríbenos por WhatsApp.',
-  su_ok_h:'¡Tu perfil gratis está listo!', su_ok_p:'Ya está publicado en {link}. Envía este enlace a tus clientes para que dejen su reseña. También te lo enviamos por correo.', su_ok_btn:'Quiero aparecer en la vitrina', su_ok_view:'Ver mi perfil', su_up_h:'Aparece en la vitrina', su_up_p:'Tu perfil gratis funciona con tu enlace. En la vitrina, los clientes te encuentran por servicio y ciudad, y tienes un feed para mostrar fotos de tus trabajos.', su_ig:'Instagram', su_site:'Sitio web', su_opt:'Opcional', pg_h:'¡Pago recibido!', pg_wait:'Estamos confirmando tu pago y publicando tu perfil...', pg_ok:'Todo listo. En unos minutos tu perfil aparecerá en la vitrina y recibirás un correo de confirmación.', pg_btn_painel:'Ir a mi área', pg_btn_entrar:'Entrar en mi área', su_price:'€2,99 el primer mes, después €14,90 al mes. Pago seguro con Stripe. Cancela cuando quieras.', su_ok_wait:'El enlace de pago todavía se está configurando. Te contactaremos por WhatsApp.',
+  up_hi:'¡Listo, {name}! Tu perfil ya está publicado.', up_sub:'Envía tu enlace a tus clientes para que dejen su reseña. También te lo enviamos por correo.', up_copy:'Copiar enlace', up_copied:'¡Enlace copiado!', up_eyebrow:'Siguiente paso', up_h:'Haz que te encuentre quien busca tu servicio', up_p:'Ahora solo ve tu perfil quien recibe tu enlace. En la vitrina, apareces a quien busca tu servicio en tu ciudad.', up_free_t:'Perfil gratis', up_free:['Tu propio enlace para compartir','Reseñas de tus clientes','Tu área con visitas y contactos'], up_vit_t:'En la vitrina', up_vit:['Todo lo del perfil gratis','Apareces en las búsquedas por servicio y ciudad','Un feed con fotos de tus trabajos','Puedes activar la insignia verificada e ir arriba'], up_price:'el primer mes · después €14,90/mes · sin permanencia y sin comisión', up_btn:'Quiero aparecer en la vitrina por €2,99', up_safe:'Pago seguro con Stripe. Cancela cuando quieras desde tu área.', up_later:'Ahora no, seguir con el perfil gratis', own_h:'Este es tu perfil gratis', own_p:'Funciona con tu enlace, pero todavía no aparece en las búsquedas de la vitrina. Actívalo para que te encuentre quien busca tu servicio en tu ciudad.', su_ok_h:'¡Tu perfil gratis está listo!', su_ok_p:'Ya está publicado en {link}. Envía este enlace a tus clientes para que dejen su reseña. También te lo enviamos por correo.', su_ok_btn:'Quiero aparecer en la vitrina', su_ok_view:'Ver mi perfil', su_up_h:'Aparece en la vitrina', su_up_p:'Tu perfil gratis funciona con tu enlace. En la vitrina, los clientes te encuentran por servicio y ciudad, y tienes un feed para mostrar fotos de tus trabajos.', su_ig:'Instagram', su_site:'Sitio web', su_opt:'Opcional', pg_h:'¡Pago recibido!', pg_wait:'Estamos confirmando tu pago y publicando tu perfil...', pg_ok:'Todo listo. En unos minutos tu perfil aparecerá en la vitrina y recibirás un correo de confirmación.', pg_btn_painel:'Ir a mi área', pg_btn_entrar:'Entrar en mi área', su_price:'€2,99 el primer mes, después €14,90 al mes. Pago seguro con Stripe. Cancela cuando quieras.', su_ok_wait:'El enlace de pago todavía se está configurando. Te contactaremos por WhatsApp.',
   su_demo:'Prototipo: el registro aún no está conectado a la hoja de cálculo.', country_other:'Otro país', wa_msg:'¡Hola, {name}! Encontré tu perfil en Trustmore y me gustaría un presupuesto.', rev_sent:'Reseña publicada. ¡Gracias por ayudar a la comunidad!', rev_err:'Revisa el formulario e inténtalo de nuevo.', reply:'Respuesta de {name}' },
 };
 T2.pt.nav_login='Entrar'; T2.en.nav_login='Log in'; T2.nl.nav_login='Inloggen'; T2.es.nav_login='Entrar';
@@ -1163,21 +1193,43 @@ function renderCadastro(){
       pais:v('#su-pais'), cidades:v('#su-cid').split(',').map(s=>s.trim()).filter(Boolean), linguas:[...$$('.su-l')].filter(c=>c.checked).map(c=>c.value),
       bio:v('#su-bio'), bio_lingua:lang, servicos:v('#su-srv').split(',').map(s=>s.trim()).filter(Boolean), instagram:v('#su-ig'), site:v('#su-site'), foto};
     if (!body.nome || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email) || body.whatsapp.replace(/\D/g,'').length < 8 || !$('#su-ok').checked) { $('#su-msg').textContent = t('su_err'); return; }
-    if (!LIVE) { toast(t('su_demo')); return showDone('exemplo', body.email); }
+    if (!LIVE) { toast(t('su_demo')); return showDone('exemplo', body.email, '', body.nome); }
     $('#su-btn').disabled = true; $('#su-msg').textContent = t('su_sending');
-    try { const r = await apiPost(body); if (r.error) throw new Error(r.error); showDone(r.slug, body.email, r.ref); }
+    try { const r = await apiPost(body); if (r.error) throw new Error(r.error); showDone(r.slug, body.email, r.ref, body.nome); }
     catch(err) { $('#su-btn').disabled = false; $('#su-msg').textContent = t('su_fail'); }
   };
 }
-function showDone(slug, email, ref){
+/* Guarda no aparelho quem acabou de criar o perfil, para mostrar o botão "aparecer na vitrine" quando abrir o próprio perfil */
+const ownSet = o => { try { const a = JSON.parse(localStorage.getItem('tm-own')||'[]').filter(x=>x.slug!==o.slug); a.unshift(o); localStorage.setItem('tm-own', JSON.stringify(a.slice(0,3))); } catch(e){} };
+const ownGet = slug => { try { return JSON.parse(localStorage.getItem('tm-own')||'[]').find(x=>x.slug===slug) || null; } catch(e){ return null; } };
+function showDone(slug, email, ref, nome){
   const url = 'trustmore.app/' + slug;
   const pay = stripeLink(CHECKOUT_URL, email, ref, PROMO);
+  if (ref) ownSet({slug, ref, email});
+  const nm = String(nome||'').trim().split(/\s+/)[0] || '';
+  const li = (arr, on) => arr.map(x => `<li>${sv(16, on ? P.check : P.check)}<span>${x}</span></li>`).join('');
   $('#su').style.display = 'none';
-  const d = $('#su-done'); d.style.display = 'block';
-  d.innerHTML = `<h2 style="font-size:28px">${t('su_ok_h')}</h2><p class="lead" style="margin-inline:auto">${t('su_ok_p',{link:'<b>'+esc(url)+'</b>'})}</p>
-    <a class="btn line" style="margin-top:14px" href="#p-${esc(slug)}">${t('su_ok_view')}</a>
-    <div class="box" style="margin:24px auto 0;max-width:520px;text-align:left"><h3 style="margin:0 0 6px">${t('su_up_h')}</h3><p class="hint">${t('su_up_p')}</p><p class="hint" style="margin-top:8px"><b>${t('su_price')}</b></p>
-    ${pay ? `<a class="btn gold" style="margin-top:14px" href="${esc(pay)}" target="_blank" rel="noopener">${t('su_ok_btn')}</a>` : `<p class="hint" style="margin-top:12px">${t('su_ok_wait')}</p>`}</div>`;
+  const d = $('#su-done'); d.style.display = 'block'; d.className = ''; d.style.textAlign = 'left'; d.style.padding = '0';
+  d.innerHTML = `<div class="upwrap">
+    <div class="uphead"><div class="okic">${sv(28,P.check)}</div>
+      <h2 style="font-size:clamp(26px,5vw,34px)">${t('up_hi',{name:esc(nm)}).replace(', !','!')}</h2>
+      <p class="lead" style="margin-inline:auto">${t('up_sub')}</p>
+      <div class="uplink"><code>${esc(url)}</code><button class="btn line" id="up-copy" type="button">${sv(16,P.link)} ${t('up_copy')}</button><a class="btn line" href="#p-${esc(slug)}">${t('su_ok_view')}</a></div>
+    </div>
+    <section class="upsell">
+      <div class="eyebrow">${t('up_eyebrow')}</div>
+      <h2>${t('up_h')}</h2>
+      <p class="lead">${t('up_p')}</p>
+      <div class="upcmp">
+        <div><b>${t('up_free_t')}</b><ul>${li(t('up_free'), false)}</ul></div>
+        <div class="on"><b>${t('up_vit_t')}</b><ul>${li(t('up_vit'), true)}</ul></div>
+      </div>
+      <div class="upprice"><span class="big">€2,99</span><small>${t('up_price')}</small></div>
+      ${pay ? `<a class="btn gold" href="${esc(pay)}" target="_blank" rel="noopener">${t('up_btn')}</a>` : `<p class="hint" style="color:#cfd6e4">${t('su_ok_wait')}</p>`}
+      <div class="upsafe">${sv(15,P.shield)} ${t('up_safe')}</div>
+      <a class="uplater" href="#p-${esc(slug)}">${t('up_later')}</a>
+    </section></div>`;
+  const cp = $('#up-copy'); if (cp) cp.onclick = () => { try { navigator.clipboard.writeText('https://' + url); } catch(e){} toast(t('up_copied')); };
   window.scrollTo(0,0);
 }
 /* Reduz a foto no próprio celular antes de enviar (máx. 600px, JPEG) */
@@ -1236,6 +1288,16 @@ function renderProfile(p){
   </div></div>`;
   $('#back').onclick = () => { location.hash = ''; };
   bindPosts();
+  if (LIVE && p.naVitrine === false) {
+    const showOwn = (email, ref) => {
+      if ($('#ownbar') || !CHECKOUT_URL) return;
+      const bar = document.createElement('div'); bar.id = 'ownbar'; bar.className = 'ownbar';
+      bar.innerHTML = `<div><b>${t('own_h')}</b><p>${t('own_p')}</p></div><a class="btn gold" target="_blank" rel="noopener" href="${esc(stripeLink(CHECKOUT_URL, email, ref, PROMO))}">${t('up_btn')}</a>`;
+      const sheet = document.querySelector('.sheet'); if (sheet) sheet.parentNode.insertBefore(bar, sheet);
+    };
+    const o = ownGet(p.slug); if (o) showOwn(o.email, o.ref);
+    else if (store.get('tm-s')) (ME ? Promise.resolve(true) : loadMe()).then(ok => { if (ok && ME && ME.slug === p.slug && !ME.live) showOwn(ME.email, ME.ref); }).catch(()=>{});
+  }
   $('#wa').onclick = () => {
     if (!LIVE || !p.whatsapp) return toast(t('t_wa',{name:nm}));
     track(p.slug, 'whatsapp');
