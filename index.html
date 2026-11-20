@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Profissionais autônomos avaliados por quem já contratou. Faxina, obras, beleza, mudanças e muito mais.">
-<meta property="og:title" content="Trustmore — contrate com confiança">
+<meta property="og:title" content="Trustmore · contrate com confiança">
 <meta property="og:description" content="Profissionais autônomos com avaliações reais de clientes e contato direto pelo WhatsApp.">
 <meta property="og:image" content="https://trustmore.app/icons/icon-512.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -15,7 +15,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Trustmore">
 <style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Trustmore — profissionais de confiança</title>
+<title>Trustmore · profissionais de confiança</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
@@ -407,6 +407,41 @@ footer.foot .wrap{padding-block:48px 28px}
 @media (max-width:640px){.dhead .btn{flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.cattile{transition:none}.card:hover,.cattile:hover{transform:none}}
 
+
+/* Ajustes 20/11/2026 */
+.cmpwrap{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:start;margin-top:8px}
+@media (max-width:900px){.cmpwrap{grid-template-columns:1fr}}
+.cmp table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:15px}
+.cmp th,.cmp td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+.cmp thead th{font-family:var(--display);font-size:17px;background:var(--bg-2)}
+.cmp thead th.on{background:var(--navy);color:var(--gold-soft)}
+.cmp td.on{background:#fbf6ea}
+.cmp tbody th{font-weight:600;width:44%}
+.cmp .yes{display:inline-flex;gap:6px;align-items:center;color:var(--ok);font-weight:600}
+.cmp .no{color:var(--muted)}
+.cmp tr.price b{font-family:var(--display);font-size:19px;display:block}
+.cmp tr.price small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:2px}
+.cmp tfoot td,.cmp tfoot th{border-bottom:0}
+.cmp tfoot .btn{width:100%;justify-content:center;text-align:center;white-space:normal;font-size:14.5px}
+.cmpnote{color:var(--muted);font-size:14.5px;margin:12px 4px 0}
+@media (max-width:560px){.cmp table{table-layout:fixed}.cmp th,.cmp td{padding:10px 7px;font-size:13px;overflow-wrap:anywhere}.cmp thead th{font-size:14px}.cmp tbody th{width:36%}.cmp tr.price b{font-size:15px}.cmp tr.price small{font-size:11.5px}.cmp .yes svg{display:none}.cmp tfoot .btn{padding:10px 6px;font-size:13px;min-height:0}.cmp tfoot th{padding:0}}
+.cattile.soon{cursor:default}
+.cattile.soon:hover{transform:none;border-color:var(--line)}
+.cattile.soon b{color:var(--muted)}
+.cattile.soon{text-align:left}
+.soonlinks{font-size:12.5px;line-height:1.4;color:var(--muted);display:grid;gap:4px;margin-top:-2px}
+.soonlinks a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.novo{display:inline-block;background:#e9f4ee;color:var(--ok);border-radius:999px;padding:2px 10px;font-size:12.5px;font-weight:700}
+/* Link rápido /criar: sem menu, sem rodapé */
+body.focus #nav .links,body.focus #nav .instbtn,body.focus #foot,body.focus #tabbar,body.focus #demo{display:none!important}
+body.focus .brand{pointer-events:none}
+.crhero{padding:22px 0 14px}
+.crhero h1{font-family:var(--display);font-size:clamp(26px,6vw,40px);line-height:1.08;margin:0}
+.crhero p{margin:8px 0 0;color:var(--muted);font-size:16px}
+.crup{color:var(--muted);font-size:14px;text-align:center;margin:16px 0 30px}
+details.crmore{border:1px dashed var(--line);border-radius:12px;padding:10px 14px}
+details.crmore summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--link)}
+details.crmore[open]{display:grid;gap:18px}
 /* Upsell: perfil grátis -> vitrine */
 .upwrap{max-width:760px;margin:0 auto;text-align:left}
 .uphead{text-align:center}
@@ -456,9 +491,9 @@ footer.foot .wrap{padding-block:48px 28px}
 const T = {
 pt:{
  demo:'Protótipo da vitrine Trustmore: todos os perfis, avaliações e números são fictícios.',
- nav_find:'Encontrar profissionais', nav_trust:'Confiança', nav_about:'Quem somos', nav_pros:'Para profissionais', nav_join:'Quero aparecer',
+ nav_find:'Encontrar profissionais', nav_trust:'Confiança', nav_about:'Quem somos', nav_pros:'Para profissionais', nav_join:'Criar minha página grátis',
  foot_tag:'A vitrine de profissionais autônomos avaliados por quem já contratou.',
- foot_h1:'Para quem contrata', foot_h2:'Para profissionais', foot_trust:'Como garantimos a confiança', foot_faq:'Perguntas frequentes', foot_how:'Como funciona', foot_create:'Criar meu perfil', foot_ask:'Pedir avaliações',
+ foot_h1:'Para quem contrata', foot_h2:'Para profissionais', foot_trust:'Como garantimos a confiança', foot_faq:'Perguntas frequentes', foot_how:'Como funciona', foot_create:'Criar minha página grátis', foot_ask:'Pedir avaliações',
  rights:'© 2026 Trustmore. Todos os direitos reservados.', legal:'Termos de uso · Privacidade',
  hero_eyebrow:'Profissionais autônomos com avaliações reais',
  hero_h1:'Contrate com confiança. <em>Veja quem já contratou</em> antes de você.',
@@ -472,17 +507,17 @@ pt:{
  how_eyebrow:'Como funciona', how_h2:'Encontrar alguém de confiança em três passos', how_lead:'Sem cadastro, sem taxa e sem intermediário. Você fala direto com o profissional.',
  how:[['Busque pelo serviço e pela cidade','Filtre por categoria, país e cidade. Só aparece quem atende na sua região.'],['Compare perfis e avaliações','Leia o que outros clientes contaram, veja a nota, os serviços e as línguas que o profissional fala.'],['Chame no WhatsApp e combine','Converse direto, peça orçamento e marque o dia. Depois do serviço, deixe sua avaliação e ajude a próxima pessoa.']],
  tr_eyebrow:'Confiança em primeiro lugar', tr_h2:'Sem confiança, ninguém abre a porta de casa.',
- tr_lead:'Contratar alguém no exterior é difícil: você não conhece ninguém, a indicação do grupo some no meio das mensagens e não dá para saber quem é bom de verdade. A Trustmore existe para resolver isso.',
+ tr_lead:'Contratar alguém que você não conhece é difícil: a indicação some no meio das mensagens do grupo e não dá para saber quem é bom de verdade. A Trustmore existe para resolver isso.',
  tips_h:'Dicas para contratar com segurança', tips:['Leia as avaliações mais recentes, não só a nota.','Prefira perfis com o selo de verificado.','Combine valor, horário e o que está incluso antes do serviço.','Depois do serviço, avalie. Isso protege a próxima pessoa.'],
  pillars:[['Avaliações de quem contratou','Cada avaliação vem de um cliente que informa nome e WhatsApp. O contato não aparece no site, mas fica com a gente para conferência.'],['Transparência total','O profissional não escolhe o que aparece e não apaga avaliação ruim. Ele pode responder, e você vê as duas versões.'],['Selo verificado','Profissionais com o selo confirmaram a identidade com a Trustmore e aparecem primeiro nas buscas. Procure o selo verde no perfil.'],['Moderação humana','Acompanhamos as avaliações e removemos spam, ofensas e qualquer tentativa de enganar.']],
- pb_eyebrow:'Para profissionais', pb_h2:'Seu trabalho já fala por você. Agora deixe mais gente ver.',
- pb_lead:'Chega de depender de indicação que se perde no grupo. Tenha um perfil profissional com suas avaliações e seja encontrado por quem procura o seu serviço.',
+ pb_eyebrow:'Para profissionais', pb_h2:'Seu trabalho já fala por você. Agora junte tudo em um link só.',
+ pb_lead:'Chega de depender de indicação que se perde no grupo. Comece com a sua página grátis e apareça na vitrine quando quiser.',
  pb_checks:['<b>Apareça na busca</b> de quem procura o seu serviço na sua cidade.','<b>Avaliações que ficam.</b> Cada cliente satisfeito vira prova para o próximo.','<b>Seu link próprio</b> para divulgar no Facebook, Instagram e WhatsApp.','<b>Sem comissão.</b> O cliente fala direto com você e o valor do serviço é todo seu.'],
- pb_btn:'Quero aparecer na vitrine', m_contacts:'Contatos pelo WhatsApp em outubro', m_visits:'Visitas no perfil', m_rating:'Nota média', m_note:'Exemplo do resumo mensal que cada profissional recebe (números ilustrativos).',
+ pb_btn:'Quero aparecer na vitrine', m_contacts:'Contatos pelo WhatsApp em outubro', m_visits:'Visitas no perfil', m_rating:'Nota média', m_note:'Na sua área você acompanha visitas e contatos.',
  faq_eyebrow:'Perguntas frequentes', faq_h2:'Ficou alguma dúvida?',
- faq:[['Preciso pagar para contratar alguém pela Trustmore?','Não. Para quem contrata, a Trustmore é gratuita. Você fala direto com o profissional e combina o valor com ele.'],['As avaliações são reais?','Quem avalia informa nome e WhatsApp, que não aparecem no site mas ficam com a gente para conferência. O profissional não consegue apagar avaliações, e removemos spam, ofensas e avaliações falsas.'],['O que significa o selo verificado?','Significa que o profissional confirmou a identidade com a Trustmore e ativou o selo. Perfis verificados aparecem primeiro nas buscas.'],['A Trustmore se responsabiliza pelo serviço?','A Trustmore é uma vitrine: o acordo, o pagamento e o serviço são combinados entre você e o profissional. Por isso as avaliações são tão importantes. Se tiver um problema, conte na sua avaliação e fale com a gente.'],['Não achei profissional na minha cidade. E agora?','Estamos chegando em novas cidades. Se conhece um bom profissional, indique a Trustmore para ele: assim a sua cidade aparece na vitrine.']],
+ faq:[['Preciso pagar para contratar alguém pela Trustmore?','Não. Para quem contrata, a Trustmore é gratuita. Você fala direto com o profissional e combina o valor com ele.'],['As avaliações são reais?','Quem avalia informa nome e WhatsApp, que não aparecem no site mas ficam com a gente para conferência. O profissional não consegue apagar avaliações, e removemos spam, ofensas e avaliações falsas.'],['O que significa o selo verificado?','Significa que o profissional confirmou a identidade com a Trustmore e ativou o selo. Perfis verificados aparecem primeiro nas buscas.'],['A Trustmore se responsabiliza pelo serviço?','A Trustmore é uma vitrine: o acordo, o pagamento e o serviço são combinados entre você e o profissional. Por isso as avaliações são tão importantes. Se tiver um problema, conte na sua avaliação e fale com a gente.'],['Não achei profissional na minha cidade. E agora?','Estamos chegando em novas cidades. Se conhece um bom profissional, indique a Trustmore para ele: assim a sua cidade aparece na vitrine.'],['Criar a página é grátis?','Sim. Você cria sua página de avaliações, recebe seu link próprio e divulga onde quiser, sem pagar nada.'],['Como funciona a vitrine? Posso cancelar?','A vitrine é onde quem procura um serviço escolhe a categoria e a cidade. Para aparecer nela, você assina por €2,99 no primeiro mês e depois €14,90 por mês, com pagamento seguro pelo Stripe. Não tem fidelidade: você cancela sozinho, quando quiser, na sua área.']],
  ca_eyebrow:'Para quem contrata', ca_h:'Precisa de um serviço?', ca_p:'Encontre profissionais avaliados na sua cidade e fale direto com eles. Grátis.',
- cb_eyebrow:'Para profissionais', cb_h:'Quer mais clientes?', cb_p:'Crie seu perfil, junte suas avaliações e apareça para quem procura o seu serviço.', cb_btn:'Criar meu perfil',
+ cb_eyebrow:'Para profissionais', cb_h:'Quer mais clientes?', cb_p:'Crie sua página grátis, junte suas avaliações e apareça na vitrine quando quiser.', cb_btn:'Criar minha página grátis',
  ab_eyebrow:'Quem somos', ab_h1:'Feita para quem trabalha bem, <em>e para quem quer contratar bem.</em>', ab_lead:'A Trustmore nasceu de um problema que quase todo mundo já viveu: precisar de alguém de confiança e não saber em quem confiar. E, do outro lado, ser um ótimo profissional e não ter como provar isso para quem ainda não te conhece.',
  st_eyebrow:'Por que fomos criados', st_h2:'Tudo começou numa pergunta de grupo',
  st_p:['"Alguém indica uma faxineira de confiança?" Quem mora fora já viu essa mensagem centenas de vezes nos grupos de WhatsApp e Facebook. Chovem respostas, nomes e números, e no dia seguinte tudo se perdeu no meio das conversas.','Quem precisa do serviço não sabe em quem confiar. E o profissional bom, que trabalha bem há anos, depende da sorte de alguém lembrar dele na hora certa.','Criamos a Trustmore para juntar essas duas pontas num só lugar, com o que mais importa quando você vai deixar alguém entrar na sua casa ou cuidar do seu filho: <b>a opinião de quem já contratou</b>.'],
@@ -494,16 +529,16 @@ pt:{
  hp_bl:['Ganha um perfil profissional pronto, com link próprio para divulgar.','Junta suas avaliações num só lugar e mostra a qualidade do seu trabalho.','É encontrado por quem procura o seu serviço na sua cidade.','Fica com 100% do valor de cada serviço, sem comissão.'],
  v_eyebrow:'No que acreditamos', v_h2:'Nossos valores',
  values:[['Confiança','É o nosso nome e o motivo de existirmos. Tudo na plataforma serve para você contratar mais seguro.'],['Transparência','Avaliação boa e ruim aparecem do mesmo jeito. Ninguém compra nota.'],['Comunidade','Cada avaliação ajuda a próxima pessoa a contratar melhor e o bom profissional a ser encontrado.'],['Simplicidade','Sem cadastro para contratar, sem taxa escondida, sem complicação.']],
- pp_eyebrow:'Para profissionais', pp_h1:'Mais clientes, <em>pela força das suas avaliações.</em>', pp_lead:'Crie seu perfil na Trustmore e seja encontrado por quem procura o seu serviço na sua cidade. Seus clientes satisfeitos fazem a sua propaganda.', pp_example:'Ver um perfil de exemplo',
+ pp_eyebrow:'Para profissionais', pp_h1:'Mais clientes, <em>pela força das suas avaliações.</em>', pp_lead:'Crie sua página grátis na Trustmore e, quando quiser, apareça na vitrine para quem procura o seu serviço na sua cidade. Seus clientes satisfeitos fazem a sua propaganda.', pp_example:'Ver um perfil de exemplo',
  g_eyebrow:'O que você ganha', g_h2:'Tudo o que um profissional precisa para passar confiança',
- g:[['Visibilidade na vitrine','Seu perfil aparece para quem busca o seu serviço no seu país e na sua cidade.'],['Avaliações sem trabalho','Mande o link para seus clientes. A avaliação entra no ar sozinha, sem você precisar aprovar nada.'],['Seu link próprio','Um endereço só seu, tipo trustmore.app/seunome, para colocar na bio, no status e nos grupos.'],['Cliente direto no WhatsApp','Quem gostou do seu perfil te chama na hora. Sem intermediário e sem leilão de preço.'],['Sem comissão','Uma assinatura mensal simples. O valor de cada serviço que você fecha é 100% seu.'],['Selo verificado e topo das buscas','Ative o selo, confirme sua identidade e apareça antes dos outros profissionais da sua cidade.']],
- j_eyebrow:'Como entrar', j_h2:'Seu perfil no ar em poucos minutos',
- j:[['Crie seu perfil grátis','Foto, uma bio curta, seus serviços, as cidades onde atende, WhatsApp e Instagram. Você ganha um link próprio na hora.'],['Junte suas avaliações','Mande o link para os seus clientes avaliarem. Tudo fica no seu perfil, de graça.'],['Apareça na vitrine','Ative a assinatura e seja encontrado por quem busca o seu serviço na sua cidade, com feed de fotos dos trabalhos.'],['Peça avaliações','Mande o link para clientes antigos e novos. Quanto mais avaliações, mais você aparece.']],
+ g:[['Visibilidade na vitrine','Seu perfil aparece para quem busca o seu serviço no seu país e na sua cidade.'],['Avaliações sem trabalho','Mande o link para seus clientes. A avaliação entra no ar sozinha, sem você precisar aprovar nada.'],['Seu link próprio','Um endereço só seu, tipo trustmore.app/seunome, para colocar na bio, no status e nos grupos.'],['Cliente direto no WhatsApp','Quem gostou do seu perfil te chama na hora. Sem intermediário e sem leilão de preço.'],['Sem comissão','A página é grátis e a vitrine é uma assinatura mensal simples. O valor de cada serviço que você fecha é 100% seu.'],['Selo verificado e topo das buscas','Ative o selo, confirme sua identidade e apareça antes dos outros profissionais da sua cidade.']],
+ j_eyebrow:'Como entrar', j_h2:'Sua página no ar em poucos minutos',
+ j:[['Crie sua página grátis','Foto, uma bio curta, seus serviços, as cidades onde atende, WhatsApp e Instagram. Você ganha um link próprio na hora.'],['Junte suas avaliações','Mande o link para os seus clientes avaliarem. Tudo fica na sua página, de graça.'],['Apareça na vitrine','Faça o upgrade e seja encontrado por quem busca o seu serviço na sua cidade, com feed de fotos dos trabalhos.'],['Peça avaliações','Mande o link para clientes antigos e novos. Quanto mais avaliações, mais você aparece.']],
  r_eyebrow:'Resultados que você acompanha', r_h2:'Saiba quantas pessoas chegaram até você', r_lead:'Todo mês você recebe um resumo com as visitas no seu perfil e quantas pessoas clicaram para te chamar no WhatsApp.',
- r:['Contatos recebidos pela vitrine','Visitas no seu perfil','Sua nota média e novas avaliações'], m2_contacts:'Contatos pelo WhatsApp', m2_new:'Novas avaliações', m2_note:'Exemplo ilustrativo de resumo mensal.',
+ r:['Contatos recebidos pela vitrine','Visitas no seu perfil','Sua nota média e novas avaliações'], m2_contacts:'Contatos pelo WhatsApp', m2_new:'Novas avaliações', m2_note:'Na sua área você acompanha visitas, contatos e novas avaliações.',
  pf_h2:'Dúvidas de quem quer aparecer',
- pf:[['Preciso ter empresa registrada?','Não para criar o perfil. A Trustmore é uma vitrine: você mostra seu trabalho e combina tudo direto com o cliente, seguindo as regras do país onde trabalha.'],['A Trustmore cobra comissão dos meus serviços?','Não. Você paga só a assinatura mensal. O valor que o cliente paga pelo serviço é todo seu.'],['E se eu receber uma avaliação injusta?','Você pode responder publicamente. Se a avaliação for falsa, ofensiva ou de alguém que nunca contratou você, fale com a gente que analisamos.'],['Tem fidelidade?','Não. O pagamento é mensal e você pode parar quando quiser.'],['Atendo em mais de uma cidade. Posso aparecer em todas?','Pode. No cadastro você marca todas as cidades onde atende e aparece nas buscas de cada uma.']],
- fin_h:'Seus clientes já falam bem de você. Deixe isso trabalhar a seu favor.', fin_p:'Crie seu perfil e comece a juntar avaliações ainda hoje.', fin_btn:'Criar meu perfil agora',
+ pf:[['Criar a página é grátis?','Sim. Você cria sua página de avaliações, recebe seu link próprio e divulga onde quiser, sem pagar nada.'],['Como funciona a vitrine? Posso cancelar?','A vitrine é onde quem procura um serviço escolhe a categoria e a cidade. Para aparecer nela, você assina por €2,99 no primeiro mês e depois €14,90 por mês, com pagamento seguro pelo Stripe. Não tem fidelidade: você cancela sozinho, quando quiser, na sua área.'],['Preciso ter empresa registrada?','Não para criar a página. A Trustmore é uma vitrine: você mostra seu trabalho e combina tudo direto com o cliente, seguindo as regras do país onde trabalha.'],['A Trustmore cobra comissão dos meus serviços?','Não. A página é grátis e, se quiser aparecer na vitrine, você paga só a assinatura mensal. O valor que o cliente paga pelo serviço é todo seu.'],['E se eu receber uma avaliação injusta?','Você pode responder publicamente. Se a avaliação for falsa, ofensiva ou de alguém que nunca contratou você, fale com a gente que analisamos.'],['Tem fidelidade?','Não. O pagamento é mensal e você pode parar quando quiser.'],['Atendo em mais de uma cidade. Posso aparecer em todas?','Pode. No cadastro você marca todas as cidades onde atende e aparece nas buscas de cada uma.']],
+ fin_h:'Seus clientes já falam bem de você. Deixe isso trabalhar a seu favor.', fin_p:'Crie sua página grátis e comece a juntar avaliações ainda hoje.', fin_btn:'Criar minha página grátis',
  t_join:'Protótipo: no site real, abre o cadastro e a assinatura mensal.',
  back:'← Voltar para a vitrine', about_x:'Sobre {name}', f_srv:'Serviços', f_area:'Atende em', f_lang:'Fala', f_since:'Na Trustmore', since:'desde {y}',
  rev_h:'O que os clientes dizem', rate_h:'Já contratou {name}? Conte como foi',
@@ -521,9 +556,9 @@ pt:{
 },
 en:{
  demo:'Trustmore showcase prototype: all profiles, reviews and numbers are fictional.',
- nav_find:'Find professionals', nav_trust:'Trust', nav_about:'About us', nav_pros:'For professionals', nav_join:'Get listed',
+ nav_find:'Find professionals', nav_trust:'Trust', nav_about:'About us', nav_pros:'For professionals', nav_join:'Create my free page',
  foot_tag:'The showcase of independent professionals, rated by the people who hired them.',
- foot_h1:'For customers', foot_h2:'For professionals', foot_trust:'How we build trust', foot_faq:'FAQ', foot_how:'How it works', foot_create:'Create my profile', foot_ask:'Ask for reviews',
+ foot_h1:'For customers', foot_h2:'For professionals', foot_trust:'How we build trust', foot_faq:'FAQ', foot_how:'How it works', foot_create:'Create my free page', foot_ask:'Ask for reviews',
  rights:'© 2026 Trustmore. All rights reserved.', legal:'Terms of use · Privacy',
  hero_eyebrow:'Independent professionals with real reviews',
  hero_h1:'Hire with confidence. <em>See who hired them</em> before you.',
@@ -537,17 +572,17 @@ en:{
  how_eyebrow:'How it works', how_h2:'Find someone you can trust in three steps', how_lead:'No sign-up, no fees, no middleman. You talk directly to the professional.',
  how:[['Search by service and city','Filter by category, country and city. You only see people who work in your area.'],['Compare profiles and reviews','Read what other customers said, and check the rating, the services and the languages they speak.'],['Message on WhatsApp and book','Talk directly, ask for a quote and set a date. After the job, leave a review and help the next person.']],
  tr_eyebrow:'Trust comes first', tr_h2:'Without trust, nobody opens their front door.',
- tr_lead:'Hiring someone abroad is hard: you don’t know anyone, recommendations get lost in group chats, and there’s no way to tell who is really good. Trustmore exists to fix that.',
+ tr_lead:'Hiring someone you don’t know is hard: recommendations get lost in group chats and there’s no way to tell who’s really good. Trustmore exists to fix that.',
  tips_h:'Tips for hiring safely', tips:['Read the latest reviews, not just the rating.','Choose profiles with the verified badge.','Agree on price, time and what’s included before the job.','Leave a review afterwards. It protects the next person.'],
  pillars:[['Reviews from real customers','Every review comes from a customer who gives their name and WhatsApp number. It isn’t shown on the site, but we keep it so we can check.'],['Full transparency','Professionals can’t choose what appears or delete a bad review. They can reply, and you see both sides.'],['Verified badge','Professionals with the badge have confirmed their identity with Trustmore and appear first in searches. Look for the green badge on the profile.'],['Human moderation','We keep an eye on reviews and remove spam, abuse and any attempt to mislead.']],
- pb_eyebrow:'For professionals', pb_h2:'Your work already speaks for you. Now let more people see it.',
- pb_lead:'Stop relying on recommendations that get lost in group chats. Get a professional profile with your reviews and be found by people looking for your service.',
+ pb_eyebrow:'For professionals', pb_h2:'Your work already speaks for you. Now bring it all together in one link.',
+ pb_lead:'Stop relying on recommendations that get lost in group chats. Start with your free page and join the showcase whenever you like.',
  pb_checks:['<b>Show up in searches</b> by people looking for your service in your city.','<b>Reviews that stay.</b> Every happy customer becomes proof for the next one.','<b>Your own link</b> to share on Facebook, Instagram and WhatsApp.','<b>No commission.</b> Customers contact you directly and the full price of the job is yours.'],
- pb_btn:'Get listed in the showcase', m_contacts:'WhatsApp contacts in October', m_visits:'Profile visits', m_rating:'Average rating', m_note:'Example of the monthly summary every professional receives (illustrative numbers).',
+ pb_btn:'I want to be in the showcase', m_contacts:'WhatsApp contacts in October', m_visits:'Profile visits', m_rating:'Average rating', m_note:'In your area you can follow your visits and contacts.',
  faq_eyebrow:'FAQ', faq_h2:'Any questions?',
- faq:[['Do I pay to hire someone through Trustmore?','No. Trustmore is free for customers. You talk directly to the professional and agree on the price with them.'],['Are the reviews real?','Reviewers give their name and WhatsApp number, which aren’t shown on the site but are kept for checking. Professionals can’t delete reviews, and we remove spam, abuse and fake reviews.'],['What does the verified badge mean?','It means the professional confirmed their identity with Trustmore and activated the badge. Verified profiles appear first in searches.'],['Is Trustmore responsible for the service?','Trustmore is a showcase: the agreement, payment and job are arranged between you and the professional. That’s why reviews matter so much. If something goes wrong, say so in your review and contact us.'],['There’s no one in my city. What now?','We’re reaching new cities. If you know a good professional, tell them about Trustmore so your city appears in the showcase.']],
+ faq:[['Do I pay to hire someone through Trustmore?','No. Trustmore is free for customers. You talk directly to the professional and agree on the price with them.'],['Are the reviews real?','Reviewers give their name and WhatsApp number, which aren’t shown on the site but are kept for checking. Professionals can’t delete reviews, and we remove spam, abuse and fake reviews.'],['What does the verified badge mean?','It means the professional confirmed their identity with Trustmore and activated the badge. Verified profiles appear first in searches.'],['Is Trustmore responsible for the service?','Trustmore is a showcase: the agreement, payment and job are arranged between you and the professional. That’s why reviews matter so much. If something goes wrong, say so in your review and contact us.'],['There’s no one in my city. What now?','We’re reaching new cities. If you know a good professional, tell them about Trustmore so your city appears in the showcase.'],['Is creating a page free?','Yes. You create your reviews page, get your own link and share it wherever you like, without paying anything.'],['How does the showcase work? Can I cancel?','The showcase is where people looking for a service pick the category and the city. To appear there, you subscribe for €2.99 for the first month and then €14.90 per month, with secure payment through Stripe. No minimum contract: you cancel yourself, whenever you want, in your area.']],
  ca_eyebrow:'For customers', ca_h:'Need a service?', ca_p:'Find reviewed professionals in your city and talk to them directly. Free.',
- cb_eyebrow:'For professionals', cb_h:'Want more customers?', cb_p:'Create your profile, collect your reviews and get found by people looking for your service.', cb_btn:'Create my profile',
+ cb_eyebrow:'For professionals', cb_h:'Want more customers?', cb_p:'Create your free page, collect your reviews and join the showcase whenever you like.', cb_btn:'Create my free page',
  ab_eyebrow:'About us', ab_h1:'Made for people who work well, <em>and people who want to hire well.</em>', ab_lead:'Trustmore was born from a problem almost everyone has had: needing someone you can trust and not knowing who that is. And, on the other side, being a great professional with no way to prove it to people who don’t know you yet.',
  st_eyebrow:'Why we started', st_h2:'It all began with a question in a group chat',
  st_p:['“Can anyone recommend a cleaner they trust?” Anyone living abroad has seen that message hundreds of times in WhatsApp and Facebook groups. Replies pour in, names and numbers, and by the next day it’s all buried in the chat.','People who need a service don’t know who to trust. And good professionals, who have done great work for years, depend on luck: someone remembering them at the right moment.','We built Trustmore to bring both sides together in one place, with what matters most when you let someone into your home or look after your child: <b>the opinion of people who already hired them</b>.'],
@@ -559,16 +594,16 @@ en:{
  hp_bl:['Get a ready-made professional profile with your own link to share.','Keep all your reviews in one place and show the quality of your work.','Get found by people looking for your service in your city.','Keep 100% of every job, with no commission.'],
  v_eyebrow:'What we believe in', v_h2:'Our values',
  values:[['Trust','It’s our name and our reason to exist. Everything on the platform helps you hire more safely.'],['Transparency','Good and bad reviews are shown the same way. Nobody can buy a rating.'],['Community','Every review helps the next person hire better and helps good professionals get found.'],['Simplicity','No sign-up to hire, no hidden fees, no hassle.']],
- pp_eyebrow:'For professionals', pp_h1:'More customers, <em>powered by your reviews.</em>', pp_lead:'Create your Trustmore profile and get found by people looking for your service in your city. Your happy customers do the advertising.', pp_example:'See an example profile',
+ pp_eyebrow:'For professionals', pp_h1:'More customers, <em>powered by your reviews.</em>', pp_lead:'Create your free Trustmore page and, whenever you like, join the showcase for people looking for your service in your city. Your happy customers do the advertising.', pp_example:'See an example profile',
  g_eyebrow:'What you get', g_h2:'Everything a professional needs to earn trust',
- g:[['Visibility in the showcase','Your profile appears to people searching for your service in your country and city.'],['Reviews without the work','Send your link to customers. Reviews go live on their own, with nothing for you to approve.'],['Your own link','An address of your own, like trustmore.app/yourname, for your bio, your status and group chats.'],['Customers straight to WhatsApp','People who like your profile message you right away. No middleman, no price bidding.'],['No commission','One simple monthly subscription. The full price of every job you land is yours.'],['Verified badge and top of searches','Activate the badge, confirm your identity and appear before other professionals in your city.']],
- j_eyebrow:'How to join', j_h2:'Your profile live in a few minutes',
- j:[['Create your free profile','A photo, a short bio, your services, the cities you work in, WhatsApp and Instagram. You get your own link right away.'],['Collect your reviews','Send the link to your customers so they can review you. It all stays on your profile, free.'],['Get into the showcase','Activate the subscription and be found by people looking for your service in your city, with a feed of your work.'],['Ask for reviews','Send the link to past and new customers. The more reviews, the more you stand out.']],
+ g:[['Visibility in the showcase','Your profile appears to people searching for your service in your country and city.'],['Reviews without the work','Send your link to customers. Reviews go live on their own, with nothing for you to approve.'],['Your own link','An address of your own, like trustmore.app/yourname, for your bio, your status and group chats.'],['Customers straight to WhatsApp','People who like your profile message you right away. No middleman, no price bidding.'],['No commission','The page is free and the showcase is one simple monthly subscription. The full price of every job you land is yours.'],['Verified badge and top of searches','Activate the badge, confirm your identity and appear before other professionals in your city.']],
+ j_eyebrow:'How to join', j_h2:'Your page live in a few minutes',
+ j:[['Create your free page','A photo, a short bio, your services, the cities you work in, WhatsApp and Instagram. You get your own link right away.'],['Collect your reviews','Send the link to your customers so they can review you. It all stays on your page, free.'],['Get into the showcase','Upgrade and be found by people looking for your service in your city, with a feed of your work.'],['Ask for reviews','Send the link to past and new customers. The more reviews, the more you stand out.']],
  r_eyebrow:'Results you can track', r_h2:'See how many people found you', r_lead:'Every month you get a summary with your profile visits and how many people tapped to message you on WhatsApp.',
- r:['Contacts from the showcase','Visits to your profile','Your average rating and new reviews'], m2_contacts:'WhatsApp contacts', m2_new:'New reviews', m2_note:'Illustrative example of a monthly summary.',
+ r:['Contacts from the showcase','Visits to your profile','Your average rating and new reviews'], m2_contacts:'WhatsApp contacts', m2_new:'New reviews', m2_note:'In your area you can follow visits, contacts and new reviews.',
  pf_h2:'Questions from professionals',
- pf:[['Do I need a registered business?','Not to create a profile. Trustmore is a showcase: you show your work and arrange everything directly with the customer, following the rules of the country where you work.'],['Does Trustmore take a commission?','No. You only pay the monthly subscription. What the customer pays for the job is all yours.'],['What if I get an unfair review?','You can reply publicly. If a review is fake, abusive or from someone who never hired you, contact us and we’ll look into it.'],['Is there a minimum contract?','No. You pay monthly and can stop whenever you want.'],['I work in more than one city. Can I appear in all of them?','Yes. When you sign up, you select every city you work in and appear in searches for each one.']],
- fin_h:'Your customers already speak highly of you. Put that to work.', fin_p:'Create your profile and start collecting reviews today.', fin_btn:'Create my profile now',
+ pf:[['Is creating a page free?','Yes. You create your reviews page, get your own link and share it wherever you like, without paying anything.'],['How does the showcase work? Can I cancel?','The showcase is where people looking for a service pick the category and the city. To appear there, you subscribe for €2.99 for the first month and then €14.90 per month, with secure payment through Stripe. No minimum contract: you cancel yourself, whenever you want, in your area.'],['Do I need a registered business?','Not to create a page. Trustmore is a showcase: you show your work and arrange everything directly with the customer, following the rules of the country where you work.'],['Does Trustmore take a commission?','No. The page is free and, if you want to be in the showcase, you only pay the monthly subscription. What the customer pays for the job is all yours.'],['What if I get an unfair review?','You can reply publicly. If a review is fake, abusive or from someone who never hired you, contact us and we’ll look into it.'],['Is there a minimum contract?','No. You pay monthly and can stop whenever you want.'],['I work in more than one city. Can I appear in all of them?','Yes. When you sign up, you select every city you work in and appear in searches for each one.']],
+ fin_h:'Your customers already speak highly of you. Put that to work.', fin_p:'Create your free page and start collecting reviews today.', fin_btn:'Create my free page',
  t_join:'Prototype: on the real site, this opens the sign-up and monthly subscription.',
  back:'← Back to the showcase', about_x:'About {name}', f_srv:'Services', f_area:'Works in', f_lang:'Speaks', f_since:'On Trustmore', since:'since {y}',
  rev_h:'What customers say', rate_h:'Hired {name}? Tell us how it went',
@@ -586,9 +621,9 @@ en:{
 },
 nl:{
  demo:'Prototype van de Trustmore-etalage: alle profielen, reviews en cijfers zijn fictief.',
- nav_find:'Vakmensen zoeken', nav_trust:'Vertrouwen', nav_about:'Over ons', nav_pros:'Voor vakmensen', nav_join:'Word zichtbaar',
+ nav_find:'Vakmensen zoeken', nav_trust:'Vertrouwen', nav_about:'Over ons', nav_pros:'Voor vakmensen', nav_join:'Maak mijn gratis pagina',
  foot_tag:'De etalage van zelfstandige vakmensen, beoordeeld door eerdere klanten.',
- foot_h1:'Voor klanten', foot_h2:'Voor vakmensen', foot_trust:'Hoe we vertrouwen waarborgen', foot_faq:'Veelgestelde vragen', foot_how:'Hoe het werkt', foot_create:'Mijn profiel maken', foot_ask:'Reviews vragen',
+ foot_h1:'Voor klanten', foot_h2:'Voor vakmensen', foot_trust:'Hoe we vertrouwen waarborgen', foot_faq:'Veelgestelde vragen', foot_how:'Hoe het werkt', foot_create:'Maak mijn gratis pagina', foot_ask:'Reviews vragen',
  rights:'© 2026 Trustmore. Alle rechten voorbehouden.', legal:'Gebruiksvoorwaarden · Privacy',
  hero_eyebrow:'Zelfstandige vakmensen met echte reviews',
  hero_h1:'Huur met vertrouwen in. <em>Zie wie je voorging.</em>',
@@ -602,17 +637,17 @@ nl:{
  how_eyebrow:'Hoe het werkt', how_h2:'Iemand vinden die je kunt vertrouwen, in drie stappen', how_lead:'Geen account, geen kosten, geen tussenpersoon. Je praat rechtstreeks met de vakman.',
  how:[['Zoek op dienst en stad','Filter op categorie, land en stad. Je ziet alleen wie in jouw regio werkt.'],['Vergelijk profielen en reviews','Lees wat andere klanten vertellen en bekijk de score, de diensten en de talen die de vakman spreekt.'],['Stuur een WhatsApp en maak een afspraak','Overleg direct, vraag een offerte en plan een dag. Laat na de klus een review achter en help de volgende.']],
  tr_eyebrow:'Vertrouwen staat voorop', tr_h2:'Zonder vertrouwen doet niemand de voordeur open.',
- tr_lead:'Iemand inhuren in een nieuw land is lastig: je kent niemand, tips raken zoek in groepschats en je weet niet wie echt goed is. Daarvoor bestaat Trustmore.',
+ tr_lead:'Iemand inhuren die je niet kent is lastig: tips verdwijnen tussen de berichten in de groep en je kunt niet zien wie echt goed is. Trustmore bestaat om dat op te lossen.',
  tips_h:'Tips om veilig in te huren', tips:['Lees de nieuwste reviews, niet alleen de score.','Kies bij voorkeur profielen met het verificatiebadge.','Spreek prijs, tijd en wat inbegrepen is vooraf af.','Laat achteraf een review achter. Zo bescherm je de volgende klant.'],
  pillars:[['Reviews van echte klanten','Elke review komt van een klant die naam en WhatsApp-nummer opgeeft. Dat staat niet op de site, maar wij bewaren het ter controle.'],['Volledige transparantie','De vakman kiest niet wat er verschijnt en kan geen slechte review verwijderen. Hij kan wel reageren, en jij ziet beide kanten.'],['Verificatiebadge','Vakmensen met het badge hebben hun identiteit bij Trustmore bevestigd en staan bovenaan in de zoekresultaten. Let op het groene badge op het profiel.'],['Menselijke moderatie','We houden de reviews in de gaten en verwijderen spam, beledigingen en elke poging tot misleiding.']],
- pb_eyebrow:'Voor vakmensen', pb_h2:'Je werk spreekt al voor zich. Laat nu meer mensen het zien.',
- pb_lead:'Niet langer afhankelijk van tips die verdwijnen in groepschats. Krijg een professioneel profiel met je reviews en word gevonden door mensen die jouw dienst zoeken.',
+ pb_eyebrow:'Voor vakmensen', pb_h2:'Je werk spreekt al voor zich. Breng nu alles samen in één link.',
+ pb_lead:'Niet langer afhankelijk van tips die verdwijnen in groepschats. Begin met je gratis pagina en kom in de etalage wanneer je wilt.',
  pb_checks:['<b>Verschijn in de zoekresultaten</b> van mensen die jouw dienst zoeken in jouw stad.','<b>Reviews die blijven.</b> Elke tevreden klant is bewijs voor de volgende.','<b>Je eigen link</b> om te delen op Facebook, Instagram en WhatsApp.','<b>Geen commissie.</b> De klant neemt direct contact op en het volledige bedrag is voor jou.'],
- pb_btn:'Ik wil in de etalage', m_contacts:'WhatsApp-contacten in oktober', m_visits:'Profielbezoeken', m_rating:'Gemiddelde score', m_note:'Voorbeeld van het maandoverzicht dat elke vakman ontvangt (fictieve cijfers).',
+ pb_btn:'Ik wil in de etalage', m_contacts:'WhatsApp-contacten in oktober', m_visits:'Profielbezoeken', m_rating:'Gemiddelde score', m_note:'In je omgeving volg je je bezoeken en contacten.',
  faq_eyebrow:'Veelgestelde vragen', faq_h2:'Nog vragen?',
- faq:[['Betaal ik om iemand via Trustmore in te huren?','Nee. Voor klanten is Trustmore gratis. Je praat direct met de vakman en spreekt de prijs met hem of haar af.'],['Zijn de reviews echt?','Reviewers geven hun naam en WhatsApp-nummer op. Die staan niet op de site, maar wij bewaren ze ter controle. Vakmensen kunnen geen reviews verwijderen, en wij halen spam, beledigingen en nepreviews weg.'],['Wat betekent het verificatiebadge?','Dat de vakman zijn identiteit bij Trustmore heeft bevestigd en het badge heeft geactiveerd. Geverifieerde profielen staan bovenaan in de zoekresultaten.'],['Is Trustmore verantwoordelijk voor de dienst?','Trustmore is een etalage: afspraak, betaling en klus regel je samen met de vakman. Daarom zijn reviews zo belangrijk. Ging er iets mis? Vertel het in je review en neem contact met ons op.'],['Er is niemand in mijn stad. Wat nu?','We komen in steeds meer steden. Ken je een goede vakman, vertel dan over Trustmore, zodat jouw stad in de etalage verschijnt.']],
+ faq:[['Betaal ik om iemand via Trustmore in te huren?','Nee. Voor klanten is Trustmore gratis. Je praat direct met de vakman en spreekt de prijs met hem of haar af.'],['Zijn de reviews echt?','Reviewers geven hun naam en WhatsApp-nummer op. Die staan niet op de site, maar wij bewaren ze ter controle. Vakmensen kunnen geen reviews verwijderen, en wij halen spam, beledigingen en nepreviews weg.'],['Wat betekent het verificatiebadge?','Dat de vakman zijn identiteit bij Trustmore heeft bevestigd en het badge heeft geactiveerd. Geverifieerde profielen staan bovenaan in de zoekresultaten.'],['Is Trustmore verantwoordelijk voor de dienst?','Trustmore is een etalage: afspraak, betaling en klus regel je samen met de vakman. Daarom zijn reviews zo belangrijk. Ging er iets mis? Vertel het in je review en neem contact met ons op.'],['Er is niemand in mijn stad. Wat nu?','We komen in steeds meer steden. Ken je een goede vakman, vertel dan over Trustmore, zodat jouw stad in de etalage verschijnt.'],['Is een pagina maken gratis?','Ja. Je maakt je reviewpagina, krijgt je eigen link en deelt die waar je wilt, zonder iets te betalen.'],['Hoe werkt de etalage? Kan ik opzeggen?','De etalage is waar mensen die een dienst zoeken de categorie en de stad kiezen. Om erin te staan, neem je een abonnement: €2,99 de eerste maand en daarna €14,90 per maand, veilig betaald via Stripe. Je zit nergens aan vast: je zegt zelf op wanneer je wilt, in je omgeving.']],
  ca_eyebrow:'Voor klanten', ca_h:'Een dienst nodig?', ca_p:'Vind beoordeelde vakmensen in jouw stad en neem direct contact op. Gratis.',
- cb_eyebrow:'Voor vakmensen', cb_h:'Meer klanten?', cb_p:'Maak je profiel, verzamel reviews en word gevonden door mensen die jouw dienst zoeken.', cb_btn:'Mijn profiel maken',
+ cb_eyebrow:'Voor vakmensen', cb_h:'Meer klanten?', cb_p:'Maak je gratis pagina, verzamel reviews en kom in de etalage wanneer je wilt.', cb_btn:'Maak mijn gratis pagina',
  ab_eyebrow:'Over ons', ab_h1:'Gemaakt voor wie goed werk levert, <em>en voor wie goed wil inhuren.</em>', ab_lead:'Trustmore is ontstaan uit een probleem dat bijna iedereen kent: iemand nodig hebben die je kunt vertrouwen en niet weten wie dat is. En aan de andere kant: een goede vakman zijn zonder dat te kunnen bewijzen aan wie je nog niet kent.',
  st_eyebrow:'Waarom we begonnen', st_h2:'Het begon met een vraag in een groepschat',
  st_p:['“Kan iemand een betrouwbare schoonmaker aanraden?” Wie in het buitenland woont, heeft dat bericht honderden keren gezien in WhatsApp- en Facebookgroepen. Er komen reacties, namen en nummers, en de volgende dag is alles weer weggezakt in de chat.','Wie een dienst nodig heeft, weet niet wie te vertrouwen. En de goede vakman, die al jaren goed werk levert, is afhankelijk van geluk: dat iemand op het juiste moment aan hem denkt.','We bouwden Trustmore om die twee kanten op één plek samen te brengen, met wat het belangrijkst is als je iemand in huis laat of op je kind laat passen: <b>de mening van wie hen al inhuurde</b>.'],
@@ -624,16 +659,16 @@ nl:{
  hp_bl:['Krijgen een kant-en-klaar profiel met een eigen link om te delen.','Bundelen hun reviews op één plek en laten de kwaliteit van hun werk zien.','Worden gevonden door mensen die hun dienst zoeken in hun stad.','Houden 100% van elke klus, zonder commissie.'],
  v_eyebrow:'Waar we in geloven', v_h2:'Onze waarden',
  values:[['Vertrouwen','Het is onze naam en de reden dat we bestaan. Alles op het platform helpt je veiliger in te huren.'],['Transparantie','Goede en slechte reviews worden op dezelfde manier getoond. Niemand kan een score kopen.'],['Gemeenschap','Elke review helpt de volgende om beter in te huren en goede vakmensen om gevonden te worden.'],['Eenvoud','Geen account om in te huren, geen verborgen kosten, geen gedoe.']],
- pp_eyebrow:'Voor vakmensen', pp_h1:'Meer klanten, <em>dankzij je reviews.</em>', pp_lead:'Maak je Trustmore-profiel en word gevonden door mensen die jouw dienst zoeken in jouw stad. Je tevreden klanten maken reclame voor je.', pp_example:'Voorbeeldprofiel bekijken',
+ pp_eyebrow:'Voor vakmensen', pp_h1:'Meer klanten, <em>dankzij je reviews.</em>', pp_lead:'Maak je gratis Trustmore-pagina en kom, wanneer je wilt, in de etalage bij mensen die jouw dienst zoeken in jouw stad. Je tevreden klanten maken reclame voor je.', pp_example:'Voorbeeldprofiel bekijken',
  g_eyebrow:'Wat je krijgt', g_h2:'Alles wat een vakman nodig heeft om vertrouwen te winnen',
- g:[['Zichtbaar in de etalage','Je profiel verschijnt bij mensen die jouw dienst zoeken in jouw land en stad.'],['Reviews zonder moeite','Stuur je link naar klanten. Reviews komen vanzelf online, zonder dat jij iets hoeft goed te keuren.'],['Je eigen link','Een eigen adres, zoals trustmore.app/jouwnaam, voor je bio, je status en groepschats.'],['Klanten direct via WhatsApp','Wie je profiel goed vindt, stuurt je meteen een bericht. Geen tussenpersoon, geen afbieden.'],['Geen commissie','Eén eenvoudig maandabonnement. Het volledige bedrag van elke klus is voor jou.'],['Verificatiebadge en bovenaan staan','Activeer het badge, bevestig je identiteit en verschijn vóór andere vakmensen in jouw stad.']],
- j_eyebrow:'Zo doe je mee', j_h2:'Je profiel binnen een paar minuten online',
- j:[['Maak je gratis profiel','Een foto, een korte bio, je diensten, de steden waar je werkt, WhatsApp en Instagram. Je krijgt meteen je eigen link.'],['Verzamel je reviews','Stuur de link naar je klanten zodat ze je beoordelen. Alles blijft gratis op je profiel.'],['Kom in de etalage','Activeer het abonnement en word gevonden door mensen die jouw dienst zoeken in jouw stad, met een feed van je werk.'],['Vraag om reviews','Stuur de link naar oude en nieuwe klanten. Hoe meer reviews, hoe beter je opvalt.']],
+ g:[['Zichtbaar in de etalage','Je profiel verschijnt bij mensen die jouw dienst zoeken in jouw land en stad.'],['Reviews zonder moeite','Stuur je link naar klanten. Reviews komen vanzelf online, zonder dat jij iets hoeft goed te keuren.'],['Je eigen link','Een eigen adres, zoals trustmore.app/jouwnaam, voor je bio, je status en groepschats.'],['Klanten direct via WhatsApp','Wie je profiel goed vindt, stuurt je meteen een bericht. Geen tussenpersoon, geen afbieden.'],['Geen commissie','De pagina is gratis en de etalage is één eenvoudig maandabonnement. Het volledige bedrag van elke klus is voor jou.'],['Verificatiebadge en bovenaan staan','Activeer het badge, bevestig je identiteit en verschijn vóór andere vakmensen in jouw stad.']],
+ j_eyebrow:'Zo doe je mee', j_h2:'Je pagina binnen een paar minuten online',
+ j:[['Maak je gratis pagina','Een foto, een korte bio, je diensten, de steden waar je werkt, WhatsApp en Instagram. Je krijgt meteen je eigen link.'],['Verzamel je reviews','Stuur de link naar je klanten zodat ze je beoordelen. Alles blijft gratis op je pagina.'],['Kom in de etalage','Upgrade en word gevonden door mensen die jouw dienst zoeken in jouw stad, met een feed van je werk.'],['Vraag om reviews','Stuur de link naar oude en nieuwe klanten. Hoe meer reviews, hoe beter je opvalt.']],
  r_eyebrow:'Resultaten die je kunt volgen', r_h2:'Zie hoeveel mensen je hebben gevonden', r_lead:'Elke maand ontvang je een overzicht met je profielbezoeken en hoeveel mensen op WhatsApp hebben getikt.',
- r:['Contacten via de etalage','Bezoeken aan je profiel','Je gemiddelde score en nieuwe reviews'], m2_contacts:'WhatsApp-contacten', m2_new:'Nieuwe reviews', m2_note:'Fictief voorbeeld van een maandoverzicht.',
+ r:['Contacten via de etalage','Bezoeken aan je profiel','Je gemiddelde score en nieuwe reviews'], m2_contacts:'WhatsApp-contacten', m2_new:'Nieuwe reviews', m2_note:'In je omgeving volg je bezoeken, contacten en nieuwe reviews.',
  pf_h2:'Vragen van vakmensen',
- pf:[['Heb ik een ingeschreven bedrijf nodig?','Niet om een profiel te maken. Trustmore is een etalage: je laat je werk zien en regelt alles direct met de klant, volgens de regels van het land waar je werkt.'],['Vraagt Trustmore commissie?','Nee. Je betaalt alleen het maandabonnement. Wat de klant voor de klus betaalt, is helemaal voor jou.'],['En als ik een onterechte review krijg?','Je kunt openbaar reageren. Is de review nep, beledigend of van iemand die je nooit heeft ingehuurd? Neem contact op, dan bekijken we het.'],['Zit ik ergens aan vast?','Nee. Je betaalt per maand en kunt stoppen wanneer je wilt.'],['Ik werk in meer steden. Kan ik overal verschijnen?','Ja. Bij aanmelding kies je alle steden waar je werkt en verschijn je in de zoekresultaten van elke stad.']],
- fin_h:'Je klanten zijn al enthousiast over je. Laat dat voor je werken.', fin_p:'Maak je profiel en begin vandaag met reviews verzamelen.', fin_btn:'Nu mijn profiel maken',
+ pf:[['Is een pagina maken gratis?','Ja. Je maakt je reviewpagina, krijgt je eigen link en deelt die waar je wilt, zonder iets te betalen.'],['Hoe werkt de etalage? Kan ik opzeggen?','De etalage is waar mensen die een dienst zoeken de categorie en de stad kiezen. Om erin te staan, neem je een abonnement: €2,99 de eerste maand en daarna €14,90 per maand, veilig betaald via Stripe. Je zit nergens aan vast: je zegt zelf op wanneer je wilt, in je omgeving.'],['Heb ik een ingeschreven bedrijf nodig?','Niet om een pagina te maken. Trustmore is een etalage: je laat je werk zien en regelt alles direct met de klant, volgens de regels van het land waar je werkt.'],['Vraagt Trustmore commissie?','Nee. De pagina is gratis en wil je in de etalage staan, dan betaal je alleen het maandabonnement. Wat de klant voor de klus betaalt, is helemaal voor jou.'],['En als ik een onterechte review krijg?','Je kunt openbaar reageren. Is de review nep, beledigend of van iemand die je nooit heeft ingehuurd? Neem contact op, dan bekijken we het.'],['Zit ik ergens aan vast?','Nee. Je betaalt per maand en kunt stoppen wanneer je wilt.'],['Ik werk in meer steden. Kan ik overal verschijnen?','Ja. Bij aanmelding kies je alle steden waar je werkt en verschijn je in de zoekresultaten van elke stad.']],
+ fin_h:'Je klanten zijn al enthousiast over je. Laat dat voor je werken.', fin_p:'Maak je gratis pagina en begin vandaag met reviews verzamelen.', fin_btn:'Maak mijn gratis pagina',
  t_join:'Prototype: op de echte site opent hier de aanmelding en het maandabonnement.',
  back:'← Terug naar de etalage', about_x:'Over {name}', f_srv:'Diensten', f_area:'Werkt in', f_lang:'Spreekt', f_since:'Op Trustmore', since:'sinds {y}',
  rev_h:'Wat klanten zeggen', rate_h:'{name} ingehuurd? Vertel hoe het ging',
@@ -651,9 +686,9 @@ nl:{
 },
 es:{
  demo:'Prototipo de la vitrina Trustmore: todos los perfiles, reseñas y cifras son ficticios.',
- nav_find:'Buscar profesionales', nav_trust:'Confianza', nav_about:'Quiénes somos', nav_pros:'Para profesionales', nav_join:'Quiero aparecer',
+ nav_find:'Buscar profesionales', nav_trust:'Confianza', nav_about:'Quiénes somos', nav_pros:'Para profesionales', nav_join:'Crear mi página gratis',
  foot_tag:'La vitrina de profesionales autónomos valorados por quienes ya los contrataron.',
- foot_h1:'Para quien contrata', foot_h2:'Para profesionales', foot_trust:'Cómo garantizamos la confianza', foot_faq:'Preguntas frecuentes', foot_how:'Cómo funciona', foot_create:'Crear mi perfil', foot_ask:'Pedir reseñas',
+ foot_h1:'Para quien contrata', foot_h2:'Para profesionales', foot_trust:'Cómo garantizamos la confianza', foot_faq:'Preguntas frecuentes', foot_how:'Cómo funciona', foot_create:'Crear mi página gratis', foot_ask:'Pedir reseñas',
  rights:'© 2026 Trustmore. Todos los derechos reservados.', legal:'Términos de uso · Privacidad',
  hero_eyebrow:'Profesionales autónomos con reseñas reales',
  hero_h1:'Contrata con confianza. <em>Mira quién contrató</em> antes que tú.',
@@ -667,17 +702,17 @@ es:{
  how_eyebrow:'Cómo funciona', how_h2:'Encuentra a alguien de confianza en tres pasos', how_lead:'Sin registro, sin comisiones y sin intermediarios. Hablas directamente con el profesional.',
  how:[['Busca por servicio y ciudad','Filtra por categoría, país y ciudad. Solo aparece quien trabaja en tu zona.'],['Compara perfiles y reseñas','Lee lo que contaron otros clientes y mira la valoración, los servicios y los idiomas que habla el profesional.'],['Escribe por WhatsApp y acuerda','Habla directamente, pide presupuesto y fija el día. Después del servicio, deja tu reseña y ayuda a la próxima persona.']],
  tr_eyebrow:'La confianza es lo primero', tr_h2:'Sin confianza, nadie abre la puerta de su casa.',
- tr_lead:'Contratar a alguien en el extranjero es difícil: no conoces a nadie, las recomendaciones se pierden en los grupos y no hay forma de saber quién es bueno de verdad. Trustmore existe para resolverlo.',
+ tr_lead:'Contratar a alguien que no conoces es difícil: la recomendación se pierde entre los mensajes del grupo y no hay forma de saber quién es bueno de verdad. Trustmore existe para resolverlo.',
  tips_h:'Consejos para contratar con seguridad', tips:['Lee las reseñas más recientes, no solo la nota.','Prefiere perfiles con la insignia de verificado.','Acuerda precio, horario y qué incluye antes del servicio.','Después del servicio, deja tu reseña. Protege a la próxima persona.'],
  pillars:[['Reseñas de quien contrató','Cada reseña viene de un cliente que da su nombre y su WhatsApp. No se muestra en la web, pero lo guardamos para poder comprobarlo.'],['Transparencia total','El profesional no elige lo que aparece ni puede borrar una reseña mala. Puede responder, y tú ves las dos versiones.'],['Insignia de verificado','Los profesionales con la insignia confirmaron su identidad con Trustmore y aparecen primero en las búsquedas. Busca la insignia verde en el perfil.'],['Moderación humana','Revisamos las reseñas y eliminamos spam, insultos y cualquier intento de engañar.']],
- pb_eyebrow:'Para profesionales', pb_h2:'Tu trabajo ya habla por ti. Ahora deja que más gente lo vea.',
- pb_lead:'Deja de depender de recomendaciones que se pierden en los grupos. Ten un perfil profesional con tus reseñas y que te encuentre quien busca tu servicio.',
+ pb_eyebrow:'Para profesionales', pb_h2:'Tu trabajo ya habla por ti. Ahora reúnelo todo en un solo enlace.',
+ pb_lead:'Deja de depender de recomendaciones que se pierden en los grupos. Empieza con tu página gratis y aparece en la vitrina cuando quieras.',
  pb_checks:['<b>Aparece en las búsquedas</b> de quien busca tu servicio en tu ciudad.','<b>Reseñas que se quedan.</b> Cada cliente satisfecho es prueba para el siguiente.','<b>Tu propio enlace</b> para compartir en Facebook, Instagram y WhatsApp.','<b>Sin comisiones.</b> El cliente habla directamente contigo y el precio del servicio es todo tuyo.'],
- pb_btn:'Quiero aparecer en la vitrina', m_contacts:'Contactos por WhatsApp en octubre', m_visits:'Visitas al perfil', m_rating:'Nota media', m_note:'Ejemplo del resumen mensual que recibe cada profesional (cifras ilustrativas).',
+ pb_btn:'Quiero aparecer en la vitrina', m_contacts:'Contactos por WhatsApp en octubre', m_visits:'Visitas al perfil', m_rating:'Nota media', m_note:'En tu área sigues tus visitas y contactos.',
  faq_eyebrow:'Preguntas frecuentes', faq_h2:'¿Tienes alguna duda?',
- faq:[['¿Tengo que pagar para contratar a alguien en Trustmore?','No. Para quien contrata, Trustmore es gratis. Hablas directamente con el profesional y acuerdas el precio con él.'],['¿Las reseñas son reales?','Quien deja una reseña da su nombre y su WhatsApp, que no se muestran en la web pero guardamos para comprobarlas. El profesional no puede borrar reseñas, y eliminamos spam, insultos y reseñas falsas.'],['¿Qué significa la insignia de verificado?','Que el profesional confirmó su identidad con Trustmore y activó la insignia. Los perfiles verificados aparecen primero en las búsquedas.'],['¿Trustmore se responsabiliza del servicio?','Trustmore es una vitrina: el acuerdo, el pago y el servicio se pactan entre tú y el profesional. Por eso las reseñas son tan importantes. Si tienes un problema, cuéntalo en tu reseña y escríbenos.'],['No encontré profesionales en mi ciudad. ¿Y ahora?','Estamos llegando a nuevas ciudades. Si conoces a un buen profesional, recomiéndale Trustmore para que tu ciudad aparezca en la vitrina.']],
+ faq:[['¿Tengo que pagar para contratar a alguien en Trustmore?','No. Para quien contrata, Trustmore es gratis. Hablas directamente con el profesional y acuerdas el precio con él.'],['¿Las reseñas son reales?','Quien deja una reseña da su nombre y su WhatsApp, que no se muestran en la web pero guardamos para comprobarlas. El profesional no puede borrar reseñas, y eliminamos spam, insultos y reseñas falsas.'],['¿Qué significa la insignia de verificado?','Que el profesional confirmó su identidad con Trustmore y activó la insignia. Los perfiles verificados aparecen primero en las búsquedas.'],['¿Trustmore se responsabiliza del servicio?','Trustmore es una vitrina: el acuerdo, el pago y el servicio se pactan entre tú y el profesional. Por eso las reseñas son tan importantes. Si tienes un problema, cuéntalo en tu reseña y escríbenos.'],['No encontré profesionales en mi ciudad. ¿Y ahora?','Estamos llegando a nuevas ciudades. Si conoces a un buen profesional, recomiéndale Trustmore para que tu ciudad aparezca en la vitrina.'],['¿Crear la página es gratis?','Sí. Creas tu página de reseñas, recibes tu propio enlace y lo compartes donde quieras, sin pagar nada.'],['¿Cómo funciona la vitrina? ¿Puedo cancelar?','La vitrina es donde quien busca un servicio elige la categoría y la ciudad. Para aparecer en ella, te suscribes por €2,99 el primer mes y después €14,90 al mes, con pago seguro con Stripe. Sin permanencia: cancelas tú mismo, cuando quieras, desde tu área.']],
  ca_eyebrow:'Para quien contrata', ca_h:'¿Necesitas un servicio?', ca_p:'Encuentra profesionales con reseñas en tu ciudad y habla directamente con ellos. Gratis.',
- cb_eyebrow:'Para profesionales', cb_h:'¿Quieres más clientes?', cb_p:'Crea tu perfil, reúne tus reseñas y aparece para quien busca tu servicio.', cb_btn:'Crear mi perfil',
+ cb_eyebrow:'Para profesionales', cb_h:'¿Quieres más clientes?', cb_p:'Crea tu página gratis, reúne tus reseñas y aparece en la vitrina cuando quieras.', cb_btn:'Crear mi página gratis',
  ab_eyebrow:'Quiénes somos', ab_h1:'Hecha para quien trabaja bien, <em>y para quien quiere contratar bien.</em>', ab_lead:'Trustmore nació de un problema que casi todo el mundo ha vivido: necesitar a alguien de confianza y no saber en quién confiar. Y, del otro lado, ser un gran profesional sin poder demostrarlo a quien todavía no te conoce.',
  st_eyebrow:'Por qué nacimos', st_h2:'Todo empezó con una pregunta en un grupo',
  st_p:['«¿Alguien recomienda a una persona de limpieza de confianza?» Quien vive fuera ha visto ese mensaje cientos de veces en los grupos de WhatsApp y Facebook. Llueven respuestas, nombres y números, y al día siguiente todo se perdió entre los mensajes.','Quien necesita el servicio no sabe en quién confiar. Y el buen profesional, que trabaja bien desde hace años, depende de la suerte de que alguien se acuerde de él en el momento justo.','Creamos Trustmore para reunir a las dos partes en un solo lugar, con lo que más importa cuando dejas entrar a alguien en tu casa o cuidar de tu hijo: <b>la opinión de quien ya lo contrató</b>.'],
@@ -689,16 +724,16 @@ es:{
  hp_bl:['Recibe un perfil profesional listo, con su propio enlace para compartir.','Reúne sus reseñas en un solo lugar y muestra la calidad de su trabajo.','Es encontrado por quien busca su servicio en su ciudad.','Se queda con el 100% de cada servicio, sin comisiones.'],
  v_eyebrow:'En qué creemos', v_h2:'Nuestros valores',
  values:[['Confianza','Es nuestro nombre y nuestra razón de ser. Todo en la plataforma sirve para que contrates con más seguridad.'],['Transparencia','Las reseñas buenas y malas se muestran igual. Nadie compra su nota.'],['Comunidad','Cada reseña ayuda a la siguiente persona a contratar mejor y al buen profesional a ser encontrado.'],['Sencillez','Sin registro para contratar, sin costes ocultos, sin complicaciones.']],
- pp_eyebrow:'Para profesionales', pp_h1:'Más clientes, <em>gracias a tus reseñas.</em>', pp_lead:'Crea tu perfil en Trustmore y que te encuentre quien busca tu servicio en tu ciudad. Tus clientes satisfechos hacen tu publicidad.', pp_example:'Ver un perfil de ejemplo',
+ pp_eyebrow:'Para profesionales', pp_h1:'Más clientes, <em>gracias a tus reseñas.</em>', pp_lead:'Crea tu página gratis en Trustmore y, cuando quieras, aparece en la vitrina para quien busca tu servicio en tu ciudad. Tus clientes satisfechos hacen tu publicidad.', pp_example:'Ver un perfil de ejemplo',
  g_eyebrow:'Lo que obtienes', g_h2:'Todo lo que un profesional necesita para transmitir confianza',
- g:[['Visibilidad en la vitrina','Tu perfil aparece a quien busca tu servicio en tu país y tu ciudad.'],['Reseñas sin esfuerzo','Envía tu enlace a tus clientes. La reseña se publica sola, sin que tengas que aprobar nada.'],['Tu propio enlace','Una dirección solo tuya, como trustmore.app/tunombre, para tu bio, tu estado y los grupos.'],['Clientes directo a WhatsApp','Quien ve tu perfil te escribe al momento. Sin intermediarios ni subastas de precio.'],['Sin comisiones','Una suscripción mensual sencilla. El precio de cada servicio que cierras es 100% tuyo.'],['Insignia de verificado y primeros puestos','Activa la insignia, confirma tu identidad y aparece antes que otros profesionales de tu ciudad.']],
- j_eyebrow:'Cómo unirte', j_h2:'Tu perfil en línea en pocos minutos',
- j:[['Crea tu perfil gratis','Una foto, una bio corta, tus servicios, las ciudades donde trabajas, WhatsApp e Instagram. Tienes tu propio enlace al momento.'],['Reúne tus reseñas','Envía el enlace a tus clientes para que te valoren. Todo queda en tu perfil, gratis.'],['Aparece en la vitrina','Activa la suscripción y deja que te encuentren quienes buscan tu servicio en tu ciudad, con un feed de tus trabajos.'],['Pide reseñas','Envía el enlace a clientes antiguos y nuevos. Cuantas más reseñas, más destacas.']],
+ g:[['Visibilidad en la vitrina','Tu perfil aparece a quien busca tu servicio en tu país y tu ciudad.'],['Reseñas sin esfuerzo','Envía tu enlace a tus clientes. La reseña se publica sola, sin que tengas que aprobar nada.'],['Tu propio enlace','Una dirección solo tuya, como trustmore.app/tunombre, para tu bio, tu estado y los grupos.'],['Clientes directo a WhatsApp','Quien ve tu perfil te escribe al momento. Sin intermediarios ni subastas de precio.'],['Sin comisiones','La página es gratis y la vitrina es una suscripción mensual sencilla. El precio de cada servicio que cierras es 100% tuyo.'],['Insignia de verificado y primeros puestos','Activa la insignia, confirma tu identidad y aparece antes que otros profesionales de tu ciudad.']],
+ j_eyebrow:'Cómo unirte', j_h2:'Tu página en línea en pocos minutos',
+ j:[['Crea tu página gratis','Una foto, una bio corta, tus servicios, las ciudades donde trabajas, WhatsApp e Instagram. Tienes tu propio enlace al momento.'],['Reúne tus reseñas','Envía el enlace a tus clientes para que te valoren. Todo queda en tu página, gratis.'],['Aparece en la vitrina','Haz el upgrade y deja que te encuentren quienes buscan tu servicio en tu ciudad, con un feed de tus trabajos.'],['Pide reseñas','Envía el enlace a clientes antiguos y nuevos. Cuantas más reseñas, más destacas.']],
  r_eyebrow:'Resultados que puedes seguir', r_h2:'Descubre cuántas personas llegaron hasta ti', r_lead:'Cada mes recibes un resumen con las visitas a tu perfil y cuántas personas pulsaron para escribirte por WhatsApp.',
- r:['Contactos recibidos desde la vitrina','Visitas a tu perfil','Tu nota media y nuevas reseñas'], m2_contacts:'Contactos por WhatsApp', m2_new:'Nuevas reseñas', m2_note:'Ejemplo ilustrativo de resumen mensual.',
+ r:['Contactos recibidos desde la vitrina','Visitas a tu perfil','Tu nota media y nuevas reseñas'], m2_contacts:'Contactos por WhatsApp', m2_new:'Nuevas reseñas', m2_note:'En tu área sigues visitas, contactos y nuevas reseñas.',
  pf_h2:'Dudas de quien quiere aparecer',
- pf:[['¿Necesito tener una empresa registrada?','No para crear el perfil. Trustmore es una vitrina: muestras tu trabajo y lo acuerdas todo directamente con el cliente, según las normas del país donde trabajas.'],['¿Trustmore cobra comisión por mis servicios?','No. Solo pagas la suscripción mensual. Lo que el cliente paga por el servicio es todo tuyo.'],['¿Y si recibo una reseña injusta?','Puedes responder públicamente. Si la reseña es falsa, ofensiva o de alguien que nunca te contrató, escríbenos y la revisamos.'],['¿Hay permanencia?','No. Pagas cada mes y puedes dejarlo cuando quieras.'],['Trabajo en más de una ciudad. ¿Puedo aparecer en todas?','Sí. Al registrarte marcas todas las ciudades donde trabajas y apareces en las búsquedas de cada una.']],
- fin_h:'Tus clientes ya hablan bien de ti. Haz que eso trabaje a tu favor.', fin_p:'Crea tu perfil y empieza a reunir reseñas hoy mismo.', fin_btn:'Crear mi perfil ahora',
+ pf:[['¿Crear la página es gratis?','Sí. Creas tu página de reseñas, recibes tu propio enlace y lo compartes donde quieras, sin pagar nada.'],['¿Cómo funciona la vitrina? ¿Puedo cancelar?','La vitrina es donde quien busca un servicio elige la categoría y la ciudad. Para aparecer en ella, te suscribes por €2,99 el primer mes y después €14,90 al mes, con pago seguro con Stripe. Sin permanencia: cancelas tú mismo, cuando quieras, desde tu área.'],['¿Necesito tener una empresa registrada?','No para crear la página. Trustmore es una vitrina: muestras tu trabajo y lo acuerdas todo directamente con el cliente, según las normas del país donde trabajas.'],['¿Trustmore cobra comisión por mis servicios?','No. La página es gratis y, si quieres aparecer en la vitrina, solo pagas la suscripción mensual. Lo que el cliente paga por el servicio es todo tuyo.'],['¿Y si recibo una reseña injusta?','Puedes responder públicamente. Si la reseña es falsa, ofensiva o de alguien que nunca te contrató, escríbenos y la revisamos.'],['¿Hay permanencia?','No. Pagas cada mes y puedes dejarlo cuando quieras.'],['Trabajo en más de una ciudad. ¿Puedo aparecer en todas?','Sí. Al registrarte marcas todas las ciudades donde trabajas y apareces en las búsquedas de cada una.']],
+ fin_h:'Tus clientes ya hablan bien de ti. Haz que eso trabaje a tu favor.', fin_p:'Crea tu página gratis y empieza a reunir reseñas hoy mismo.', fin_btn:'Crear mi página gratis',
  t_join:'Prototipo: en la web real, aquí se abre el registro y la suscripción mensual.',
  back:'← Volver a la vitrina', about_x:'Sobre {name}', f_srv:'Servicios', f_area:'Trabaja en', f_lang:'Habla', f_since:'En Trustmore', since:'desde {y}',
  rev_h:'Lo que dicen los clientes', rate_h:'¿Contrataste a {name}? Cuéntanos cómo fue',
@@ -718,44 +753,50 @@ es:{
 /* Textos novos (cadastro, carregamento, outros serviços) */
 const T2 = {
  pt:{ other:'Outros serviços', loading:'Carregando profissionais...', load_err:'Não foi possível carregar agora. Tente de novo em alguns minutos.', not_found:'Perfil não encontrado ou fora do ar.',
-  su_eyebrow:'Cadastro de profissional', su_h1:'Crie seu perfil na Trustmore', su_lead:'Grátis e em poucos minutos: você ganha um perfil com link próprio para juntar as avaliações dos seus clientes. Para aparecer na vitrine, é só ativar a assinatura quando quiser.',
-  su_name:'Nome e sobrenome', su_email:'E-mail', su_email_hint:'Use o mesmo e-mail no pagamento. É assim que liberamos seu perfil.', su_zap:'WhatsApp com código do país', su_zap_hint:'Ex.: +31 6 1234 5678. É por aqui que os clientes vão te chamar.',
+  su_eyebrow:'Cadastro de profissional', su_h1:'Crie sua página grátis na Trustmore', su_lead:'Grátis e em poucos minutos: você ganha uma página com link próprio para juntar as avaliações dos seus clientes. Para aparecer na vitrine, é só fazer o upgrade quando quiser.',
+  su_name:'Nome e sobrenome', su_email:'E-mail', su_email_hint:'Use o mesmo e-mail se fizer o upgrade para a vitrine. É assim que reconhecemos sua página.', su_zap:'WhatsApp com código do país', su_zap_hint:'Ex.: +31 6 1234 5678. É por aqui que os clientes vão te chamar.',
   su_cat:'Serviço principal', su_cat_other:'Qual serviço?', su_country:'País onde atende', su_cities:'Cidades onde atende', su_cities_hint:'Separe por vírgula. Ex.: Amsterdam, Haarlem',
   su_langs:'Línguas que você fala', su_bio:'Sobre você', su_bio_hint:'Conte sua experiência, como trabalha e o que inclui. Até 800 caracteres.', su_srv:'Serviços que oferece', su_srv_hint:'Separe por vírgula. Ex.: Faxina residencial, Pós-obra',
   su_photo:'Sua foto', su_photo_hint:'Uma foto de rosto, com boa luz. Ajuda muito a passar confiança.', su_terms:'Confirmo que as informações são verdadeiras, que vou combinar os serviços diretamente com meus clientes e que li e aceito os <a href="/termos/" target="_blank" rel="noopener" style="text-decoration:underline">Termos de uso e a Política de privacidade</a>.', foot_legal:'Termos e privacidade',
-  su_btn:'Criar meu perfil grátis', su_sending:'Enviando...', su_err:'Confira os campos: nome, e-mail e WhatsApp são obrigatórios.', su_fail:'Não foi possível enviar agora. Tente de novo em alguns minutos ou fale com a gente no WhatsApp.',
-  up_hi:'Pronto, {name}! Seu perfil já está no ar.', up_sub:'Mande o seu link para os clientes deixarem avaliação. Também enviamos ele para o seu e-mail.', up_copy:'Copiar link', up_copied:'Link copiado!', up_eyebrow:'Próximo passo', up_h:'Seja encontrado por quem procura o seu serviço', up_p:'Hoje, só quem recebe o seu link vê o seu perfil. Na vitrine, você aparece para quem busca o seu serviço na sua cidade.', up_free_t:'Perfil grátis', up_free:['Link próprio para divulgar','Avaliações dos seus clientes','Sua área com visitas e contatos'], up_vit_t:'Na vitrine', up_vit:['Tudo do perfil grátis','Aparece nas buscas por serviço e cidade','Feed com fotos dos seus trabalhos','Pode ativar o selo verificado e ir para o topo'], up_price:'no primeiro mês · depois €14,90/mês · sem fidelidade e sem comissão', up_btn:'Quero aparecer na vitrine por €2,99', up_safe:'Pagamento seguro pelo Stripe. Cancele quando quiser, direto na sua área.', up_later:'Agora não, continuar com o perfil grátis', own_h:'Este é o seu perfil grátis', own_p:'Ele funciona pelo seu link, mas ainda não aparece nas buscas da vitrine. Ative para ser encontrado por quem procura o seu serviço na sua cidade.', su_ok_h:'Seu perfil grátis está pronto!', su_ok_p:'Ele já está no ar em {link}. Mande esse link para os seus clientes deixarem avaliação. Também enviamos o link para o seu e-mail.', su_ok_btn:'Quero aparecer na vitrine', su_ok_view:'Ver meu perfil', su_up_h:'Apareça na vitrine', su_up_p:'O perfil grátis funciona pelo seu link. Na vitrine, os clientes te encontram buscando pelo serviço e pela cidade, e você ganha o feed de fotos dos seus trabalhos.', su_ig:'Instagram', su_site:'Site', su_opt:'Opcional', pg_h:'Pagamento recebido!', pg_wait:'Estamos confirmando seu pagamento e colocando seu perfil no ar...', pg_ok:'Tudo certo. Em poucos minutos seu perfil aparece na vitrine e você recebe um e-mail de confirmação.', pg_btn_painel:'Ir para minha área', pg_btn_entrar:'Entrar na minha área', su_price:'€2,99 no primeiro mês, depois €14,90 por mês. Pagamento seguro pelo Stripe. Cancele quando quiser.', su_ok_wait:'O link de pagamento ainda está sendo configurado. Entraremos em contato pelo WhatsApp.',
+  su_btn:'Criar minha página grátis', su_sending:'Enviando...', su_err:'Confira os campos: nome, e-mail e WhatsApp são obrigatórios.', su_fail:'Não foi possível enviar agora. Tente de novo em alguns minutos ou fale com a gente no WhatsApp.',
+  up_hi:'Pronto, {name}! Sua página já está no ar.', up_sub:'Mande o seu link para os clientes deixarem avaliação. Também enviamos ele para o seu e-mail.', up_copy:'Copiar link', up_copied:'Link copiado!', up_eyebrow:'Próximo passo', up_h:'Seja encontrado por quem procura o seu serviço', up_p:'Hoje, só quem recebe o seu link vê a sua página. Na vitrine, você aparece para quem busca o seu serviço na sua cidade.', up_free_t:'Página grátis', up_free:['Link próprio para divulgar','Avaliações dos seus clientes','Sua área com visitas e contatos'], up_vit_t:'Página na vitrine', up_vit:['Tudo da página grátis','Aparece nas buscas por serviço e cidade','Feed com fotos dos seus trabalhos','Pode ativar o selo verificado e ir para o topo'], up_price:'no primeiro mês · depois €14,90/mês · sem fidelidade e sem comissão', up_btn:'Quero aparecer na vitrine', up_safe:'Pagamento seguro pelo Stripe. Cancele quando quiser, direto na sua área.', up_later:'Agora não, continuar com a página grátis', own_h:'Esta é a sua página grátis', own_p:'Ela funciona pelo seu link, mas ainda não aparece nas buscas da vitrine. Faça o upgrade para ser encontrado por quem procura o seu serviço na sua cidade.', su_ok_h:'Sua página grátis está pronta!', su_ok_p:'Ele já está no ar em {link}. Mande esse link para os seus clientes deixarem avaliação. Também enviamos o link para o seu e-mail.', su_ok_btn:'Quero aparecer na vitrine', su_ok_view:'Ver minha página', su_up_h:'Apareça na vitrine', su_up_p:'A página grátis funciona pelo seu link. Na vitrine, os clientes te encontram buscando pelo serviço e pela cidade, e você ganha o feed de fotos dos seus trabalhos.', su_ig:'Instagram', su_site:'Site', su_opt:'Opcional', pg_h:'Pagamento recebido!', pg_wait:'Estamos confirmando seu pagamento e colocando seu perfil no ar...', pg_ok:'Tudo certo. Em poucos minutos seu perfil aparece na vitrine e você recebe um e-mail de confirmação.', pg_btn_painel:'Ir para minha área', pg_btn_entrar:'Entrar na minha área', su_price:'€2,99 no primeiro mês, depois €14,90 por mês. Pagamento seguro pelo Stripe. Cancele quando quiser.', su_ok_wait:'O link de pagamento ainda está sendo configurado. Entraremos em contato pelo WhatsApp.',
   su_demo:'Protótipo: o cadastro ainda não está ligado à planilha.', country_other:'Outro país', wa_msg:'Oi, {name}! Encontrei seu perfil na Trustmore e gostaria de um orçamento.', rev_sent:'Avaliação publicada. Obrigado por ajudar a comunidade!', rev_err:'Confira os campos e tente de novo.', reply:'Resposta de {name}' },
  en:{ other:'Other services', loading:'Loading professionals...', load_err:'Couldn’t load right now. Please try again in a few minutes.', not_found:'Profile not found or not available.',
-  su_eyebrow:'Professional sign-up', su_h1:'Create your Trustmore profile', su_lead:'Free and quick: you get a profile with your own link to collect your customers’ reviews. To appear in the showcase, just activate the subscription whenever you like.',
-  su_name:'First and last name', su_email:'Email', su_email_hint:'Use the same email when you pay. That’s how we activate your profile.', su_zap:'WhatsApp with country code', su_zap_hint:'E.g. +31 6 1234 5678. Customers will contact you here.',
+  su_eyebrow:'Professional sign-up', su_h1:'Create your free Trustmore page', su_lead:'Free and quick: you get a page with your own link to collect your customers’ reviews. To appear in the showcase, just upgrade whenever you like.',
+  su_name:'First and last name', su_email:'Email', su_email_hint:'Use the same email if you upgrade to the showcase. That’s how we recognise your page.', su_zap:'WhatsApp with country code', su_zap_hint:'E.g. +31 6 1234 5678. Customers will contact you here.',
   su_cat:'Main service', su_cat_other:'Which service?', su_country:'Country you work in', su_cities:'Cities you work in', su_cities_hint:'Separate with commas. E.g. Amsterdam, Haarlem',
   su_langs:'Languages you speak', su_bio:'About you', su_bio_hint:'Tell customers about your experience, how you work and what’s included. Up to 800 characters.', su_srv:'Services you offer', su_srv_hint:'Separate with commas. E.g. Home cleaning, After-renovation cleaning',
   su_photo:'Your photo', su_photo_hint:'A clear photo of your face in good light. It builds a lot of trust.', su_terms:'I confirm this information is true, that I’ll arrange services directly with my customers, and that I have read and accept the <a href="/termos/#terms" target="_blank" rel="noopener" style="text-decoration:underline">Terms of use and Privacy policy</a>.', foot_legal:'Terms and privacy',
-  su_btn:'Create my free profile', su_sending:'Sending...', su_err:'Please check the form: name, email and WhatsApp are required.', su_fail:'Couldn’t send right now. Please try again in a few minutes or message us on WhatsApp.',
-  up_hi:'All set, {name}! Your profile is live.', up_sub:'Send your link to customers so they can leave a review. We’ve also emailed it to you.', up_copy:'Copy link', up_copied:'Link copied!', up_eyebrow:'Next step', up_h:'Get found by people looking for your service', up_p:'Right now only people who get your link can see your profile. In the showcase, you appear to people searching for your service in your city.', up_free_t:'Free profile', up_free:['Your own link to share','Reviews from your customers','Your area with visits and contacts'], up_vit_t:'In the showcase', up_vit:['Everything in the free profile','Appear in searches by service and city','A feed with photos of your work','Option to add the verified badge and go to the top'], up_price:'for the first month · then €14.90/month · no contract, no commission', up_btn:'Get into the showcase for €2.99', up_safe:'Secure payment with Stripe. Cancel anytime from your area.', up_later:'Not now, keep my free profile', own_h:'This is your free profile', own_p:'It works through your link, but it doesn’t appear in showcase searches yet. Activate it to be found by people looking for your service in your city.', su_ok_h:'Your free profile is ready!', su_ok_p:'It’s already live at {link}. Send this link to your customers so they can leave a review. We’ve also emailed it to you.', su_ok_btn:'I want to be in the showcase', su_ok_view:'View my profile', su_up_h:'Get into the showcase', su_up_p:'Your free profile works through your link. In the showcase, customers find you by service and city, and you get a feed to show photos of your work.', su_ig:'Instagram', su_site:'Website', su_opt:'Optional', pg_h:'Payment received!', pg_wait:'We’re confirming your payment and putting your profile live...', pg_ok:'All set. Your profile will appear in the showcase within a few minutes, and you’ll get a confirmation email.', pg_btn_painel:'Go to my area', pg_btn_entrar:'Log in to my area', su_price:'€2.99 for the first month, then €14.90 per month. Secure payment with Stripe. Cancel anytime.', su_ok_wait:'The payment link is still being set up. We’ll contact you on WhatsApp.',
+  su_btn:'Create my free page', su_sending:'Sending...', su_err:'Please check the form: name, email and WhatsApp are required.', su_fail:'Couldn’t send right now. Please try again in a few minutes or message us on WhatsApp.',
+  up_hi:'Done, {name}! Your page is live.', up_sub:'Send your link to customers so they can leave a review. We’ve also emailed it to you.', up_copy:'Copy link', up_copied:'Link copied!', up_eyebrow:'Next step', up_h:'Get found by people looking for your service', up_p:'Right now, only people with your link see your page. In the showcase, you appear to people searching for your service in your city.', up_free_t:'Free page', up_free:['Your own link to share','Reviews from your customers','Your area with visits and contacts'], up_vit_t:'Page in the showcase', up_vit:['Everything in the free page','Appear in searches by service and city','A feed with photos of your work','Option to add the verified badge and go to the top'], up_price:'for the first month · then €14.90/month · no contract, no commission', up_btn:'I want to be in the showcase', up_safe:'Secure payment with Stripe. Cancel anytime from your area.', up_later:'Not now, keep my free page', own_h:'This is your free page', own_p:'It works through your link, but it doesn’t appear in showcase searches yet. Upgrade to be found by people looking for your service in your city.', su_ok_h:'Your free page is ready!', su_ok_p:'It’s already live at {link}. Send this link to your customers so they can leave a review. We’ve also emailed it to you.', su_ok_btn:'I want to be in the showcase', su_ok_view:'View my page', su_up_h:'Get into the showcase', su_up_p:'Your free page works through your link. In the showcase, customers find you by service and city, and you get a feed to show photos of your work.', su_ig:'Instagram', su_site:'Website', su_opt:'Optional', pg_h:'Payment received!', pg_wait:'We’re confirming your payment and putting your profile live...', pg_ok:'All set. Your profile will appear in the showcase within a few minutes, and you’ll get a confirmation email.', pg_btn_painel:'Go to my area', pg_btn_entrar:'Log in to my area', su_price:'€2.99 for the first month, then €14.90 per month. Secure payment with Stripe. Cancel anytime.', su_ok_wait:'The payment link is still being set up. We’ll contact you on WhatsApp.',
   su_demo:'Prototype: sign-up isn’t connected to the spreadsheet yet.', country_other:'Other country', wa_msg:'Hi {name}! I found your profile on Trustmore and would like a quote.', rev_sent:'Review posted. Thanks for helping the community!', rev_err:'Please check the form and try again.', reply:'Reply from {name}' },
  nl:{ other:'Overige diensten', loading:'Vakmensen laden...', load_err:'Laden lukt nu niet. Probeer het over een paar minuten opnieuw.', not_found:'Profiel niet gevonden of niet beschikbaar.',
-  su_eyebrow:'Aanmelden als vakman', su_h1:'Maak je Trustmore-profiel', su_lead:'Gratis en snel: je krijgt een profiel met je eigen link om reviews van je klanten te verzamelen. Wil je in de etalage staan? Activeer dan het abonnement wanneer je wilt.',
-  su_name:'Voor- en achternaam', su_email:'E-mail', su_email_hint:'Gebruik hetzelfde e-mailadres bij het betalen. Zo activeren we je profiel.', su_zap:'WhatsApp met landcode', su_zap_hint:'Bijv. +31 6 1234 5678. Klanten nemen hier contact met je op.',
+  su_eyebrow:'Aanmelden als vakman', su_h1:'Maak je gratis Trustmore-pagina', su_lead:'Gratis en snel: je krijgt een pagina met je eigen link om reviews van je klanten te verzamelen. Wil je in de etalage staan? Upgrade dan wanneer je wilt.',
+  su_name:'Voor- en achternaam', su_email:'E-mail', su_email_hint:'Gebruik hetzelfde e-mailadres als je upgradet naar de etalage. Zo herkennen we je pagina.', su_zap:'WhatsApp met landcode', su_zap_hint:'Bijv. +31 6 1234 5678. Klanten nemen hier contact met je op.',
   su_cat:'Belangrijkste dienst', su_cat_other:'Welke dienst?', su_country:'Land waar je werkt', su_cities:'Steden waar je werkt', su_cities_hint:'Scheid met komma’s. Bijv. Amsterdam, Haarlem',
   su_langs:'Talen die je spreekt', su_bio:'Over jou', su_bio_hint:'Vertel over je ervaring, hoe je werkt en wat inbegrepen is. Maximaal 800 tekens.', su_srv:'Diensten die je aanbiedt', su_srv_hint:'Scheid met komma’s. Bijv. Huishoudelijke schoonmaak, Opleveringsschoonmaak',
   su_photo:'Je foto', su_photo_hint:'Een duidelijke foto van je gezicht met goed licht. Dat wekt veel vertrouwen.', su_terms:'Ik bevestig dat deze gegevens kloppen, dat ik diensten rechtstreeks met mijn klanten afspreek en dat ik de <a href="/termos/#terms" target="_blank" rel="noopener" style="text-decoration:underline">gebruiksvoorwaarden en het privacybeleid</a> heb gelezen en accepteer.', foot_legal:'Voorwaarden en privacy',
-  su_btn:'Maak mijn gratis profiel', su_sending:'Versturen...', su_err:'Controleer het formulier: naam, e-mail en WhatsApp zijn verplicht.', su_fail:'Versturen lukt nu niet. Probeer het over een paar minuten opnieuw of stuur ons een WhatsApp.',
-  up_hi:'Klaar, {name}! Je profiel staat online.', up_sub:'Stuur je link naar klanten zodat ze een review kunnen achterlaten. We hebben hem ook naar je e-mail gestuurd.', up_copy:'Link kopiëren', up_copied:'Link gekopieerd!', up_eyebrow:'Volgende stap', up_h:'Word gevonden door mensen die jouw dienst zoeken', up_p:'Nu zien alleen mensen met je link je profiel. In de etalage verschijn je bij mensen die jouw dienst zoeken in jouw stad.', up_free_t:'Gratis profiel', up_free:['Je eigen link om te delen','Reviews van je klanten','Je omgeving met bezoeken en contacten'], up_vit_t:'In de etalage', up_vit:['Alles van het gratis profiel','Zichtbaar in zoekresultaten op dienst en stad','Een feed met foto’s van je werk','Mogelijkheid om de geverifieerd-badge te nemen en bovenaan te staan'], up_price:'de eerste maand · daarna €14,90/maand · geen contract, geen commissie', up_btn:'Kom in de etalage voor €2,99', up_safe:'Veilig betalen via Stripe. Altijd opzegbaar vanuit je omgeving.', up_later:'Nu niet, ik houd mijn gratis profiel', own_h:'Dit is je gratis profiel', own_p:'Het werkt via je link, maar staat nog niet in de zoekresultaten van de etalage. Activeer het om gevonden te worden door mensen die jouw dienst zoeken in jouw stad.', su_ok_h:'Je gratis profiel staat klaar!', su_ok_p:'Het staat al online op {link}. Stuur deze link naar je klanten zodat ze een review kunnen achterlaten. We hebben hem ook naar je e-mail gestuurd.', su_ok_btn:'Ik wil in de etalage', su_ok_view:'Mijn profiel bekijken', su_up_h:'Kom in de etalage', su_up_p:'Je gratis profiel werkt via je link. In de etalage vinden klanten je op dienst en stad, en krijg je een feed om foto’s van je werk te laten zien.', su_ig:'Instagram', su_site:'Website', su_opt:'Optioneel', pg_h:'Betaling ontvangen!', pg_wait:'We bevestigen je betaling en zetten je profiel online...', pg_ok:'Alles in orde. Binnen een paar minuten staat je profiel in de etalage en ontvang je een bevestiging per e-mail.', pg_btn_painel:'Naar mijn omgeving', pg_btn_entrar:'Inloggen', su_price:'€2,99 de eerste maand, daarna €14,90 per maand. Veilig betalen via Stripe. Altijd opzegbaar.', su_ok_wait:'De betaallink wordt nog ingesteld. We nemen contact met je op via WhatsApp.',
+  su_btn:'Maak mijn gratis pagina', su_sending:'Versturen...', su_err:'Controleer het formulier: naam, e-mail en WhatsApp zijn verplicht.', su_fail:'Versturen lukt nu niet. Probeer het over een paar minuten opnieuw of stuur ons een WhatsApp.',
+  up_hi:'Klaar, {name}! Je pagina staat online.', up_sub:'Stuur je link naar klanten zodat ze een review kunnen achterlaten. We hebben hem ook naar je e-mail gestuurd.', up_copy:'Link kopiëren', up_copied:'Link gekopieerd!', up_eyebrow:'Volgende stap', up_h:'Word gevonden door mensen die jouw dienst zoeken', up_p:'Nu zien alleen mensen met je link je pagina. In de etalage verschijn je bij mensen die jouw dienst zoeken in jouw stad.', up_free_t:'Gratis pagina', up_free:['Je eigen link om te delen','Reviews van je klanten','Je omgeving met bezoeken en contacten'], up_vit_t:'Pagina in de etalage', up_vit:['Alles van de gratis pagina','Zichtbaar in zoekresultaten op dienst en stad','Een feed met foto’s van je werk','Mogelijkheid om de geverifieerd-badge te nemen en bovenaan te staan'], up_price:'de eerste maand · daarna €14,90/maand · geen contract, geen commissie', up_btn:'Ik wil in de etalage', up_safe:'Veilig betalen via Stripe. Altijd opzegbaar vanuit je omgeving.', up_later:'Nu niet, ik houd mijn gratis pagina', own_h:'Dit is je gratis pagina', own_p:'Hij werkt via je link, maar staat nog niet in de zoekresultaten van de etalage. Upgrade om gevonden te worden door mensen die jouw dienst zoeken in jouw stad.', su_ok_h:'Je gratis pagina staat klaar!', su_ok_p:'Het staat al online op {link}. Stuur deze link naar je klanten zodat ze een review kunnen achterlaten. We hebben hem ook naar je e-mail gestuurd.', su_ok_btn:'Ik wil in de etalage', su_ok_view:'Mijn pagina bekijken', su_up_h:'Kom in de etalage', su_up_p:'Je gratis pagina werkt via je link. In de etalage vinden klanten je op dienst en stad, en krijg je een feed om foto’s van je werk te laten zien.', su_ig:'Instagram', su_site:'Website', su_opt:'Optioneel', pg_h:'Betaling ontvangen!', pg_wait:'We bevestigen je betaling en zetten je profiel online...', pg_ok:'Alles in orde. Binnen een paar minuten staat je profiel in de etalage en ontvang je een bevestiging per e-mail.', pg_btn_painel:'Naar mijn omgeving', pg_btn_entrar:'Inloggen', su_price:'€2,99 de eerste maand, daarna €14,90 per maand. Veilig betalen via Stripe. Altijd opzegbaar.', su_ok_wait:'De betaallink wordt nog ingesteld. We nemen contact met je op via WhatsApp.',
   su_demo:'Prototype: aanmelden is nog niet gekoppeld aan de spreadsheet.', country_other:'Ander land', wa_msg:'Hoi {name}! Ik vond je profiel op Trustmore en wil graag een offerte.', rev_sent:'Review geplaatst. Bedankt dat je de gemeenschap helpt!', rev_err:'Controleer het formulier en probeer het opnieuw.', reply:'Reactie van {name}' },
  es:{ other:'Otros servicios', loading:'Cargando profesionales...', load_err:'No se pudo cargar ahora. Inténtalo de nuevo en unos minutos.', not_found:'Perfil no encontrado o no disponible.',
-  su_eyebrow:'Registro de profesional', su_h1:'Crea tu perfil en Trustmore', su_lead:'Gratis y en pocos minutos: tienes un perfil con tu propio enlace para reunir las reseñas de tus clientes. Para aparecer en la vitrina, activa la suscripción cuando quieras.',
-  su_name:'Nombre y apellido', su_email:'Correo electrónico', su_email_hint:'Usa el mismo correo al pagar. Así activamos tu perfil.', su_zap:'WhatsApp con código de país', su_zap_hint:'Ej.: +31 6 1234 5678. Aquí te escribirán los clientes.',
+  su_eyebrow:'Registro de profesional', su_h1:'Crea tu página gratis en Trustmore', su_lead:'Gratis y en pocos minutos: tienes una página con tu propio enlace para reunir las reseñas de tus clientes. Para aparecer en la vitrina, haz el upgrade cuando quieras.',
+  su_name:'Nombre y apellido', su_email:'Correo electrónico', su_email_hint:'Usa el mismo correo si haces el upgrade a la vitrina. Así reconocemos tu página.', su_zap:'WhatsApp con código de país', su_zap_hint:'Ej.: +31 6 1234 5678. Aquí te escribirán los clientes.',
   su_cat:'Servicio principal', su_cat_other:'¿Qué servicio?', su_country:'País donde trabajas', su_cities:'Ciudades donde trabajas', su_cities_hint:'Separa con comas. Ej.: Amsterdam, Haarlem',
   su_langs:'Idiomas que hablas', su_bio:'Sobre ti', su_bio_hint:'Cuenta tu experiencia, cómo trabajas y qué incluye. Hasta 800 caracteres.', su_srv:'Servicios que ofreces', su_srv_hint:'Separa con comas. Ej.: Limpieza del hogar, Limpieza fin de obra',
   su_photo:'Tu foto', su_photo_hint:'Una foto de tu cara con buena luz. Transmite mucha confianza.', su_terms:'Confirmo que la información es verdadera, que acordaré los servicios directamente con mis clientes y que he leído y acepto los <a href="/termos/#terms" target="_blank" rel="noopener" style="text-decoration:underline">Términos de uso y la Política de privacidad</a>.', foot_legal:'Términos y privacidad',
-  su_btn:'Crear mi perfil gratis', su_sending:'Enviando...', su_err:'Revisa el formulario: nombre, correo y WhatsApp son obligatorios.', su_fail:'No se pudo enviar ahora. Inténtalo en unos minutos o escríbenos por WhatsApp.',
-  up_hi:'¡Listo, {name}! Tu perfil ya está publicado.', up_sub:'Envía tu enlace a tus clientes para que dejen su reseña. También te lo enviamos por correo.', up_copy:'Copiar enlace', up_copied:'¡Enlace copiado!', up_eyebrow:'Siguiente paso', up_h:'Haz que te encuentre quien busca tu servicio', up_p:'Ahora solo ve tu perfil quien recibe tu enlace. En la vitrina, apareces a quien busca tu servicio en tu ciudad.', up_free_t:'Perfil gratis', up_free:['Tu propio enlace para compartir','Reseñas de tus clientes','Tu área con visitas y contactos'], up_vit_t:'En la vitrina', up_vit:['Todo lo del perfil gratis','Apareces en las búsquedas por servicio y ciudad','Un feed con fotos de tus trabajos','Puedes activar la insignia verificada e ir arriba'], up_price:'el primer mes · después €14,90/mes · sin permanencia y sin comisión', up_btn:'Quiero aparecer en la vitrina por €2,99', up_safe:'Pago seguro con Stripe. Cancela cuando quieras desde tu área.', up_later:'Ahora no, seguir con el perfil gratis', own_h:'Este es tu perfil gratis', own_p:'Funciona con tu enlace, pero todavía no aparece en las búsquedas de la vitrina. Actívalo para que te encuentre quien busca tu servicio en tu ciudad.', su_ok_h:'¡Tu perfil gratis está listo!', su_ok_p:'Ya está publicado en {link}. Envía este enlace a tus clientes para que dejen su reseña. También te lo enviamos por correo.', su_ok_btn:'Quiero aparecer en la vitrina', su_ok_view:'Ver mi perfil', su_up_h:'Aparece en la vitrina', su_up_p:'Tu perfil gratis funciona con tu enlace. En la vitrina, los clientes te encuentran por servicio y ciudad, y tienes un feed para mostrar fotos de tus trabajos.', su_ig:'Instagram', su_site:'Sitio web', su_opt:'Opcional', pg_h:'¡Pago recibido!', pg_wait:'Estamos confirmando tu pago y publicando tu perfil...', pg_ok:'Todo listo. En unos minutos tu perfil aparecerá en la vitrina y recibirás un correo de confirmación.', pg_btn_painel:'Ir a mi área', pg_btn_entrar:'Entrar en mi área', su_price:'€2,99 el primer mes, después €14,90 al mes. Pago seguro con Stripe. Cancela cuando quieras.', su_ok_wait:'El enlace de pago todavía se está configurando. Te contactaremos por WhatsApp.',
+  su_btn:'Crear mi página gratis', su_sending:'Enviando...', su_err:'Revisa el formulario: nombre, correo y WhatsApp son obligatorios.', su_fail:'No se pudo enviar ahora. Inténtalo en unos minutos o escríbenos por WhatsApp.',
+  up_hi:'¡Listo, {name}! Tu página ya está publicada.', up_sub:'Envía tu enlace a tus clientes para que dejen su reseña. También te lo enviamos por correo.', up_copy:'Copiar enlace', up_copied:'¡Enlace copiado!', up_eyebrow:'Siguiente paso', up_h:'Haz que te encuentre quien busca tu servicio', up_p:'Ahora solo ve tu página quien recibe tu enlace. En la vitrina, apareces a quien busca tu servicio en tu ciudad.', up_free_t:'Página gratis', up_free:['Tu propio enlace para compartir','Reseñas de tus clientes','Tu área con visitas y contactos'], up_vit_t:'Página en la vitrina', up_vit:['Todo lo de la página gratis','Apareces en las búsquedas por servicio y ciudad','Un feed con fotos de tus trabajos','Puedes activar la insignia verificada e ir arriba'], up_price:'el primer mes · después €14,90/mes · sin permanencia y sin comisión', up_btn:'Quiero aparecer en la vitrina', up_safe:'Pago seguro con Stripe. Cancela cuando quieras desde tu área.', up_later:'Ahora no, seguir con la página gratis', own_h:'Esta es tu página gratis', own_p:'Funciona con tu enlace, pero todavía no aparece en las búsquedas de la vitrina. Haz el upgrade para que te encuentre quien busca tu servicio en tu ciudad.', su_ok_h:'¡Tu página gratis está lista!', su_ok_p:'Ya está publicado en {link}. Envía este enlace a tus clientes para que dejen su reseña. También te lo enviamos por correo.', su_ok_btn:'Quiero aparecer en la vitrina', su_ok_view:'Ver mi página', su_up_h:'Aparece en la vitrina', su_up_p:'Tu página gratis funciona con tu enlace. En la vitrina, los clientes te encuentran por servicio y ciudad, y tienes un feed para mostrar fotos de tus trabajos.', su_ig:'Instagram', su_site:'Sitio web', su_opt:'Opcional', pg_h:'¡Pago recibido!', pg_wait:'Estamos confirmando tu pago y publicando tu perfil...', pg_ok:'Todo listo. En unos minutos tu perfil aparecerá en la vitrina y recibirás un correo de confirmación.', pg_btn_painel:'Ir a mi área', pg_btn_entrar:'Entrar en mi área', su_price:'€2,99 el primer mes, después €14,90 al mes. Pago seguro con Stripe. Cancela cuando quieras.', su_ok_wait:'El enlace de pago todavía se está configurando. Te contactaremos por WhatsApp.',
   su_demo:'Prototipo: el registro aún no está conectado a la hoja de cálculo.', country_other:'Otro país', wa_msg:'¡Hola, {name}! Encontré tu perfil en Trustmore y me gustaría un presupuesto.', rev_sent:'Reseña publicada. ¡Gracias por ayudar a la comunidad!', rev_err:'Revisa el formulario e inténtalo de nuevo.', reply:'Respuesta de {name}' },
 };
 T2.pt.nav_login='Entrar'; T2.en.nav_login='Log in'; T2.nl.nav_login='Inloggen'; T2.es.nav_login='Entrar';
 for (const l in T2) { Object.assign(T[l], T2[l]); T[l].K.other = T2[l].other; }
+
+/* Ajustes de 20/11/2026: comparação grátis x vitrine, categorias vazias, "Novo na Trustmore", link rápido /criar */
+Object.assign(T.pt, {cmp_free:'Página grátis', cmp_vit:'Página na vitrine', cmp_rows:[['Link próprio (trustmore.app/seunome)',1,1],['Recebe avaliações',1,1],['Você divulga onde quiser',1,1],['Aparece para quem busca o seu serviço na sua cidade',0,1]], cmp_yes:'Sim', cmp_no:'Não', cmp_price:'Valor', cmp_free_v:'Grátis', cmp_vit_v:'A partir de €2,99', cmp_vit_s:'1º mês, depois €14,90/mês, sem fidelidade', cmp_note:'Sem comissão: o cliente fala direto com você no WhatsApp e o valor do serviço é todo seu. Você cancela sozinho, quando quiser.', soon_h:'Ainda sem profissionais aqui.', soon_ind:['Conhece alguém bom?','Indique.'], soon_new:['Você trabalha com isso?','Crie sua página grátis.'], soon_msg:'Oi! Conheço seu trabalho com {cat} e lembrei de você. Na Trustmore você cria grátis uma página com suas avaliações e um link próprio: {url}', novo:'Novo na Trustmore', cr_h1:'Crie sua página de avaliações grátis', cr_lead:'Link próprio, avaliações reais e você divulga onde quiser.', cr_up:'Quer aparecer na vitrine? Faça o upgrade quando quiser, direto na sua página.', cr_more:'Adicionar foto, descrição e serviços (opcional, dá para fazer depois)'});
+Object.assign(T.en, {cmp_free:'Free page', cmp_vit:'Page in the showcase', cmp_rows:[['Your own link (trustmore.app/yourname)',1,1],['Receives reviews',1,1],['Share it wherever you like',1,1],['Shows up for people looking for your service in your city',0,1]], cmp_yes:'Yes', cmp_no:'No', cmp_price:'Price', cmp_free_v:'Free', cmp_vit_v:'From €2.99', cmp_vit_s:'1st month, then €14.90/month, no minimum contract', cmp_note:'No commission: customers message you directly on WhatsApp and the full price of the job is yours. You cancel yourself, whenever you want.', soon_h:'No professionals here yet.', soon_ind:['Know someone good?','Recommend them.'], soon_new:['Do you do this work?','Create your free page.'], soon_msg:'Hi! I know your work in {cat} and thought of you. On Trustmore you can create a free page with your reviews and your own link: {url}', novo:'New on Trustmore', cr_h1:'Create your free reviews page', cr_lead:'Your own link, real reviews, and you share it wherever you like.', cr_up:'Want to appear in the showcase? Upgrade whenever you like, right from your page.', cr_more:'Add a photo, description and services (optional, you can do it later)'});
+Object.assign(T.nl, {cmp_free:'Gratis pagina', cmp_vit:'Pagina in de etalage', cmp_rows:[['Eigen link (trustmore.app/jouwnaam)',1,1],['Ontvangt reviews',1,1],['Delen waar je wilt',1,1],['Zichtbaar voor mensen die jouw dienst zoeken in jouw stad',0,1]], cmp_yes:'Ja', cmp_no:'Nee', cmp_price:'Prijs', cmp_free_v:'Gratis', cmp_vit_v:'Vanaf €2,99', cmp_vit_s:'1e maand, daarna €14,90/maand, nergens aan vast', cmp_note:'Geen commissie: de klant stuurt je direct een WhatsApp en het volledige bedrag van de klus is voor jou. Je zegt zelf op, wanneer je wilt.', soon_h:'Hier nog geen vakmensen.', soon_ind:['Ken je iemand goeds?','Tip ze.'], soon_new:['Doe jij dit werk?','Maak je gratis pagina.'], soon_msg:'Hoi! Ik ken je werk in {cat} en moest aan je denken. Op Trustmore maak je gratis een pagina met je reviews en je eigen link: {url}', novo:'Nieuw op Trustmore', cr_h1:'Maak je gratis reviewpagina', cr_lead:'Eigen link, echte reviews en je deelt hem waar je wilt.', cr_up:'In de etalage staan? Upgrade wanneer je wilt, direct vanaf je pagina.', cr_more:'Foto, beschrijving en diensten toevoegen (optioneel, kan ook later)'});
+Object.assign(T.es, {cmp_free:'Página gratis', cmp_vit:'Página en la vitrina', cmp_rows:[['Enlace propio (trustmore.app/tunombre)',1,1],['Recibe reseñas',1,1],['Lo compartes donde quieras',1,1],['Apareces a quien busca tu servicio en tu ciudad',0,1]], cmp_yes:'Sí', cmp_no:'No', cmp_price:'Precio', cmp_free_v:'Gratis', cmp_vit_v:'Desde €2,99', cmp_vit_s:'1.er mes, después €14,90/mes, sin permanencia', cmp_note:'Sin comisiones: el cliente te escribe directamente por WhatsApp y el precio del servicio es todo tuyo. Cancelas tú mismo, cuando quieras.', soon_h:'Todavía no hay profesionales aquí.', soon_ind:['¿Conoces a alguien bueno?','Recomiéndalo.'], soon_new:['¿Trabajas en esto?','Crea tu página gratis.'], soon_msg:'¡Hola! Conozco tu trabajo en {cat} y me acordé de ti. En Trustmore puedes crear gratis una página con tus reseñas y tu propio enlace: {url}', novo:'Nuevo en Trustmore', cr_h1:'Crea tu página de reseñas gratis', cr_lead:'Enlace propio, reseñas reales y lo compartes donde quieras.', cr_up:'¿Quieres aparecer en la vitrina? Haz el upgrade cuando quieras, desde tu página.', cr_more:'Añadir foto, descripción y servicios (opcional, puedes hacerlo después)'});
 const EXTRA_C = {pt:{ES:'Espanha',FR:'França',DE:'Alemanha',LU:'Luxemburgo',GB:'Reino Unido',CH:'Suíça',AT:'Áustria'},en:{ES:'Spain',FR:'France',DE:'Germany',LU:'Luxembourg',GB:'United Kingdom',CH:'Switzerland',AT:'Austria'},nl:{ES:'Spanje',FR:'Frankrijk',DE:'Duitsland',LU:'Luxemburg',GB:'Verenigd Koninkrijk',CH:'Zwitserland',AT:'Oostenrijk'},es:{ES:'España',FR:'Francia',DE:'Alemania',LU:'Luxemburgo',GB:'Reino Unido',CH:'Suiza',AT:'Austria'}};
 for (const l in EXTRA_C) { Object.assign(T[l].C, EXTRA_C[l]); T[l].C.OTHER = T2[l].country_other; }
 
@@ -775,6 +816,23 @@ const PROMO = 'BEMVINDO';
 /* Monta o link do Stripe já com o e-mail e o cadastro da pessoa (para o sistema saber quem pagou) */
 const stripeLink = (base, email, ref, promo) => { if (!base) return ''; const q = []; if (email) q.push('prefilled_email=' + encodeURIComponent(email)); if (ref) q.push('client_reference_id=' + encodeURIComponent(ref)); if (promo) q.push('prefilled_promo_code=' + promo); return base + (q.length ? (base.includes('?') ? '&' : '?') + q.join('&') : ''); };
 const WHATSAPP_TRUSTMORE = '31687678875';
+/* Origem da visita (UTM): guarda o último utm_source/medium/campaign/content (ou ?o=) por 60 dias e manda junto com o cadastro */
+const ORIGEM = (() => {
+  try {
+    const q = new URLSearchParams(location.search);
+    const parts = ['utm_source','utm_medium','utm_campaign','utm_content'].map(k => (q.get(k)||'').trim().slice(0,40)).filter(Boolean);
+    if (!parts.length && q.get('o')) parts.push(q.get('o').trim().slice(0,40));
+    if (parts.length) {
+      localStorage.setItem('tm-origem', JSON.stringify({v: parts.join(' / '), t: Date.now()}));
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','o'].forEach(k => q.delete(k));
+      const qs = q.toString();
+      history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+    }
+    const o = JSON.parse(localStorage.getItem('tm-origem') || 'null');
+    return o && Date.now() - o.t < 60 * 864e5 ? o.v : '';
+  } catch(e) { return ''; }
+})();
+
 
 const LANGS = ['pt','en','nl','es'];
 const LOCALE = {pt:'pt-BR',en:'en-GB',nl:'nl-NL',es:'es-ES'};
@@ -926,7 +984,7 @@ function renderChrome(){
       <a href="#sobre" data-r="sobre">${t('nav_about')}</a>
       <a href="#profissionais" data-r="profissionais">${t('nav_pros')}</a>
       <a href="#entrar" data-r="entrar">${t('nav_login')}</a>
-      <a class="btn gold" href="#profissionais">${t('nav_join')}</a>
+      <a class="btn gold" href="#cadastro">${t('nav_join')}</a>
     </div>
     <button class="instbtn" id="inst" type="button">${sv(15,'<path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/>')}<span>${t('inst_btn')}</span></button>
     <label class="lang" for="lang" title="Idioma · Language">${sv(14,P.globe)}
@@ -950,7 +1008,7 @@ function card(p){
   return `<button class="card" data-s="${p.slug}">
     <div class="who">${avatar(p)}
       <div><h3>${esc(p.nome)} ${p.ver?`<span class="ver" title="${t('verified')}">✓</span>`:''}</h3><p>${esc(pcat(p))}</p></div></div>
-    <div class="rate"><span class="stars">${starStr(a)}</span><b>${fmt1(a)}</b><small>(${t('n_reviews',{n:p.total})})</small></div>
+    ${p.total ? `<div class="rate"><span class="stars">${starStr(a)}</span><b>${fmt1(a)}</b><small>(${t('n_reviews',{n:p.total})})</small></div>` : `<div class="rate"><span class="novo">${t('novo')}</span></div>`}
     ${last ? `<p class="quote">“${esc(last.t)}”</p>` : ''}
     <div class="meta">${p.cidades.map(c=>`<span class="tag">${esc(c)}</span>`).join('')}<span class="tag">${esc(country(p.pais))}</span></div>
     <div class="cardfoot"><span>${t('view')}</span><span>→</span></div>
@@ -960,6 +1018,9 @@ function bindCards(){ $$('.card').forEach(b => b.onclick = () => { location.hash
 const faqHtml = list => `<div class="faq">${list.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>`;
 const checks = list => `<ul class="checks">${list.map(x=>`<li>${sv(18,P.check)}<span>${x}</span></li>`).join('')}</ul>`;
 
+/* "Indique": abre o WhatsApp com uma mensagem pronta para mandar ao profissional que a pessoa conhece */
+let suCat = '';
+const soonShare = k => 'https://wa.me/?text=' + encodeURIComponent(t('soon_msg', {cat: cat(k).toLowerCase(), url: 'https://trustmore.app/criar?o=indicacao'}));
 /* ---------- HOME ---------- */
 function renderHome(scrollTo, keep){
   const {paises, cidades} = options();
@@ -985,7 +1046,9 @@ function renderHome(scrollTo, keep){
   <section class="band alt"><div class="wrap">
     <div class="shead"><div class="eyebrow">${t('cat_eyebrow')}</div><h2>${t('cat_h2')}</h2></div>
     <div class="catgrid">${[...CATS].sort((a,b)=>PROS.filter(p=>p.cat===b[0]).length-PROS.filter(p=>p.cat===a[0]).length).map(([k,ic])=>{const n=PROS.filter(p=>p.cat===k).length;
-      return `<button class="cattile" data-c="${k}"><span class="ic">${sv(22,P[ic])}</span><b>${esc(cat(k))}</b><small>${n?nPros(n):t('soon')}</small></button>`}).join('')}</div>
+      return n ? `<button class="cattile" data-c="${k}"><span class="ic">${sv(22,P[ic])}</span><b>${esc(cat(k))}</b><small>${nPros(n)}</small></button>`
+        : `<div class="cattile soon"><span class="ic">${sv(22,P[ic])}</span><b>${esc(cat(k))}</b><small>${t('soon_h')}</small>
+            <span class="soonlinks"><span>${t('soon_ind')[0]} <a href="${soonShare(k)}" target="_blank" rel="noopener">${t('soon_ind')[1]}</a></span><span>${t('soon_new')[0]} <a href="#cadastro" data-cat="${k}">${t('soon_new')[1]}</a></span></span></div>`}).join('')}</div>
   </div></section>
 
   ${POSTS.some(x=>proOf(x)) ? `<section class="band" id="trabalhos-home"><div class="wrap">
@@ -1001,20 +1064,16 @@ function renderHome(scrollTo, keep){
 
   ${trustSection()}
 
-  <section class="band"><div class="wrap proband">
-    <div>
-      <div class="eyebrow">${t('pb_eyebrow')}</div>
-      <h2>${t('pb_h2')}</h2>
-      <p class="lead">${t('pb_lead')}</p>
-      ${checks(t('pb_checks'))}
-      <a class="btn navy" href="#profissionais">${t('pb_btn')}</a>
-    </div>
-    <div class="mock">
-      <div class="who"><div class="av" style="background:#12305c">JR</div><div><h3>Juliana Rocha <span class="ver">✓</span></h3><p>${esc(cat('clean'))} · Amsterdam</p></div></div>
-      <div class="stat"><span>${t('m_contacts')}</span><b>14</b></div>
-      <div class="stat"><span>${t('m_visits')}</span><b>212</b></div>
-      <div class="stat"><span>${t('m_rating')}</span><b>${fmt1(4.7)} ★</b></div>
-      <p class="note">${t('m_note')}</p>
+  <section class="band" id="para-profissionais"><div class="wrap">
+    <div class="shead"><div class="eyebrow">${t('pb_eyebrow')}</div><h2>${t('pb_h2')}</h2><p class="lead">${t('pb_lead')}</p></div>
+    <div class="cmpwrap">
+      ${cmpTable()}
+      <div class="mock">
+        <div class="who"><div class="av" style="background:#12305c">JR</div><div><h3>Juliana Rocha <span class="ver">✓</span></h3><p>${esc(cat('clean'))} · Amsterdam</p></div></div>
+        <div class="stat"><span>${t('m_visits')}</span>${SPARK}</div>
+        <div class="stat"><span>${t('m2_contacts')}</span>${SPARK}</div>
+        <p class="note">${t('m_note')}</p>
+      </div>
     </div>
   </div></section>
 
@@ -1029,7 +1088,8 @@ function renderHome(scrollTo, keep){
   $('#f-pais').onchange = e => { state.pais=e.target.value; state.cidade=''; renderHome('resultados'); };
   $('#f-cid').onchange = e => { state.cidade=e.target.value; renderResults(); };
   $('#go').onclick = go;
-  $$('.cattile').forEach(b => b.onclick = () => { state.cat=b.dataset.c; $('#f-cat').value=state.cat; renderResults(); go(); });
+  $$('button.cattile').forEach(b => b.onclick = () => { state.cat=b.dataset.c; $('#f-cat').value=state.cat; renderResults(); go(); });
+  $$('.soonlinks a[data-cat]').forEach(a => a.onclick = () => { suCat = a.dataset.cat; });
   renderResults();
   bindPosts();
   if (keep) return;
@@ -1054,6 +1114,21 @@ function renderResults(){
   const clr = $('#clr'); if (clr) clr.onclick = () => { state.cat=''; state.pais=''; state.cidade=''; renderHome('resultados'); };
   bindCards();
 }
+/* Painel de exemplo: barrinhas no lugar de números (não soa como promessa de resultado) */
+const SPARK = '<svg width="64" height="22" viewBox="0 0 64 22" aria-hidden="true" style="flex:none">' + [9,13,8,15,12,18,21].map((h,i)=>`<rect x="${i*9}" y="${22-h}" width="6" height="${h}" rx="1.5" fill="${i>4?'#d99a2b':'#d9d6cc'}"/>`).join('') + '</svg>';
+/* Comparação página grátis x página na vitrine (mesma do story 4 do destaque "Seja encontrado") */
+function cmpTable(){
+  const yn = v => v ? `<span class="yes">${sv(16,P.check)} ${t('cmp_yes')}</span>` : `<span class="no">${t('cmp_no')}</span>`;
+  return `<div class="cmp">
+    <table>
+      <thead><tr><th></th><th>${t('cmp_free')}</th><th class="on">${t('cmp_vit')}</th></tr></thead>
+      <tbody>${t('cmp_rows').map(([r,a,b])=>`<tr><th scope="row">${r}</th><td>${yn(a)}</td><td class="on">${yn(b)}</td></tr>`).join('')}
+        <tr class="price"><th scope="row">${t('cmp_price')}</th><td><b>${t('cmp_free_v')}</b></td><td class="on"><b>${t('cmp_vit_v')}</b><small>${t('cmp_vit_s')}</small></td></tr></tbody>
+      <tfoot><tr><th></th><td><a class="btn gold" href="#cadastro">${t('cb_btn')}</a></td><td class="on"><a class="btn navy" href="#cadastro">${t('pb_btn')}</a></td></tr></tfoot>
+    </table>
+    <p class="cmpnote">${t('cmp_note')}</p>
+  </div>`;
+}
 function trustSection(){
   const ic = ['star','eye','shield','users'];
   return `<section class="band dark" id="confianca"><div class="wrap"><div class="trust">
@@ -1069,7 +1144,7 @@ function trustSection(){
 function finalCta(){
   return `<section class="band"><div class="wrap duo">
     <div class="a"><div class="eyebrow">${t('ca_eyebrow')}</div><h3>${t('ca_h')}</h3><p>${t('ca_p')}</p><a class="btn gold" href="#">${t('nav_find')}</a></div>
-    <div class="b"><div class="eyebrow">${t('cb_eyebrow')}</div><h3>${t('cb_h')}</h3><p>${t('cb_p')}</p><a class="btn navy" href="#profissionais">${t('cb_btn')}</a></div>
+    <div class="b"><div class="eyebrow">${t('cb_eyebrow')}</div><h3>${t('cb_h')}</h3><p>${t('cb_p')}</p><a class="btn navy" href="#cadastro">${t('cb_btn')}</a></div>
   </div></section>`;
 }
 
@@ -1128,9 +1203,9 @@ function renderPros(){
     <div><div class="eyebrow">${t('r_eyebrow')}</div><h2>${t('r_h2')}</h2><p class="lead">${t('r_lead')}</p>${checks(t('r'))}</div>
     <div class="mock">
       <div class="who"><div class="av" style="background:#1f6f5c">CM</div><div><h3>Clara Mendes <span class="ver">✓</span></h3><p>${esc(cat('uph'))} · Bruxelles</p></div></div>
-      <div class="stat"><span>${t('m2_contacts')}</span><b>9</b></div>
-      <div class="stat"><span>${t('m_visits')}</span><b>148</b></div>
-      <div class="stat"><span>${t('m2_new')}</span><b>3</b></div>
+      <div class="stat"><span>${t('m2_contacts')}</span>${SPARK}</div>
+      <div class="stat"><span>${t('m_visits')}</span>${SPARK}</div>
+      <div class="stat"><span>${t('m2_new')}</span>${SPARK}</div>
       <p class="note">${t('m2_note')}</p>
     </div>
   </div></section>
@@ -1145,17 +1220,18 @@ function renderPros(){
 }
 
 /* ---------- CADASTRO DO PROFISSIONAL ---------- */
-function renderCadastro(){
+function renderCadastro(compact){
   const countries = Object.keys(t('C'));
   const field = (id, label, input, hint) => `<label for="${id}" style="display:grid;gap:5px"><b style="font-size:14.5px">${label}</b>${input}${hint?`<span class="hint">${hint}</span>`:''}</label>`;
   const inp = (id, type, extra='') => `<input id="${id}" type="${type}" ${extra} style="width:100%;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:11px 12px">`;
   const sel = (id, opts) => `<select id="${id}" style="width:100%;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:11px 12px">${opts}</select>`;
   $('#app').innerHTML = `
-  <header class="pagehero"><div class="wrap">
+  ${compact ? '' : `<header class="pagehero"><div class="wrap">
     <div class="eyebrow">${t('su_eyebrow')}</div><h1>${t('su_h1')}</h1><p class="lead">${t('su_lead')}</p>
-  </div></header>
-  <section class="band alt"><div class="wrap" style="max-width:760px">
-    <form id="su" class="box" style="display:grid;gap:18px;padding:26px" novalidate>
+  </div></header>`}
+  <section class="band ${compact ? '' : 'alt'}" style="${compact ? 'padding-top:0' : ''}"><div class="wrap" style="max-width:760px">
+    ${compact ? `<div class="crhero"><h1>${t('cr_h1')}</h1><p>${t('cr_lead')}</p></div>` : ''}
+    <form id="su" class="box" style="display:grid;gap:18px;padding:${compact ? '20px' : '26px'}" novalidate>
       <input id="su-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
       ${field('su-nome', t('su_name'), inp('su-nome','text','required autocomplete="name" maxlength="80"'))}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
@@ -1168,6 +1244,7 @@ function renderCadastro(){
       </div>
       <div id="su-other-wrap" hidden>${field('su-other', t('su_cat_other'), inp('su-other','text','maxlength="60"'))}</div>
       ${field('su-cid', t('su_cities'), inp('su-cid','text','maxlength="200"'), t('su_cities_hint'))}
+      ${compact ? `<details class="crmore"><summary>${t('cr_more')}</summary>` : ''}
       <fieldset style="border:0;padding:0;margin:0;display:grid;gap:8px"><legend style="font-weight:700;font-size:14.5px;margin-bottom:6px">${t('su_langs')}</legend>
         <div style="display:flex;flex-wrap:wrap;gap:8px 16px">${['pt','en','nl','es','it','fr'].map(l=>`<label style="display:flex;gap:6px;align-items:center"><input type="checkbox" value="${l}" class="su-l" ${l===lang?'checked':''}>${esc(t('L')[l])}</label>`).join('')}</div></fieldset>
       ${field('su-bio', t('su_bio'), `<textarea id="su-bio" maxlength="800" style="width:100%;min-height:110px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:11px 12px;resize:vertical"></textarea>`, t('su_bio_hint'))}
@@ -1177,12 +1254,16 @@ function renderCadastro(){
         ${field('su-site', t('su_site'), inp('su-site','url','maxlength="200" placeholder="www.seusite.com"'), t('su_opt'))}
       </div>
       ${field('su-foto', t('su_photo'), `<input id="su-foto" type="file" accept="image/*">`, t('su_photo_hint'))}
-      <label style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px"><input id="su-ok" type="checkbox" style="margin-top:4px">${t('su_terms')}</label>
+      ${compact ? '</details>' : ''}
+      <label style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px"><input id="su-ok" type="checkbox" style="margin-top:4px"><span>${t('su_terms')}</span></label>
       <button class="btn gold" type="submit" id="su-btn" style="justify-self:start">${t('su_btn')}</button>
       <p class="hint" id="su-msg" role="status"></p>
     </form>
     <div id="su-done" class="box" style="padding:30px;display:none;text-align:center"></div>
+    ${compact ? `<p class="crup" id="cr-up">${t('cr_up')}</p>` : ''}
   </div></section>`;
+  if (suCat) { $('#su-cat').value = suCat; suCat = ''; }
+  $('#su-other-wrap').hidden = $('#su-cat').value !== 'other';
   $('#su-cat').onchange = e => { $('#su-other-wrap').hidden = e.target.value !== 'other'; };
   let foto = '';
   $('#su-foto').onchange = async e => { const f = e.target.files[0]; foto = f ? await shrink(f) : ''; };
@@ -1191,7 +1272,7 @@ function renderCadastro(){
     const v = id => $(id).value.trim();
     const body = {a:'signup', hp:v('#su-hp'), nome:v('#su-nome'), email:v('#su-email'), whatsapp:v('#su-zap'), categoria:v('#su-cat'), categoria_outro:v('#su-other'),
       pais:v('#su-pais'), cidades:v('#su-cid').split(',').map(s=>s.trim()).filter(Boolean), linguas:[...$$('.su-l')].filter(c=>c.checked).map(c=>c.value),
-      bio:v('#su-bio'), bio_lingua:lang, servicos:v('#su-srv').split(',').map(s=>s.trim()).filter(Boolean), instagram:v('#su-ig'), site:v('#su-site'), foto};
+      bio:v('#su-bio'), bio_lingua:lang, servicos:v('#su-srv').split(',').map(s=>s.trim()).filter(Boolean), instagram:v('#su-ig'), site:v('#su-site'), foto, origem:(ORIGEM || 'direto') + (compact ? ' [criar]' : '')};
     if (!body.nome || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email) || body.whatsapp.replace(/\D/g,'').length < 8 || !$('#su-ok').checked) { $('#su-msg').textContent = t('su_err'); return; }
     if (!LIVE) { toast(t('su_demo')); return showDone('exemplo', body.email, '', body.nome); }
     $('#su-btn').disabled = true; $('#su-msg').textContent = t('su_sending');
@@ -1208,7 +1289,7 @@ function showDone(slug, email, ref, nome){
   if (ref) ownSet({slug, ref, email});
   const nm = String(nome||'').trim().split(/\s+/)[0] || '';
   const li = (arr, on) => arr.map(x => `<li>${sv(16, on ? P.check : P.check)}<span>${x}</span></li>`).join('');
-  $('#su').style.display = 'none';
+  $('#su').style.display = 'none'; const cu = $('#cr-up'); if (cu) cu.hidden = true; const ch = $('.crhero'); if (ch) ch.hidden = true;
   const d = $('#su-done'); d.style.display = 'block'; d.className = ''; d.style.textAlign = 'left'; d.style.padding = '0';
   d.innerHTML = `<div class="upwrap">
     <div class="uphead"><div class="okic">${sv(28,P.check)}</div>
@@ -1255,7 +1336,7 @@ function renderProfile(p){
     <button class="back" id="back">${t('back')}</button>
     <div class="phead">${avatar(p)}
       <div><h1>${esc(p.nome)}</h1><p>${esc(pcat(p))} · ${esc(p.cidades.join(', '))} (${esc(country(p.pais))})</p>
-      <div class="rate"><span class="stars">${starStr(a)}</span><b>${fmt1(a)}</b><small>${t('n_reviews',{n:p.revs.length})}${p.ver?' · '+t('verified'):''}</small></div></div></div>
+      <div class="rate">${p.revs.length ? `<span class="stars">${starStr(a)}</span><b>${fmt1(a)}</b><small>${t('n_reviews',{n:p.revs.length})}${p.ver?' · '+t('verified'):''}</small>` : `<span class="novo">${t('novo')}</span>${p.ver?`<small>${t('verified')}</small>`:''}`}</div></div></div>
   </div></header>
   <div class="wrap"><div class="sheet">
     <div>
@@ -1266,7 +1347,7 @@ function renderProfile(p){
         <dt>${t('f_since')}</dt><dd>${t('since',{y:p.desde})}</dd></dl></section>
       ${(() => { const mine = POSTS.filter(x=>x.slug===p.slug); return mine.length ? `<section class="box"><h2>${t('fd_pro_h',{name:esc(nm)})}</h2><div class="feedgrid sm">${mine.map(x=>postCard(x,true)).join('')}</div></section>` : ''; })()}
       <section class="box"><h2>${t('rev_h')}</h2>
-        <div class="revsum"><div><div class="big">${fmt1(a)}</div><span class="stars">${starStr(a)}</span><div class="hint">${t('n_reviews',{n:p.revs.length})}</div></div>
+        <div class="revsum" ${p.revs.length ? '' : 'hidden'}><div><div class="big">${fmt1(a)}</div><span class="stars">${starStr(a)}</span><div class="hint">${t('n_reviews',{n:p.revs.length})}</div></div>
           <div class="bars">${dist.map(([s,n])=>`<div><span>${s}</span><i><span style="width:${p.revs.length?n/p.revs.length*100:0}%"></span></i><span>${n}</span></div>`).join('')}</div></div>
         <div id="revs">${p.revs.map(r=>rev(r,nm)).join('')}</div></section>
       <section class="box" id="avaliar"><h2>${t('rate_h',{name:esc(nm)})}</h2>
@@ -1505,9 +1586,9 @@ function bindPainelFeed(me){
 Object.assign(T.pt, {
   in_eyebrow:'Área do profissional', in_h1:'Entre na sua área', in_lead:'Digite o e-mail do seu cadastro. Mandamos um link de acesso na hora, sem senha para lembrar.',
   in_email:'Seu e-mail', in_btn:'Receber link de acesso', in_sent:'Pronto! Se esse e-mail tiver um perfil na Trustmore, o link de acesso chega em instantes. Confira também o spam.',
-  in_demo:'Ver painel de exemplo', in_new:'Ainda não tem perfil?', in_new_link:'Criar meu perfil',
+  in_demo:'Ver painel de exemplo', in_new:'Ainda não tem sua página?', in_new_link:'Criar minha página grátis',
   d_hello:'Olá, {name}!', d_tabs:['Início','Meu perfil','Avaliações','Feed','Conta'],
-  d_live:'Perfil no ar', d_pend:'Perfil grátis · fora da vitrine', d_view:'Ver meu perfil público', d_month:'Seus números de {m}',
+  d_live:'Perfil no ar', d_pend:'Página grátis · fora da vitrine', d_view:'Ver meu perfil público', d_month:'Seus números de {m}',
   d_k:['Visitas no perfil','Contatos pelo WhatsApp','Novas avaliações','Nota média'], d_vs:'+{n} que no mês passado',
   d_link_h:'Seu link', d_link_p:'Coloque na bio do Instagram, no status do WhatsApp e mande nos grupos.',
   d_grow_h:'Deixe seu perfil completo', d_grow_p:'Perfis completos aparecem primeiro e recebem mais contatos.',
@@ -1518,7 +1599,7 @@ Object.assign(T.pt, {
   e_verify_h:'Selo verificado', e_verify_p:'Com o selo verde, seu perfil aparece no topo das buscas da sua cidade e passa mais segurança aos clientes. Para ativar, você confirma sua identidade numa chamada rápida com a Trustmore.', e_verify_btn:'Quero o selo verificado · €4,90/mês', e_verify_ok:'Pedido enviado. Vamos te chamar no WhatsApp com os detalhes do selo.', e_verify_wait:'Pagamento do selo recebido! Vamos te chamar no WhatsApp para uma confirmação rápida de identidade. Depois disso, o selo aparece no seu perfil.', e_verify_late:'O pagamento do selo não foi renovado, por isso ele saiu do seu perfil. Assine de novo para voltar ao topo.',
   r_h:'Suas avaliações', r_p:'Você não pode apagar avaliações, mas pode responder. Responder com educação, até a uma crítica, passa muita confiança.',
   r_reply:'Responder', r_edit:'Editar resposta', r_save:'Publicar resposta', r_report:'Denunciar', r_reported:'Enviado. A Trustmore vai analisar essa avaliação.', r_replied:'Resposta publicada.', r_ph:'Escreva sua resposta...', r_none:'Você ainda não tem avaliações. Use o botão "Pedir avaliação" no Início.',
-  s_plan_free:'Perfil grátis · link e avaliações (fora da vitrine)', d_up_h:'Apareça na vitrine', d_up_p:'Hoje seu perfil funciona pelo seu link. Na vitrine, os clientes te encontram buscando pelo serviço e pela cidade, e você libera o feed de fotos e o selo verificado.', d_feed_lock:'O feed de trabalhos é para quem está na vitrine. Ative a assinatura para postar fotos dos seus serviços.', e_verify_free:'O selo verificado é para quem está na vitrine. Ative a assinatura primeiro, na aba Início.', s_h:'Seu plano', s_plan:'Plano', s_plan_v:'Vitrine Trustmore · €14,90 por mês', s_status:'Situação', s_next:'Próxima cobrança', s_portal:'Gerenciar assinatura', s_portal_p:'Troque o cartão, veja suas faturas ou cancele quando quiser, direto no Stripe.', s_activate_p:'€2,99 no primeiro mês, depois €14,90 por mês. Cancele quando quiser.', s_reactivate_p:'Sua assinatura foi cancelada. Suas avaliações e posts continuam guardados: é só assinar de novo para voltar à vitrine.', s_since:'Na Trustmore desde', s_manage:'Renovar por mais 30 dias', s_manage_p:'Cada pagamento deixa seu perfil no ar por 30 dias. Sem fidelidade: você renova quando quiser, e avisamos por e-mail antes de vencer.',
+  s_plan_free:'Página grátis · link e avaliações (fora da vitrine)', d_up_h:'Apareça na vitrine', d_up_p:'Hoje sua página funciona pelo seu link. Na vitrine, os clientes te encontram buscando pelo serviço e pela cidade, e você libera o feed de fotos e o selo verificado.', d_feed_lock:'O feed de trabalhos é para quem está na vitrine. Ative a assinatura para postar fotos dos seus serviços.', e_verify_free:'O selo verificado é para quem está na vitrine. Ative a assinatura primeiro, na aba Início.', s_h:'Seu plano', s_plan:'Plano', s_plan_v:'Vitrine Trustmore · €14,90 por mês', s_status:'Situação', s_next:'Próxima cobrança', s_portal:'Gerenciar assinatura', s_portal_p:'Troque o cartão, veja suas faturas ou cancele quando quiser, direto no Stripe.', s_activate_p:'€2,99 no primeiro mês, depois €14,90 por mês. Cancele quando quiser.', s_reactivate_p:'Sua assinatura foi cancelada. Suas avaliações e posts continuam guardados: é só assinar de novo para voltar à vitrine.', s_since:'Na Trustmore desde', s_manage:'Renovar por mais 30 dias', s_manage_p:'Cada pagamento deixa seu perfil no ar por 30 dias. Sem fidelidade: você renova quando quiser, e avisamos por e-mail antes de vencer.',
   s_plan_life:'Cliente fundador · vitalício, sem mensalidade', s_life_p:'Obrigado por acreditar na Trustmore desde o começo. Seu perfil fica na vitrine sem custo, para sempre.', s_free:'No ar sem custo até', s_help_h:'Precisa de ajuda?', s_help_p:'Fale com a Trustmore pelo WhatsApp:', s_logout:'Sair da minha área', s_t_manage:'Protótipo: no site real, abre a página do Stripe para trocar o cartão ou cancelar.',
   d_demo:'Protótipo: este é um painel de exemplo com dados fictícios.',
 });
@@ -1691,9 +1772,9 @@ Object.assign(T.en, {
   pf_mine:'Your posts', pf_del:'Remove', pf_deleted:'Post removed.', pf_none:'You haven’t posted any work yet.', pf_stats:'{l} likes · {c} comments',
   in_eyebrow:'Professional area', in_h1:'Log in to your area', in_lead:'Enter the email you signed up with. We’ll send you an access link right away — no password to remember.',
   in_email:'Your email', in_btn:'Send me an access link', in_sent:'Done! If this email has a Trustmore profile, the access link will arrive in a moment. Check your spam folder too.',
-  in_demo:'See a sample dashboard', in_new:'Don’t have a profile yet?', in_new_link:'Create my profile',
+  in_demo:'See a sample dashboard', in_new:'Don’t have a page yet?', in_new_link:'Create my free page',
   d_hello:'Hi, {name}!', d_tabs:['Home','My profile','Reviews','Feed','Account'],
-  d_live:'Profile live', d_pend:'Free profile · not in the showcase', d_view:'View my public profile', d_month:'Your numbers for {m}',
+  d_live:'Profile live', d_pend:'Free page · not in the showcase', d_view:'View my public profile', d_month:'Your numbers for {m}',
   d_k:['Profile visits','WhatsApp contacts','New reviews','Average rating'], d_vs:'+{n} vs last month',
   d_link_h:'Your link', d_link_p:'Add it to your Instagram bio and WhatsApp status, and share it in groups.',
   d_grow_h:'Complete your profile', d_grow_p:'Complete profiles appear first and get more contacts.',
@@ -1708,7 +1789,7 @@ Object.assign(T.en, {
   r_h:'Your reviews', r_p:'You can’t delete reviews, but you can reply. A polite reply, even to criticism, builds a lot of trust.',
   r_reply:'Reply', r_edit:'Edit reply', r_save:'Publish reply', r_report:'Report', r_reported:'Sent. Trustmore will look into this review.', r_replied:'Reply published.', r_ph:'Write your reply...',
   r_none:'You don’t have any reviews yet. Use the "Ask for a review" button on Home.',
-  s_plan_free:'Free profile · link and reviews (not in the showcase)', d_up_h:'Get into the showcase', d_up_p:'Right now your profile works through your link. In the showcase, customers find you by service and city, and you unlock the photo feed and the verified badge.', d_feed_lock:'The work feed is for professionals in the showcase. Activate the subscription to post photos of your jobs.', e_verify_free:'The verified badge is for professionals in the showcase. Activate the subscription first, on the Home tab.', s_h:'Your plan', s_plan:'Plan', s_plan_v:'Trustmore Showcase · €14.90 per month', s_status:'Status', s_next:'Next payment', s_portal:'Manage subscription',
+  s_plan_free:'Free page · link and reviews (not in the showcase)', d_up_h:'Get into the showcase', d_up_p:'Right now your page works through your link. In the showcase, customers find you by service and city, and you unlock the photo feed and the verified badge.', d_feed_lock:'The work feed is for professionals in the showcase. Activate the subscription to post photos of your jobs.', e_verify_free:'The verified badge is for professionals in the showcase. Activate the subscription first, on the Home tab.', s_h:'Your plan', s_plan:'Plan', s_plan_v:'Trustmore Showcase · €14.90 per month', s_status:'Status', s_next:'Next payment', s_portal:'Manage subscription',
   s_portal_p:'Change your card, see your invoices or cancel anytime, directly on Stripe.', s_activate_p:'€2.99 for the first month, then €14.90 per month. Cancel anytime.',
   s_reactivate_p:'Your subscription was cancelled. Your reviews and posts are still saved — just subscribe again to get back into the showcase.',
   s_since:'On Trustmore since', s_manage:'Renew for 30 more days', s_manage_p:'Each payment keeps your profile live for 30 days. No commitment: renew whenever you like, and we’ll email you before it expires.',
@@ -1725,9 +1806,9 @@ Object.assign(T.nl, {
   pf_mine:'Jouw posts', pf_del:'Verwijderen', pf_deleted:'Post verwijderd.', pf_none:'Je hebt nog geen werk geplaatst.', pf_stats:'{l} likes · {c} reacties',
   in_eyebrow:'Omgeving voor professionals', in_h1:'Log in op je omgeving', in_lead:'Vul het e-mailadres van je aanmelding in. We sturen je meteen een toegangslink, zonder wachtwoord.',
   in_email:'Je e-mailadres', in_btn:'Stuur mij een toegangslink', in_sent:'Klaar! Als dit e-mailadres een Trustmore-profiel heeft, komt de toegangslink zo binnen. Kijk ook in je spam.',
-  in_demo:'Voorbeelddashboard bekijken', in_new:'Nog geen profiel?', in_new_link:'Mijn profiel aanmaken',
+  in_demo:'Voorbeelddashboard bekijken', in_new:'Nog geen pagina?', in_new_link:'Maak mijn gratis pagina',
   d_hello:'Hoi, {name}!', d_tabs:['Start','Mijn profiel','Reviews','Feed','Account'],
-  d_live:'Profiel online', d_pend:'Gratis profiel · niet in de etalage', d_view:'Mijn openbare profiel bekijken', d_month:'Jouw cijfers van {m}',
+  d_live:'Profiel online', d_pend:'Gratis pagina · niet in de etalage', d_view:'Mijn openbare profiel bekijken', d_month:'Jouw cijfers van {m}',
   d_k:['Profielbezoeken','Contact via WhatsApp','Nieuwe reviews','Gemiddelde score'], d_vs:'+{n} t.o.v. vorige maand',
   d_link_h:'Jouw link', d_link_p:'Zet hem in je Instagram-bio en WhatsApp-status en deel hem in groepen.',
   d_grow_h:'Maak je profiel compleet', d_grow_p:'Complete profielen staan bovenaan en krijgen meer contact.',
@@ -1742,7 +1823,7 @@ Object.assign(T.nl, {
   r_h:'Jouw reviews', r_p:'Je kunt reviews niet verwijderen, maar wel reageren. Een beleefde reactie, ook op kritiek, wekt veel vertrouwen.',
   r_reply:'Reageren', r_edit:'Reactie bewerken', r_save:'Reactie plaatsen', r_report:'Melden', r_reported:'Verstuurd. Trustmore bekijkt deze review.', r_replied:'Reactie geplaatst.', r_ph:'Schrijf je reactie...',
   r_none:'Je hebt nog geen reviews. Gebruik de knop "Vraag om een review" op Start.',
-  s_plan_free:'Gratis profiel · link en reviews (niet in de etalage)', d_up_h:'Kom in de etalage', d_up_p:'Nu werkt je profiel via je link. In de etalage vinden klanten je op dienst en stad, en ontgrendel je de fotofeed en de geverifieerd-badge.', d_feed_lock:'De werkfeed is voor vakmensen in de etalage. Activeer het abonnement om foto’s van je klussen te plaatsen.', e_verify_free:'De geverifieerd-badge is voor vakmensen in de etalage. Activeer eerst het abonnement, op het tabblad Start.', s_h:'Jouw abonnement', s_plan:'Abonnement', s_plan_v:'Trustmore-etalage · €14,90 per maand', s_status:'Status', s_next:'Volgende betaling', s_portal:'Abonnement beheren',
+  s_plan_free:'Gratis pagina · link en reviews (niet in de etalage)', d_up_h:'Kom in de etalage', d_up_p:'Nu werkt je pagina via je link. In de etalage vinden klanten je op dienst en stad, en ontgrendel je de fotofeed en de geverifieerd-badge.', d_feed_lock:'De werkfeed is voor vakmensen in de etalage. Activeer het abonnement om foto’s van je klussen te plaatsen.', e_verify_free:'De geverifieerd-badge is voor vakmensen in de etalage. Activeer eerst het abonnement, op het tabblad Start.', s_h:'Jouw abonnement', s_plan:'Abonnement', s_plan_v:'Trustmore-etalage · €14,90 per maand', s_status:'Status', s_next:'Volgende betaling', s_portal:'Abonnement beheren',
   s_portal_p:'Wijzig je kaart, bekijk je facturen of zeg op wanneer je wilt, direct bij Stripe.', s_activate_p:'€2,99 de eerste maand, daarna €14,90 per maand. Altijd opzegbaar.',
   s_reactivate_p:'Je abonnement is opgezegd. Je reviews en posts zijn bewaard: neem gewoon opnieuw een abonnement om terug te komen in de etalage.',
   s_since:'Bij Trustmore sinds', s_manage:'30 dagen verlengen', s_manage_p:'Elke betaling houdt je profiel 30 dagen online. Geen verplichting: verleng wanneer je wilt; we mailen je voordat het afloopt.',
@@ -1759,9 +1840,9 @@ Object.assign(T.es, {
   pf_mine:'Tus publicaciones', pf_del:'Eliminar', pf_deleted:'Publicación eliminada.', pf_none:'Todavía no has publicado ningún trabajo.', pf_stats:'{l} me gusta · {c} comentarios',
   in_eyebrow:'Área del profesional', in_h1:'Entra en tu área', in_lead:'Escribe el correo con el que te registraste. Te enviamos un enlace de acceso al momento, sin contraseña que recordar.',
   in_email:'Tu correo', in_btn:'Recibir enlace de acceso', in_sent:'¡Listo! Si este correo tiene un perfil en Trustmore, el enlace llegará en unos instantes. Revisa también el spam.',
-  in_demo:'Ver panel de ejemplo', in_new:'¿Todavía no tienes perfil?', in_new_link:'Crear mi perfil',
+  in_demo:'Ver panel de ejemplo', in_new:'¿Todavía no tienes tu página?', in_new_link:'Crear mi página gratis',
   d_hello:'¡Hola, {name}!', d_tabs:['Inicio','Mi perfil','Reseñas','Feed','Cuenta'],
-  d_live:'Perfil publicado', d_pend:'Perfil gratis · fuera de la vitrina', d_view:'Ver mi perfil público', d_month:'Tus números de {m}',
+  d_live:'Perfil publicado', d_pend:'Página gratis · fuera de la vitrina', d_view:'Ver mi perfil público', d_month:'Tus números de {m}',
   d_k:['Visitas al perfil','Contactos por WhatsApp','Nuevas reseñas','Nota media'], d_vs:'+{n} que el mes pasado',
   d_link_h:'Tu enlace', d_link_p:'Ponlo en la bio de Instagram y en el estado de WhatsApp, y compártelo en los grupos.',
   d_grow_h:'Completa tu perfil', d_grow_p:'Los perfiles completos aparecen primero y reciben más contactos.',
@@ -1776,7 +1857,7 @@ Object.assign(T.es, {
   r_h:'Tus reseñas', r_p:'No puedes borrar reseñas, pero sí responder. Una respuesta educada, incluso a una crítica, da mucha confianza.',
   r_reply:'Responder', r_edit:'Editar respuesta', r_save:'Publicar respuesta', r_report:'Denunciar', r_reported:'Enviado. Trustmore revisará esta reseña.', r_replied:'Respuesta publicada.', r_ph:'Escribe tu respuesta...',
   r_none:'Todavía no tienes reseñas. Usa el botón "Pedir reseña" en Inicio.',
-  s_plan_free:'Perfil gratis · enlace y reseñas (fuera de la vitrina)', d_up_h:'Aparece en la vitrina', d_up_p:'Ahora tu perfil funciona con tu enlace. En la vitrina, los clientes te encuentran por servicio y ciudad, y desbloqueas el feed de fotos y la insignia verificada.', d_feed_lock:'El feed de trabajos es para quienes están en la vitrina. Activa la suscripción para publicar fotos de tus servicios.', e_verify_free:'La insignia verificada es para quienes están en la vitrina. Activa primero la suscripción, en la pestaña Inicio.', s_h:'Tu plan', s_plan:'Plan', s_plan_v:'Vitrina Trustmore · €14,90 al mes', s_status:'Estado', s_next:'Próximo cobro', s_portal:'Gestionar suscripción',
+  s_plan_free:'Página gratis · enlace y reseñas (fuera de la vitrina)', d_up_h:'Aparece en la vitrina', d_up_p:'Ahora tu página funciona con tu enlace. En la vitrina, los clientes te encuentran por servicio y ciudad, y desbloqueas el feed de fotos y la insignia verificada.', d_feed_lock:'El feed de trabajos es para quienes están en la vitrina. Activa la suscripción para publicar fotos de tus servicios.', e_verify_free:'La insignia verificada es para quienes están en la vitrina. Activa primero la suscripción, en la pestaña Inicio.', s_h:'Tu plan', s_plan:'Plan', s_plan_v:'Vitrina Trustmore · €14,90 al mes', s_status:'Estado', s_next:'Próximo cobro', s_portal:'Gestionar suscripción',
   s_portal_p:'Cambia la tarjeta, mira tus facturas o cancela cuando quieras, directamente en Stripe.', s_activate_p:'€2,99 el primer mes, después €14,90 al mes. Cancela cuando quieras.',
   s_reactivate_p:'Tu suscripción fue cancelada. Tus reseñas y publicaciones siguen guardadas: solo tienes que suscribirte de nuevo para volver a la vitrina.',
   s_since:'En Trustmore desde', s_manage:'Renovar 30 días más', s_manage_p:'Cada pago mantiene tu perfil publicado 30 días. Sin permanencia: renueva cuando quieras y te avisamos por correo antes de que venza.',
@@ -1827,6 +1908,7 @@ async function renderPago(){
 }
 async function route(keep){
   const h = location.hash.slice(1);
+  document.body.classList.toggle('focus', h === 'criar');
   renderTabbar();
   if (!keep) { const a = $('#app'); a.classList.remove('enter'); void a.offsetWidth; a.classList.add('enter'); }
   $$('.links a[data-r]').forEach(a => { if (a.dataset.r === h) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
@@ -1847,6 +1929,7 @@ async function route(keep){
   }
   if (h === 'pago') { renderPago(); window.scrollTo(0,0); return; }
   if (h === 'cadastro') { renderCadastro(); if (!keep) window.scrollTo(0,0); return; }
+  if (h === 'criar') { renderCadastro(true); if (!keep) window.scrollTo(0,0); return; }
   if (h === 'trabalhos') { renderFeed(); if (!keep) window.scrollTo(0,0); return; }
   if (h === 'entrar') { renderEntrar(); if (!keep) window.scrollTo(0,0); return; }
   if (h === 'painel') { renderPainel(); if (!keep) window.scrollTo(0,0); return; }
