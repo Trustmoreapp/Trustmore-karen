@@ -483,6 +483,10 @@ details.crmore[open]{display:grid;gap:18px}
 .search .sq{grid-column:1/-1;border-bottom:1px solid var(--line);border-radius:10px 10px 0 0;padding-bottom:10px}
 .search input[type=search]{border:0;background:transparent;padding:4px 0 2px;font:inherit;font-weight:600;font-size:16px;color:var(--fg);width:100%;outline:none}
 .search input[type=search]::placeholder{color:var(--muted);font-weight:500}
+
+/* Home 21/11/2026: Confiança só com as dicas, preço da vitrine em dourado */
+.tips.tips-only{margin-top:18px}
+.cmp tr.price td.on b{color:var(--gold)}
 /* Upsell: perfil grátis -> vitrine */
 .upwrap{max-width:760px;margin:0 auto;text-align:left}
 .uphead{text-align:center}
@@ -538,18 +542,18 @@ pt:{
  rights:'© 2026 Trustmore. Todos os direitos reservados.', legal:'Termos de uso · Privacidade',
  hero_eyebrow:'Profissionais autônomos com avaliações reais',
  hero_h1:'Contrate com confiança. <em>Veja quem já contratou</em> antes de você.',
- hero_lead:'Faxina, obra, beleza, mudança e muito mais. Profissionais com avaliações reais de clientes e contato direto pelo WhatsApp.',
+ hero_lead:'Profissionais com avaliações reais de clientes e contato direto pelo WhatsApp.',
  s_need:'O que você precisa?', s_all_srv:'Todos os serviços', s_country:'País', s_all_c:'Todos os países', s_city:'Cidade', s_all_city:'Todas as cidades', s_btn:'Buscar profissionais',
- as:['Avaliações abertas que o profissional não apaga','Perfis verificados','Contato direto, sem taxa para quem contrata'],
+ as:['Avaliações de clientes reais','Perfis verificados','Contato direto, sem taxa para quem contrata'],
  cat_eyebrow:'Categorias', cat_h2:'Do que você precisa hoje?', pro_one:'{n} profissional', pro_many:'{n} profissionais', soon:'Em breve na sua região',
- res_eyebrow:'Vitrine', featured:'Profissionais em destaque', europe:'todas as cidades', empty_h_all:'Ainda não tem ninguém de {cat} na vitrine.', sorted:'ordenados pela nota', all:'Todos',
+ res_eyebrow:'Vitrine', featured:'Profissionais em destaque', europe:'todas as cidades da Europa', empty_h_all:'Ainda não tem ninguém de {cat} na vitrine.', sorted:'ordenados pela nota', all:'Todos',
  empty_h:'Ainda não tem ninguém de {cat} em {where}.', empty_p:'Estamos chegando em novas cidades toda semana. Conhece um bom profissional? Indique a Trustmore.', empty_btn:'Ver todos os profissionais',
  n_reviews:'{n} avaliações', view:'Ver perfil e avaliações', verified:'Perfil verificado',
  how_eyebrow:'Como funciona', how_h2:'Encontrar alguém de confiança em três passos', how_lead:'Sem cadastro, sem taxa e sem intermediário. Você fala direto com o profissional.',
  how:[['Busque pelo serviço e pela cidade','Filtre por categoria, país e cidade. Só aparece quem atende na sua região.'],['Compare perfis e avaliações','Leia o que outros clientes contaram, veja a nota, os serviços e as línguas que o profissional fala.'],['Chame no WhatsApp e combine','Converse direto, peça orçamento e marque o dia. Depois do serviço, deixe sua avaliação e ajude a próxima pessoa.']],
  tr_eyebrow:'Confiança em primeiro lugar', tr_h2:'Sem confiança, ninguém abre a porta de casa.',
  tr_lead:'Contratar alguém que você não conhece é difícil: a indicação some no meio das mensagens do grupo e não dá para saber quem é bom de verdade. A Trustmore existe para resolver isso.',
- tips_h:'Dicas para contratar com segurança', tips:['Leia as avaliações mais recentes, não só a nota.','Prefira perfis com o selo de verificado.','Combine valor, horário e o que está incluso antes do serviço.','Depois do serviço, avalie. Isso protege a próxima pessoa.'],
+ tips_h:'Dicas para contratar com segurança', tips:['Leia as avaliações mais recentes, não só a nota.','Combine valor, horário e o que está incluso antes do serviço.','Depois do serviço, avalie. Isso ajuda a próxima pessoa.'],
  pillars:[['Avaliações de quem contratou','Cada avaliação vem de um cliente que informa nome e WhatsApp. O contato não aparece no site, mas fica com a gente para conferência.'],['Transparência total','O profissional não escolhe o que aparece e não apaga avaliação ruim. Ele pode responder, e você vê as duas versões.'],['Selo verificado','Profissionais com o selo confirmaram a identidade com a Trustmore e aparecem primeiro nas buscas. Procure o selo verde no perfil.'],['Moderação humana','Acompanhamos as avaliações e removemos spam, ofensas e qualquer tentativa de enganar.']],
  pb_eyebrow:'Para profissionais', pb_h2:'Seu trabalho já fala por você. Agora junte tudo em um link só.',
  pb_lead:'Chega de depender de indicação que se perde no grupo. Comece com a sua página grátis e apareça na vitrine quando quiser.',
@@ -593,7 +597,7 @@ pt:{
  written:'Escrito em {lang}', translate:'Traduzir', t_tr:'Protótipo: no site real, o texto aparece traduzido para a sua língua.',
  L:{pt:'português',en:'inglês',nl:'holandês',es:'espanhol',it:'italiano',fr:'francês'},
  C:{NL:'Holanda',PT:'Portugal',IT:'Itália',BE:'Bélgica',IE:'Irlanda'},
- K:{clean:'Faxina e limpeza',uph:'Limpeza de estofados',build:'Ajudante de obra / reformas',paint:'Pintura',move:'Mudanças e fretes',furn:'Montagem de móveis',beauty:'Beleza',care:'Babá e cuidadores',food:'Comida e encomendas',lessons:'Aulas e traduções',repair:'Eletricista, encanador e reparos',garden:'Jardinagem',wellness:'Massagem e bem-estar',fitness:'Personal trainer e esportes',pets:'Pets',events:'Eventos e festas',photo:'Fotografia e vídeo',tech:'Informática e tecnologia',design:'Design e marketing',admin:'Contabilidade e documentos',auto:'Carros e mecânica'},
+ K:{clean:'Faxina e limpeza',uph:'Limpeza de estofados',build:'Ajudante de obra / reformas',paint:'Pintura',move:'Mudanças e fretes',furn:'Montagem de móveis',nails:'Unhas (manicure e pedicure)',hair:'Cabelo (cabeleireira e tranças)',beauty:'Beleza',care:'Babá e cuidadores',food:'Comida e encomendas',lessons:'Aulas e traduções',repair:'Eletricista, encanador e reparos',garden:'Jardinagem',wellness:'Massagem e bem-estar',fitness:'Personal trainer e esportes',pets:'Pets',events:'Eventos e festas',photo:'Fotografia e vídeo',tech:'Informática e tecnologia',design:'Design e marketing',admin:'Contabilidade e documentos',auto:'Carros e mecânica'},
 },
 en:{
  demo:'Trustmore showcase prototype: all profiles, reviews and numbers are fictional.',
@@ -603,18 +607,18 @@ en:{
  rights:'© 2026 Trustmore. All rights reserved.', legal:'Terms of use · Privacy',
  hero_eyebrow:'Independent professionals with real reviews',
  hero_h1:'Hire with confidence. <em>See who hired them</em> before you.',
- hero_lead:'Cleaning, building work, beauty, moving and much more. Professionals with real customer reviews and direct contact on WhatsApp.',
+ hero_lead:'Professionals with real customer reviews and direct contact on WhatsApp.',
  s_need:'What do you need?', s_all_srv:'All services', s_country:'Country', s_all_c:'All countries', s_city:'City', s_all_city:'All cities', s_btn:'Find professionals',
- as:['Open reviews the professional can’t delete','Verified profiles','Direct contact, free for customers'],
+ as:['Reviews from real customers','Verified profiles','Direct contact, free for customers'],
  cat_eyebrow:'Categories', cat_h2:'What do you need today?', pro_one:'{n} professional', pro_many:'{n} professionals', soon:'Coming soon to your area',
- res_eyebrow:'Showcase', featured:'Featured professionals', europe:'all cities', empty_h_all:'No one for {cat} in the showcase yet.', sorted:'sorted by rating', all:'All',
+ res_eyebrow:'Showcase', featured:'Featured professionals', europe:'all cities in Europe', empty_h_all:'No one for {cat} in the showcase yet.', sorted:'sorted by rating', all:'All',
  empty_h:'No one for {cat} in {where} yet.', empty_p:'We reach new cities every week. Know a great professional? Tell them about Trustmore.', empty_btn:'See all professionals',
  n_reviews:'{n} reviews', view:'See profile and reviews', verified:'Verified profile',
  how_eyebrow:'How it works', how_h2:'Find someone you can trust in three steps', how_lead:'No sign-up, no fees, no middleman. You talk directly to the professional.',
  how:[['Search by service and city','Filter by category, country and city. You only see people who work in your area.'],['Compare profiles and reviews','Read what other customers said, and check the rating, the services and the languages they speak.'],['Message on WhatsApp and book','Talk directly, ask for a quote and set a date. After the job, leave a review and help the next person.']],
  tr_eyebrow:'Trust comes first', tr_h2:'Without trust, nobody opens their front door.',
  tr_lead:'Hiring someone you don’t know is hard: recommendations get lost in group chats and there’s no way to tell who’s really good. Trustmore exists to fix that.',
- tips_h:'Tips for hiring safely', tips:['Read the latest reviews, not just the rating.','Choose profiles with the verified badge.','Agree on price, time and what’s included before the job.','Leave a review afterwards. It protects the next person.'],
+ tips_h:'Tips for hiring safely', tips:['Read the latest reviews, not just the rating.','Agree on price, time and what’s included before the job.','Leave a review afterwards. It helps the next person.'],
  pillars:[['Reviews from real customers','Every review comes from a customer who gives their name and WhatsApp number. It isn’t shown on the site, but we keep it so we can check.'],['Full transparency','Professionals can’t choose what appears or delete a bad review. They can reply, and you see both sides.'],['Verified badge','Professionals with the badge have confirmed their identity with Trustmore and appear first in searches. Look for the green badge on the profile.'],['Human moderation','We keep an eye on reviews and remove spam, abuse and any attempt to mislead.']],
  pb_eyebrow:'For professionals', pb_h2:'Your work already speaks for you. Now bring it all together in one link.',
  pb_lead:'Stop relying on recommendations that get lost in group chats. Start with your free page and join the showcase whenever you like.',
@@ -658,7 +662,7 @@ en:{
  written:'Written in {lang}', translate:'Translate', t_tr:'Prototype: on the real site, the text appears translated into your language.',
  L:{pt:'Portuguese',en:'English',nl:'Dutch',es:'Spanish',it:'Italian',fr:'French'},
  C:{NL:'Netherlands',PT:'Portugal',IT:'Italy',BE:'Belgium',IE:'Ireland'},
- K:{clean:'Cleaner / Cleaning',uph:'Upholstery cleaning',build:'Handyman / Renovation',paint:'Painter / Painting',move:'Movers / Removals',furn:'Furniture assembly',beauty:'Beauty',care:'Babysitter / Nanny / Carer',food:'Food and catering',lessons:'Lessons and translation',repair:'Electrician, plumber and repairs',garden:'Gardener / Gardening',wellness:'Massage and wellness',fitness:'Personal trainer and sports',pets:'Pet sitter / Dog walker',events:'Events and parties',photo:'Photographer / Video',tech:'IT / Computer help',design:'Design and marketing',admin:'Accountant / Paperwork',auto:'Mechanic / Cars'},
+ K:{clean:'Cleaner / Cleaning',uph:'Upholstery cleaning',build:'Handyman / Renovation',paint:'Painter / Painting',move:'Movers / Removals',furn:'Furniture assembly',nails:'Nails / Manicure',hair:'Hairdresser / Hair',beauty:'Beauty',care:'Babysitter / Nanny / Carer',food:'Food and catering',lessons:'Lessons and translation',repair:'Electrician, plumber and repairs',garden:'Gardener / Gardening',wellness:'Massage and wellness',fitness:'Personal trainer and sports',pets:'Pet sitter / Dog walker',events:'Events and parties',photo:'Photographer / Video',tech:'IT / Computer help',design:'Design and marketing',admin:'Accountant / Paperwork',auto:'Mechanic / Cars'},
 },
 nl:{
  demo:'Prototype van de Trustmore-etalage: alle profielen, reviews en cijfers zijn fictief.',
@@ -668,18 +672,18 @@ nl:{
  rights:'© 2026 Trustmore. Alle rechten voorbehouden.', legal:'Gebruiksvoorwaarden · Privacy',
  hero_eyebrow:'Zelfstandige vakmensen met echte reviews',
  hero_h1:'Huur met vertrouwen in. <em>Zie wie je voorging.</em>',
- hero_lead:'Schoonmaak, klussen, beauty, verhuizen en nog veel meer. Vakmensen met echte klantreviews en direct contact via WhatsApp.',
+ hero_lead:'Vakmensen met echte klantreviews en direct contact via WhatsApp.',
  s_need:'Wat heb je nodig?', s_all_srv:'Alle diensten', s_country:'Land', s_all_c:'Alle landen', s_city:'Stad', s_all_city:'Alle steden', s_btn:'Vakmensen zoeken',
- as:['Open reviews die de vakman niet kan verwijderen','Geverifieerde profielen','Direct contact, gratis voor klanten'],
+ as:['Reviews van echte klanten','Geverifieerde profielen','Direct contact, gratis voor klanten'],
  cat_eyebrow:'Categorieën', cat_h2:'Waar ben je vandaag naar op zoek?', pro_one:'{n} vakman', pro_many:'{n} vakmensen', soon:'Binnenkort in jouw regio',
- res_eyebrow:'Etalage', featured:'Uitgelichte vakmensen', europe:'alle steden', empty_h_all:'Nog niemand voor {cat} in de etalage.', sorted:'gesorteerd op beoordeling', all:'Alles',
+ res_eyebrow:'Etalage', featured:'Uitgelichte vakmensen', europe:'alle steden in Europa', empty_h_all:'Nog niemand voor {cat} in de etalage.', sorted:'gesorteerd op beoordeling', all:'Alles',
  empty_h:'Nog niemand voor {cat} in {where}.', empty_p:'We komen elke week in nieuwe steden. Ken je een goede vakman? Vertel over Trustmore.', empty_btn:'Alle vakmensen bekijken',
  n_reviews:'{n} reviews', view:'Profiel en reviews bekijken', verified:'Geverifieerd profiel',
  how_eyebrow:'Hoe het werkt', how_h2:'Iemand vinden die je kunt vertrouwen, in drie stappen', how_lead:'Geen account, geen kosten, geen tussenpersoon. Je praat rechtstreeks met de vakman.',
  how:[['Zoek op dienst en stad','Filter op categorie, land en stad. Je ziet alleen wie in jouw regio werkt.'],['Vergelijk profielen en reviews','Lees wat andere klanten vertellen en bekijk de score, de diensten en de talen die de vakman spreekt.'],['Stuur een WhatsApp en maak een afspraak','Overleg direct, vraag een offerte en plan een dag. Laat na de klus een review achter en help de volgende.']],
  tr_eyebrow:'Vertrouwen staat voorop', tr_h2:'Zonder vertrouwen doet niemand de voordeur open.',
  tr_lead:'Iemand inhuren die je niet kent is lastig: tips verdwijnen tussen de berichten in de groep en je kunt niet zien wie echt goed is. Trustmore bestaat om dat op te lossen.',
- tips_h:'Tips om veilig in te huren', tips:['Lees de nieuwste reviews, niet alleen de score.','Kies bij voorkeur profielen met het verificatiebadge.','Spreek prijs, tijd en wat inbegrepen is vooraf af.','Laat achteraf een review achter. Zo bescherm je de volgende klant.'],
+ tips_h:'Tips om veilig in te huren', tips:['Lees de nieuwste reviews, niet alleen de score.','Spreek prijs, tijd en wat inbegrepen is vooraf af.','Laat achteraf een review achter. Dat helpt de volgende klant.'],
  pillars:[['Reviews van echte klanten','Elke review komt van een klant die naam en WhatsApp-nummer opgeeft. Dat staat niet op de site, maar wij bewaren het ter controle.'],['Volledige transparantie','De vakman kiest niet wat er verschijnt en kan geen slechte review verwijderen. Hij kan wel reageren, en jij ziet beide kanten.'],['Verificatiebadge','Vakmensen met het badge hebben hun identiteit bij Trustmore bevestigd en staan bovenaan in de zoekresultaten. Let op het groene badge op het profiel.'],['Menselijke moderatie','We houden de reviews in de gaten en verwijderen spam, beledigingen en elke poging tot misleiding.']],
  pb_eyebrow:'Voor vakmensen', pb_h2:'Je werk spreekt al voor zich. Breng nu alles samen in één link.',
  pb_lead:'Niet langer afhankelijk van tips die verdwijnen in groepschats. Begin met je gratis pagina en kom in de etalage wanneer je wilt.',
@@ -723,7 +727,7 @@ nl:{
  written:'Geschreven in het {lang}', translate:'Vertalen', t_tr:'Prototype: op de echte site verschijnt de tekst vertaald in jouw taal.',
  L:{pt:'Portugees',en:'Engels',nl:'Nederlands',es:'Spaans',it:'Italiaans',fr:'Frans'},
  C:{NL:'Nederland',PT:'Portugal',IT:'Italië',BE:'België',IE:'Ierland'},
- K:{clean:'Schoonmaker / Schoonmaak',uph:'Meubelreiniging',build:'Klusjesman / Renovatie',paint:'Schilder / Schilderwerk',move:'Verhuizer / Transport',furn:'Meubelmontage',beauty:'Beauty',care:'Oppas / Nanny / Zorg',food:'Eten en catering',lessons:'Lessen en vertalingen',repair:'Elektricien, loodgieter en reparaties',garden:'Hovenier / Tuinonderhoud',wellness:'Massage en welzijn',fitness:'Personal trainer en sport',pets:'Dierenoppas / Hondenuitlaat',events:'Evenementen en feesten',photo:'Fotograaf / Video',tech:'IT / Computerhulp',design:'Design en marketing',admin:'Boekhouder / Administratie',auto:'Monteur / Auto’s'},
+ K:{clean:'Schoonmaker / Schoonmaak',uph:'Meubelreiniging',build:'Klusjesman / Renovatie',paint:'Schilder / Schilderwerk',move:'Verhuizer / Transport',furn:'Meubelmontage',nails:'Nagels / Manicure',hair:'Kapper / Haar',beauty:'Beauty',care:'Oppas / Nanny / Zorg',food:'Eten en catering',lessons:'Lessen en vertalingen',repair:'Elektricien, loodgieter en reparaties',garden:'Hovenier / Tuinonderhoud',wellness:'Massage en welzijn',fitness:'Personal trainer en sport',pets:'Dierenoppas / Hondenuitlaat',events:'Evenementen en feesten',photo:'Fotograaf / Video',tech:'IT / Computerhulp',design:'Design en marketing',admin:'Boekhouder / Administratie',auto:'Monteur / Auto’s'},
 },
 es:{
  demo:'Prototipo de la vitrina Trustmore: todos los perfiles, reseñas y cifras son ficticios.',
@@ -733,18 +737,18 @@ es:{
  rights:'© 2026 Trustmore. Todos los derechos reservados.', legal:'Términos de uso · Privacidad',
  hero_eyebrow:'Profesionales autónomos con reseñas reales',
  hero_h1:'Contrata con confianza. <em>Mira quién contrató</em> antes que tú.',
- hero_lead:'Limpieza, obras, belleza, mudanzas y mucho más. Profesionales con reseñas reales de clientes y contacto directo por WhatsApp.',
+ hero_lead:'Profesionales con reseñas reales de clientes y contacto directo por WhatsApp.',
  s_need:'¿Qué necesitas?', s_all_srv:'Todos los servicios', s_country:'País', s_all_c:'Todos los países', s_city:'Ciudad', s_all_city:'Todas las ciudades', s_btn:'Buscar profesionales',
- as:['Reseñas abiertas que el profesional no puede borrar','Perfiles verificados','Contacto directo, gratis para quien contrata'],
+ as:['Reseñas de clientes reales','Perfiles verificados','Contacto directo, gratis para quien contrata'],
  cat_eyebrow:'Categorías', cat_h2:'¿Qué necesitas hoy?', pro_one:'{n} profesional', pro_many:'{n} profesionales', soon:'Pronto en tu zona',
- res_eyebrow:'Vitrina', featured:'Profesionales destacados', europe:'todas las ciudades', empty_h_all:'Todavía no hay nadie de {cat} en la vitrina.', sorted:'ordenados por valoración', all:'Todos',
+ res_eyebrow:'Vitrina', featured:'Profesionales destacados', europe:'todas las ciudades de Europa', empty_h_all:'Todavía no hay nadie de {cat} en la vitrina.', sorted:'ordenados por valoración', all:'Todos',
  empty_h:'Todavía no hay nadie de {cat} en {where}.', empty_p:'Llegamos a nuevas ciudades cada semana. ¿Conoces a un buen profesional? Recomiéndale Trustmore.', empty_btn:'Ver todos los profesionales',
  n_reviews:'{n} reseñas', view:'Ver perfil y reseñas', verified:'Perfil verificado',
  how_eyebrow:'Cómo funciona', how_h2:'Encuentra a alguien de confianza en tres pasos', how_lead:'Sin registro, sin comisiones y sin intermediarios. Hablas directamente con el profesional.',
  how:[['Busca por servicio y ciudad','Filtra por categoría, país y ciudad. Solo aparece quien trabaja en tu zona.'],['Compara perfiles y reseñas','Lee lo que contaron otros clientes y mira la valoración, los servicios y los idiomas que habla el profesional.'],['Escribe por WhatsApp y acuerda','Habla directamente, pide presupuesto y fija el día. Después del servicio, deja tu reseña y ayuda a la próxima persona.']],
  tr_eyebrow:'La confianza es lo primero', tr_h2:'Sin confianza, nadie abre la puerta de su casa.',
  tr_lead:'Contratar a alguien que no conoces es difícil: la recomendación se pierde entre los mensajes del grupo y no hay forma de saber quién es bueno de verdad. Trustmore existe para resolverlo.',
- tips_h:'Consejos para contratar con seguridad', tips:['Lee las reseñas más recientes, no solo la nota.','Prefiere perfiles con la insignia de verificado.','Acuerda precio, horario y qué incluye antes del servicio.','Después del servicio, deja tu reseña. Protege a la próxima persona.'],
+ tips_h:'Consejos para contratar con seguridad', tips:['Lee las reseñas más recientes, no solo la nota.','Acuerda precio, horario y qué incluye antes del servicio.','Después del servicio, deja tu reseña. Ayuda a la próxima persona.'],
  pillars:[['Reseñas de quien contrató','Cada reseña viene de un cliente que da su nombre y su WhatsApp. No se muestra en la web, pero lo guardamos para poder comprobarlo.'],['Transparencia total','El profesional no elige lo que aparece ni puede borrar una reseña mala. Puede responder, y tú ves las dos versiones.'],['Insignia de verificado','Los profesionales con la insignia confirmaron su identidad con Trustmore y aparecen primero en las búsquedas. Busca la insignia verde en el perfil.'],['Moderación humana','Revisamos las reseñas y eliminamos spam, insultos y cualquier intento de engañar.']],
  pb_eyebrow:'Para profesionales', pb_h2:'Tu trabajo ya habla por ti. Ahora reúnelo todo en un solo enlace.',
  pb_lead:'Deja de depender de recomendaciones que se pierden en los grupos. Empieza con tu página gratis y aparece en la vitrina cuando quieras.',
@@ -788,7 +792,7 @@ es:{
  written:'Escrito en {lang}', translate:'Traducir', t_tr:'Prototipo: en la web real, el texto aparece traducido a tu idioma.',
  L:{pt:'portugués',en:'inglés',nl:'neerlandés',es:'español',it:'italiano',fr:'francés'},
  C:{NL:'Países Bajos',PT:'Portugal',IT:'Italia',BE:'Bélgica',IE:'Irlanda'},
- K:{clean:'Limpieza',uph:'Limpieza de tapicería',build:'Ayudante de obra / reformas',paint:'Pintura',move:'Mudanzas y transporte',furn:'Montaje de muebles',beauty:'Belleza',care:'Niñera y cuidados',food:'Comida y encargos',lessons:'Clases y traducciones',repair:'Electricista, fontanero y reparaciones',garden:'Jardinería',wellness:'Masaje y bienestar',fitness:'Entrenador personal y deporte',pets:'Mascotas',events:'Eventos y fiestas',photo:'Foto y vídeo',tech:'Informática y tecnología',design:'Diseño y marketing',admin:'Contabilidad y trámites',auto:'Coches y mecánica'},
+ K:{clean:'Limpieza',uph:'Limpieza de tapicería',build:'Ayudante de obra / reformas',paint:'Pintura',move:'Mudanzas y transporte',furn:'Montaje de muebles',nails:'Uñas (manicura y pedicura)',hair:'Peluquería (cabello y trenzas)',beauty:'Belleza',care:'Niñera y cuidados',food:'Comida y encargos',lessons:'Clases y traducciones',repair:'Electricista, fontanero y reparaciones',garden:'Jardinería',wellness:'Masaje y bienestar',fitness:'Entrenador personal y deporte',pets:'Mascotas',events:'Eventos y fiestas',photo:'Foto y vídeo',tech:'Informática y tecnología',design:'Diseño y marketing',admin:'Contabilidad y trámites',auto:'Coches y mecánica'},
 },
 };
 /* Textos novos (cadastro, carregamento, outros serviços) */
@@ -912,7 +916,7 @@ const t = (k, v) => { let s = T[lang][k] ?? T.pt[k]; if (v && typeof s === 'stri
 const LOGO = s => `<svg width="${s}" height="${s}" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#d99a2b"/><circle cx="14" cy="16" r="2.6" fill="#071633"/><circle cx="26" cy="16" r="2.6" fill="#071633"/><path d="M12 24c2.2 3.4 5 5 8 5s5.8-1.6 8-5" stroke="#071633" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>`;
 const sv = (w, d) => `<svg width="${w}" height="${w}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 const P = {
-  check:'<path d="M20 6 9 17l-5-5"/>', shield:'<path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>', scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>', shield:'<path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
   star:'<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>', eye:'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
   chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>', globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c2 .7 3.2 2.4 3.5 5.2"/>',
@@ -926,7 +930,7 @@ const P = {
   insta:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>', sparkle:'<path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/>', home:'<path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/>',
 };
 const I = k => sv(26, P[k]);
-const CATS = [['clean','home'],['uph','sparkle'],['build','shield'],['paint','pen'],['repair','wrench'],['garden','leaf'],['move','globe'],['furn','home'],['beauty','star'],['wellness','heart'],['fitness','bolt'],['care','users'],['pets','paw'],['food','chat'],['events','cal'],['photo','camera'],['lessons','globe'],['tech','laptop'],['design','pen'],['admin','doc'],['auto','car'],['other','sparkle']];
+const CATS = [['clean','home'],['uph','sparkle'],['build','shield'],['paint','pen'],['repair','wrench'],['garden','leaf'],['move','globe'],['furn','home'],['nails','sparkle'],['hair','scissors'],['beauty','star'],['wellness','heart'],['fitness','bolt'],['care','users'],['pets','paw'],['food','chat'],['events','cal'],['photo','camera'],['lessons','globe'],['tech','laptop'],['design','pen'],['admin','doc'],['auto','car'],['other','sparkle']];
 const COLORS = ['#12305c','#8a5a12','#1f6f5c','#7a2e4d','#3d4f8a','#5e6b1f','#9a3f1f','#2f5d7c'];
 const DEMO = [
  {slug:'juliana-faxina',nome:'Juliana Rocha',cat:'clean',pais:'NL',cidades:['Amsterdam','Haarlem'],ver:true,linguas:['pt','en'],desde:2021,bl:'pt',
@@ -1031,7 +1035,7 @@ function options(){
   return {paises, cidades:[...new Set(pool.flatMap(p=>p.cidades))].sort()};
 }
 /* Busca por palavra (21/11/2026): sinônimos de cada categoria nos 4 idiomas, para quem procura "cleaner", "babysitter", "oppas"... */
-const SYN = {clean:'faxina faxineira diarista limpeza limpar domestica cleaner cleaners cleaning cleaning lady housekeeper housekeeping house cleaning maid schoonmaak schoonmaker schoonmaakster poetsvrouw poetshulp huishoudhulp huishoudelijke hulp limpieza limpiadora asistenta empleada de hogar',uph:'estofado estofados sofa carpete tapete colchao upholstery carpet rug couch mattress meubelreiniging bankstel tapijt tapijtreiniging matras tapiceria alfombra colchon',build:'obra obras reforma reformas pedreiro ajudante servente handyman builder renovation construction bricklayer klusjesman aannemer verbouwing bouw klussen bouwvakker albanil peon',paint:'pintura pintor painter painting decorator schilder schilderwerk',move:'mudanca mudancas frete fretes carreto mover movers moving removals removal man with a van verhuizer verhuizing verhuisbedrijf transport mudanza',furn:'montagem montador moveis movel furniture assembly ikea flatpack meubelmontage meubels montage montaje muebles',beauty:'beleza cabeleireira cabeleireiro cabelo manicure pedicure unha unhas maquiagem maquiadora sobrancelha depilacao trancas cilios hairdresser hair nails nail manicurist makeup lashes eyebrows waxing braids beautician kapper kapster nagels nagelstudio wimpers schoonheidsspecialist peluqueria peluquera manicura unas maquillaje',care:'baba babas cuidadora cuidador idoso idosos crianca criancas babysitter baby sitter babysitting nanny au pair childcare child care elderly care caregiver carer oppas oppasser kinderopvang ouderenzorg verzorging verzorger ninera ninero canguro cuidado mayores',food:'comida marmita marmitas bolo bolos doces salgados encomenda encomendas cozinheira cozinheiro chef catering food cook cake cakes baker bakery meal prep lunch eten koken kok taart taarten cocinera cocinero pasteles tartas',lessons:'aula aulas professor professora traducao tradutor tradutora ingles portugues holandes reforco lessons lesson tutor tutoring teacher translation translator language les lessen bijles docent vertaling vertaler clases profesor profesora traduccion traductor',repair:'eletricista encanador reparo reparos conserto manutencao marido de aluguel electrician plumber repair repairs handyman maintenance fix fixing elektricien loodgieter reparatie reparaties onderhoud klusjesman electricista fontanero reparaciones',garden:'jardim jardinagem jardineiro jardineira grama poda gardener gardening garden lawn landscaping hedge tuin tuinman hovenier tuinonderhoud jardinero jardineria',wellness:'massagem massagista bem-estar estetica drenagem massage masseuse masseur therapist wellness spa massagetherapeut masaje masajista',fitness:'personal trainer treino academia esporte yoga pilates coach fitness workout gym sport sportschool trainer entrenador deporte',pets:'pet pets cachorro cao cachorros gato gatos passeador dog walker dogwalker dog walking pet sitter petsitter grooming dog cat hond honden kat hondenuitlaat hondenuitlaatservice dierenoppas trimsalon perro perros paseador mascota mascotas',events:'evento eventos festa festas decoracao buffet garcom garconete party parties event events wedding dj waiter waitress bartender feest feesten evenement bruiloft fiesta boda camarero',photo:'foto fotos fotografia fotografo fotografa video filmagem photographer photography photo photos videographer fotograaf fotografie fotografo',tech:'informatica computador notebook celular tecnologia site sites it tech computer laptop phone website developer computerhulp ict tecnologia ordenador movil',design:'design designer marketing social media redes sociais logo logotipo branding graphic designer ontwerp ontwerper diseno disenador',admin:'contabilidade contador contadora documentos papelada imposto impostos declaracao accountant accounting bookkeeper bookkeeping paperwork tax taxes tax return administratie boekhouder boekhouding belasting belastingaangifte contable contabilidad tramites impuestos',auto:'carro carros mecanico mecanica oficina auto car cars mechanic garage car repair monteur autogarage autoreparatie coche coches taller'};
+const SYN = {clean:'faxina faxineira diarista limpeza limpar domestica cleaner cleaners cleaning cleaning lady housekeeper housekeeping house cleaning maid schoonmaak schoonmaker schoonmaakster poetsvrouw poetshulp huishoudhulp huishoudelijke hulp limpieza limpiadora asistenta empleada de hogar',uph:'estofado estofados sofa carpete tapete colchao upholstery carpet rug couch mattress meubelreiniging bankstel tapijt tapijtreiniging matras tapiceria alfombra colchon',build:'obra obras reforma reformas pedreiro ajudante servente handyman builder renovation construction bricklayer klusjesman aannemer verbouwing bouw klussen bouwvakker albanil peon',paint:'pintura pintor painter painting decorator schilder schilderwerk',move:'mudanca mudancas frete fretes carreto mover movers moving removals removal man with a van verhuizer verhuizing verhuisbedrijf transport mudanza',furn:'montagem montador moveis movel furniture assembly ikea flatpack meubelmontage meubels montage montaje muebles',nails:'unha unhas manicure pedicure manicura pedicura esmalte esmaltacao alongamento unha de gel nails nail manicurist gel nails acrylic nagels nagelstudio nagelstyliste gelnagels unas',hair:'cabelo cabelos cabeleireira cabeleireiro corte escova progressiva trancas tranca mechas coloracao barbeiro hair hairdresser haircut hairstylist braids barber kapper kapster kapsalon haar knippen vlechten peluqueria peluquera peluquero corte trenzas barbero',beauty:'beleza maquiagem maquiadora sobrancelha sobrancelhas depilacao cilios estetica limpeza de pele makeup make-up lashes eyebrows waxing beautician facial schoonheidsspecialist wimpers wenkbrauwen visagie belleza maquillaje cejas pestanas depilacion',care:'baba babas cuidadora cuidador idoso idosos crianca criancas babysitter baby sitter babysitting nanny au pair childcare child care elderly care caregiver carer oppas oppasser kinderopvang ouderenzorg verzorging verzorger ninera ninero canguro cuidado mayores',food:'comida marmita marmitas bolo bolos doces salgados encomenda encomendas cozinheira cozinheiro chef catering food cook cake cakes baker bakery meal prep lunch eten koken kok taart taarten cocinera cocinero pasteles tartas',lessons:'aula aulas professor professora traducao tradutor tradutora ingles portugues holandes reforco lessons lesson tutor tutoring teacher translation translator language les lessen bijles docent vertaling vertaler clases profesor profesora traduccion traductor',repair:'eletricista encanador reparo reparos conserto manutencao marido de aluguel electrician plumber repair repairs handyman maintenance fix fixing elektricien loodgieter reparatie reparaties onderhoud klusjesman electricista fontanero reparaciones',garden:'jardim jardinagem jardineiro jardineira grama poda gardener gardening garden lawn landscaping hedge tuin tuinman hovenier tuinonderhoud jardinero jardineria',wellness:'massagem massagista bem-estar estetica drenagem massage masseuse masseur therapist wellness spa massagetherapeut masaje masajista',fitness:'personal trainer treino academia esporte yoga pilates coach fitness workout gym sport sportschool trainer entrenador deporte',pets:'pet pets cachorro cao cachorros gato gatos passeador dog walker dogwalker dog walking pet sitter petsitter grooming dog cat hond honden kat hondenuitlaat hondenuitlaatservice dierenoppas trimsalon perro perros paseador mascota mascotas',events:'evento eventos festa festas decoracao buffet garcom garconete party parties event events wedding dj waiter waitress bartender feest feesten evenement bruiloft fiesta boda camarero',photo:'foto fotos fotografia fotografo fotografa video filmagem photographer photography photo photos videographer fotograaf fotografie fotografo',tech:'informatica computador notebook celular tecnologia site sites it tech computer laptop phone website developer computerhulp ict tecnologia ordenador movil',design:'design designer marketing social media redes sociais logo logotipo branding graphic designer ontwerp ontwerper diseno disenador',admin:'contabilidade contador contadora documentos papelada imposto impostos declaracao accountant accounting bookkeeper bookkeeping paperwork tax taxes tax return administratie boekhouder boekhouding belasting belastingaangifte contable contabilidad tramites impuestos',auto:'carro carros mecanico mecanica oficina auto car cars mechanic garage car repair monteur autogarage autoreparatie coche coches taller'};
 const normTxt = v => String(v || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const proHay = p => p._hay || (p._hay = normTxt([p.nome, p.catOutro, (p.servicos||[]).join(' '), (p.cidades||[]).join(' '), ['pt','en','nl','es'].map(l => (T[l].K||{})[p.cat] || '').join(' '), SYN[p.cat] || ''].join(' ')));
 const matchQ = p => { const words = normTxt(state.q).split(/[^a-z0-9]+/).filter(w => w.length > 1); return !words.length || words.every(w => proHay(p).includes(w)); };
@@ -1086,7 +1090,7 @@ const checks = list => `<ul class="checks">${list.map(x=>`<li>${sv(18,P.check)}<
 
 /* "Indique": abre o WhatsApp com uma mensagem pronta para mandar ao profissional que a pessoa conhece */
 let suCat = '';
-const soonShare = k => 'https://wa.me/?text=' + encodeURIComponent(t('soon_msg', {cat: cat(k).toLowerCase(), url: 'https://trustmore.app/criar?o=indicacao'}));
+const soonShare = k => 'https://wa.me/?text=' + encodeURIComponent(t('soon_msg', {cat: cat(k).toLowerCase(), url: 'https://trustmore.app/?o=indicacao#cadastro'}));
 /* ---------- HOME ---------- */
 function renderHome(scrollTo, keep){
   const {paises, cidades} = options();
@@ -1204,9 +1208,7 @@ function trustSection(){
   return `<section class="band dark" id="confianca"><div class="wrap"><div class="trust">
     <div>
       <div class="eyebrow">${t('tr_eyebrow')}</div>
-      <h2>${t('tr_h2')}</h2>
-      <p class="lead">${t('tr_lead')}</p>
-      <div class="tips"><h3>${t('tips_h')}</h3><ul>${t('tips').map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="tips tips-only"><ul>${t('tips').map(x=>`<li>${x}</li>`).join('')}</ul></div>
     </div>
     <div class="pillars">${t('pillars').map(([h,p],i)=>`<div class="pillar">${I(ic[i])}<h3>${h}</h3><p>${p}</p></div>`).join('')}</div>
   </div></div></section>`;
