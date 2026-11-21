@@ -9,6 +9,7 @@
 <meta property="og:image" content="https://trustmore.app/icons/icon-512.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#071633">
+<meta name="color-scheme" content="light only">
 <link rel="icon" href="/icons/icon-192.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,9 +30,8 @@
   --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --r:16px;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0b1220; --bg-2:#0f1829; --surface:#131c2f; --fg:#e9ecf3; --muted:#a3abbb; --line:#25314b; --chip:#1b2640;
-  --navy:#050d1f; --navy-2:#173561; --navy-3:#0a1a3a; --ok:#4cc38a; --link:#fbd97a; color-scheme:dark }}
+/* 21/11/2026: sempre nas cores claras da marca, mesmo com o celular no modo escuro (pedido do Gabriel) */
+:root{color-scheme:light}
 :root[data-theme="dark"]{
   --bg:#0b1220; --bg-2:#0f1829; --surface:#131c2f; --fg:#e9ecf3; --muted:#a3abbb; --line:#25314b; --chip:#1b2640;
   --navy:#050d1f; --navy-2:#173561; --navy-3:#0a1a3a; --ok:#4cc38a; --link:#fbd97a; color-scheme:dark }
@@ -209,7 +209,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
 .herobtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 @media (max-width:860px){.story{grid-template-columns:1fr;gap:24px}}
-.story h2{font-size:clamp(28px,3.8vw,38px);line-height:1.1;margin-top:8px}
+.story h2{font-size:clamp(28px,3.8vw,38px);line-height:1.1;margin:8px 0 22px}
 .story p{margin:0 0 14px;max-width:62ch}
 .chat{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:10px}
 .chat .gname{font-size:12.5px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);padding-bottom:10px}
@@ -571,7 +571,7 @@ pt:{
  fs:[['Conecta quem precisa com quem faz','Quem contrata encontra profissionais por serviço e cidade. Quem trabalha é encontrado sem depender só do boca a boca.'],['Transforma indicação em prova','A indicação que sumia no grupo vira uma avaliação pública, que fica no perfil e ajuda a próxima pessoa a decidir.'],['Fala a sua língua','O site abre automaticamente na língua do seu celular (português, inglês, holandês ou espanhol), facilitando o acesso de todos à plataforma. E cada profissional mostra as línguas em que atende.']],
  hp_eyebrow:'Como ajudamos', hp_h2:'Os dois lados ganham', hp_a:'Quem contrata', hp_b:'Quem trabalha',
  hp_al:['Encontra profissionais de confiança sem precisar pedir no grupo.','Compara notas, avaliações, serviços e línguas antes de chamar.','Fala direto com o profissional, sem taxa e sem intermediário.','Ajuda a comunidade deixando a sua avaliação.'],
- hp_bl:['Ganha um perfil profissional pronto, com link próprio para divulgar.','Junta suas avaliações num só lugar e mostra a qualidade do seu trabalho.','É encontrado por quem procura o seu serviço na sua cidade.','Fica com 100% do valor de cada serviço, sem comissão.'],
+ hp_bl:['Ganha uma página profissional pronta, com link próprio para divulgar.','Junta suas avaliações num só lugar e mostra a qualidade do seu trabalho.','É encontrado por quem procura o seu serviço na sua cidade.','Fica com 100% do valor de cada serviço, sem comissão.'],
  v_eyebrow:'No que acreditamos', v_h2:'Nossos valores',
  values:[['Confiança','É o nosso nome e o motivo de existirmos. Tudo na plataforma serve para você contratar de forma mais segura.'],['Transparência','Avaliação boa e ruim aparecem do mesmo jeito. Ninguém compra nota.'],['Comunidade','Cada avaliação ajuda a próxima pessoa a contratar melhor e o bom profissional a ser encontrado.'],['Simplicidade','Sem cadastro para contratar, sem taxa escondida, sem complicação.']],
  pp_eyebrow:'Para profissionais', pp_h1:'Mais clientes, <em>pela força das suas avaliações.</em>', pp_lead:'Crie sua página grátis na Trustmore e, quando quiser, apareça na vitrine para quem procura o seu serviço na sua cidade. Seus clientes satisfeitos fazem a sua propaganda.', pp_example:'Ver um perfil de exemplo',
@@ -636,7 +636,7 @@ en:{
  fs:[['Connects people who need help with people who do the work','Customers find professionals by service and city. Professionals get found without relying only on word of mouth.'],['Turns recommendations into proof','A recommendation that used to vanish in a group chat becomes a public review that stays on the profile and helps the next person decide.'],['Speaks your language','The site opens automatically in your phone’s language (Portuguese, English, Dutch or Spanish), making the platform easy for everyone to use. And every professional shows the languages they work in.']],
  hp_eyebrow:'How we help', hp_h2:'Both sides win', hp_a:'Customers', hp_b:'Professionals',
  hp_al:['Find trusted professionals without asking in group chats.','Compare ratings, reviews, services and languages before getting in touch.','Talk directly to the professional, with no fees and no middleman.','Help the community by leaving a review.'],
- hp_bl:['Get a ready-made professional profile with your own link to share.','Keep all your reviews in one place and show the quality of your work.','Get found by people looking for your service in your city.','Keep 100% of every job, with no commission.'],
+ hp_bl:['Get a ready-made professional page with your own link to share.','Keep all your reviews in one place and show the quality of your work.','Get found by people looking for your service in your city.','Keep 100% of every job, with no commission.'],
  v_eyebrow:'What we believe in', v_h2:'Our values',
  values:[['Trust','It’s our name and our reason to exist. Everything on the platform helps you hire more safely.'],['Transparency','Good and bad reviews are shown the same way. Nobody can buy a rating.'],['Community','Every review helps the next person hire better and helps good professionals get found.'],['Simplicity','No sign-up to hire, no hidden fees, no hassle.']],
  pp_eyebrow:'For professionals', pp_h1:'More customers, <em>powered by your reviews.</em>', pp_lead:'Create your free Trustmore page and, whenever you like, join the showcase for people looking for your service in your city. Your happy customers do the advertising.', pp_example:'See an example profile',
@@ -701,7 +701,7 @@ nl:{
  fs:[['Verbindt vraag en vakmanschap','Klanten vinden vakmensen op dienst en stad. Vakmensen worden gevonden zonder alleen van mond-tot-mondreclame afhankelijk te zijn.'],['Maakt van een tip bewijs','Een tip die vroeger verdween in de groepschat, wordt een openbare review die op het profiel blijft en de volgende helpt kiezen.'],['Spreekt jouw taal','De site opent automatisch in de taal van je telefoon (Portugees, Engels, Nederlands of Spaans), zodat iedereen het platform makkelijk kan gebruiken. En elke vakman laat zien in welke talen hij werkt.']],
  hp_eyebrow:'Hoe we helpen', hp_h2:'Beide kanten winnen', hp_a:'Klanten', hp_b:'Vakmensen',
  hp_al:['Vinden betrouwbare vakmensen zonder rond te vragen in groepen.','Vergelijken scores, reviews, diensten en talen voordat ze contact opnemen.','Praten direct met de vakman, zonder kosten of tussenpersoon.','Helpen de gemeenschap door een review achter te laten.'],
- hp_bl:['Krijgen een kant-en-klaar profiel met een eigen link om te delen.','Bundelen hun reviews op één plek en laten de kwaliteit van hun werk zien.','Worden gevonden door mensen die hun dienst zoeken in hun stad.','Houden 100% van elke klus, zonder commissie.'],
+ hp_bl:['Krijgen een kant-en-klare pagina met een eigen link om te delen.','Bundelen hun reviews op één plek en laten de kwaliteit van hun werk zien.','Worden gevonden door mensen die hun dienst zoeken in hun stad.','Houden 100% van elke klus, zonder commissie.'],
  v_eyebrow:'Waar we in geloven', v_h2:'Onze waarden',
  values:[['Vertrouwen','Het is onze naam en de reden dat we bestaan. Alles op het platform helpt je veiliger in te huren.'],['Transparantie','Goede en slechte reviews worden op dezelfde manier getoond. Niemand kan een score kopen.'],['Gemeenschap','Elke review helpt de volgende om beter in te huren en goede vakmensen om gevonden te worden.'],['Eenvoud','Geen account om in te huren, geen verborgen kosten, geen gedoe.']],
  pp_eyebrow:'Voor vakmensen', pp_h1:'Meer klanten, <em>dankzij je reviews.</em>', pp_lead:'Maak je gratis Trustmore-pagina en kom, wanneer je wilt, in de etalage bij mensen die jouw dienst zoeken in jouw stad. Je tevreden klanten maken reclame voor je.', pp_example:'Voorbeeldprofiel bekijken',
@@ -766,7 +766,7 @@ es:{
  fs:[['Conecta a quien necesita con quien sabe hacerlo','Quien contrata encuentra profesionales por servicio y ciudad. Quien trabaja es encontrado sin depender solo del boca a boca.'],['Convierte la recomendación en prueba','La recomendación que se perdía en el grupo se convierte en una reseña pública que se queda en el perfil y ayuda a la próxima persona a decidir.'],['Habla tu idioma','La web se abre automáticamente en el idioma de tu móvil (portugués, inglés, neerlandés o español), lo que facilita el acceso de todos a la plataforma. Y cada profesional muestra los idiomas en los que atiende.']],
  hp_eyebrow:'Cómo ayudamos', hp_h2:'Ganan las dos partes', hp_a:'Quien contrata', hp_b:'Quien trabaja',
  hp_al:['Encuentra profesionales de confianza sin preguntar en los grupos.','Compara notas, reseñas, servicios e idiomas antes de escribir.','Habla directamente con el profesional, sin comisiones ni intermediarios.','Ayuda a la comunidad dejando su reseña.'],
- hp_bl:['Recibe un perfil profesional listo, con su propio enlace para compartir.','Reúne sus reseñas en un solo lugar y muestra la calidad de su trabajo.','Es encontrado por quien busca su servicio en su ciudad.','Se queda con el 100% de cada servicio, sin comisiones.'],
+ hp_bl:['Recibe una página profesional lista, con su propio enlace para compartir.','Reúne sus reseñas en un solo lugar y muestra la calidad de su trabajo.','Es encontrado por quien busca su servicio en su ciudad.','Se queda con el 100% de cada servicio, sin comisiones.'],
  v_eyebrow:'En qué creemos', v_h2:'Nuestros valores',
  values:[['Confianza','Es nuestro nombre y nuestra razón de ser. Todo en la plataforma sirve para que contrates con más seguridad.'],['Transparencia','Las reseñas buenas y malas se muestran igual. Nadie compra su nota.'],['Comunidad','Cada reseña ayuda a la siguiente persona a contratar mejor y al buen profesional a ser encontrado.'],['Sencillez','Sin registro para contratar, sin costes ocultos, sin complicaciones.']],
  pp_eyebrow:'Para profesionales', pp_h1:'Más clientes, <em>gracias a tus reseñas.</em>', pp_lead:'Crea tu página gratis en Trustmore y, cuando quieras, aparece en la vitrina para quien busca tu servicio en tu ciudad. Tus clientes satisfechos hacen tu publicidad.', pp_example:'Ver un perfil de ejemplo',
