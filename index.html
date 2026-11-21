@@ -467,6 +467,9 @@ details.crmore[open]{display:grid;gap:18px}
 .probal h1 em{font-style:normal;color:var(--gold-soft)}
 .probal p{margin:0;color:var(--on-navy-mut);font-size:clamp(16px,2vw,19px);max-width:44ch}
 .probal .btn{margin-top:6px}
+.proend{text-align:center;margin-top:48px;display:grid;justify-items:center;gap:18px}
+.proend h2{font-size:clamp(26px,3.6vw,38px);line-height:1.1;max-width:22ch;margin:0}
+.proend h2 em{font-style:normal;color:var(--gold)}
 .hsteps{grid-template-columns:1fr;max-width:860px;gap:12px}
 .hsteps .step{display:grid;grid-template-columns:auto 1fr;column-gap:18px;align-items:start;padding:20px 22px}
 .hsteps .step::before{grid-row:1 / span 3;margin:0}
@@ -824,10 +827,10 @@ T2.pt.nav_login='Entrar'; T2.en.nav_login='Log in'; T2.nl.nav_login='Inloggen'; 
 for (const l in T2) { Object.assign(T[l], T2[l]); T[l].K.other = T2[l].other; }
 
 /* Para profissionais: balão do topo (21/11/2026) */
-Object.assign(T.pt, {pb_top_h:'Agora você consegue <em>provar que seu trabalho é bom!</em>', pb_top_p:'Seus clientes já falam bem de você. Deixe isso trabalhar a seu favor.', pb_top_btn:'Crie sua página grátis'});
-Object.assign(T.en, {pb_top_h:'Now you can <em>prove your work is good!</em>', pb_top_p:'Your customers already speak well of you. Let that work in your favour.', pb_top_btn:'Create your free page'});
-Object.assign(T.nl, {pb_top_h:'Nu kun je <em>bewijzen dat je werk goed is!</em>', pb_top_p:'Je klanten zijn al tevreden over je. Laat dat voor je werken.', pb_top_btn:'Maak je gratis pagina'});
-Object.assign(T.es, {pb_top_h:'¡Ahora puedes <em>demostrar que tu trabajo es bueno!</em>', pb_top_p:'Tus clientes ya hablan bien de ti. Haz que eso trabaje a tu favor.', pb_top_btn:'Crea tu página gratis'});
+Object.assign(T.pt, {pb_top_h:'Seus clientes já falam bem de você. <em>Deixe isso trabalhar a seu favor.</em>', pb_top_p:'Agora você consegue <em>provar que seu trabalho é bom!</em>', pb_top_btn:'Crie sua página grátis'});
+Object.assign(T.en, {pb_top_h:'Your customers already speak well of you. <em>Let that work in your favour.</em>', pb_top_p:'Now you can <em>prove your work is good!</em>', pb_top_btn:'Create your free page'});
+Object.assign(T.nl, {pb_top_h:'Je klanten zijn al tevreden over je. <em>Laat dat voor je werken.</em>', pb_top_p:'Nu kun je <em>bewijzen dat je werk goed is!</em>', pb_top_btn:'Maak je gratis pagina'});
+Object.assign(T.es, {pb_top_h:'Tus clientes ya hablan bien de ti. <em>Haz que eso trabaje a tu favor.</em>', pb_top_p:'¡Ahora puedes <em>demostrar que tu trabajo es bueno!</em>', pb_top_btn:'Crea tu página gratis'});
 /* Página Para profissionais (21/11/2026): exemplo de página (Lara, fictícia), Como criar, Por que criar a sua */
 Object.assign(T.pt, {ex_eyebrow:'Exemplo', ex_h2:'Sua página fica assim', ex_note:'Exemplo ilustrativo, com uma profissional fictícia.', ex_bio:'Sou babá há 8 anos e cuido de crianças de 0 a 10 anos com carinho, paciência e muita brincadeira. Atendo durante o dia, à noite e nos fins de semana.', ex_srv:['Babá diurna','Babá à noite','Fins de semana','Buscar na escola'], ex_revs:[['Sophie',5,'Lara is amazing with our two kids. Always on time, very caring and the kids adore her!','2026-11-12','en'],['Marina',5,'Confio de olhos fechados. Meu filho fica feliz quando sabe que é dia da Lara.','2026-11-03','pt'],['Joost',5,'Heel betrouwbaar en lief voor de kinderen. Echt een aanrader!','2026-10-21','nl']], ex_wa:'Chamar no WhatsApp', sup_link:'Falar com o suporte', sup_msg:'Oi! Quero criar minha página na Trustmore e tenho uma dúvida.', why_eyebrow:'Por que criar a sua?', why_h2:'Por que criar a sua?', why:['Com avaliações reais, fica mais difícil questionar o valor do seu serviço.','Você pode usar as avaliações para divulgar seu trabalho em páginas do Facebook, grupos de WhatsApp e aplicativos regionais.'], why_end:'Todas as empresas têm um sistema de avaliação. O seu trabalho também merece um!'});
 Object.assign(T.en, {ex_eyebrow:'Example', ex_h2:'Your page will look like this', ex_note:'Illustrative example with a fictional professional.', ex_bio:'I’ve been a nanny for 8 years and look after children aged 0 to 10 with care, patience and lots of play. Available during the day, evenings and weekends.', ex_srv:['Daytime babysitting','Evening babysitting','Weekends','School pick-up'], ex_wa:'Message on WhatsApp', sup_link:'Talk to support', sup_msg:'Hi! I want to create my Trustmore page and I have a question.', why_eyebrow:'Why create yours?', why_h2:'Why create yours?', why:['With real reviews, it’s much harder for anyone to question the value of your work.','You can use your reviews to promote your work on Facebook pages, WhatsApp groups and local apps.'], why_end:'Every company has a review system. Your work deserves one too!'});
@@ -1250,7 +1253,7 @@ function renderPros(){
   const steps = t('j').map(([h,p],i)=>`<div class="step"><h3>${h}</h3><p>${p}</p>${i===2?`<p style="margin-top:10px"><a class="btn line" href="${sup}" target="_blank" rel="noopener">${t('sup_link')}</a></p>`:''}</div>`).join('');
   $('#app').innerHTML = `
   <section class="band" style="padding-top:28px"><div class="wrap">
-    <div class="probal"><h1>${t('pb_top_h')}</h1><p>${t('pb_top_p')}</p><button class="btn gold" data-join>${t('pb_top_btn')}</button></div>
+    <div class="probal"><h1>${t('pb_top_h')}</h1><button class="btn gold" data-join>${t('pb_top_btn')}</button></div>
   </div></section>
   <section class="band" style="padding-top:0"><div class="wrap">
     <div class="shead center"><div class="eyebrow">${t('ex_eyebrow')}</div><h2>${t('ex_h2')}</h2></div>
@@ -1278,7 +1281,7 @@ function renderPros(){
   <section class="band"><div class="wrap">
     <div class="shead center"><div class="eyebrow">${t('faq_eyebrow')}</div><h2>${t('pf_h2')}</h2></div>
     ${faqHtml(t('pf'))}
-    <p style="text-align:center;margin-top:28px"><button class="btn gold" data-join>${t('cb_btn')}</button></p>
+    <div class="proend"><h2>${t('pb_top_p')}</h2><button class="btn gold" data-join>${t('cb_btn')}</button></div>
   </div></section>`;
   $$('[data-join]').forEach(b => b.onclick = () => { location.hash = 'cadastro'; });
 }
