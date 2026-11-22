@@ -1372,7 +1372,7 @@ function renderCadastro(compact){
     if (!body.nome || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email) || body.whatsapp.replace(/\D/g,'').length < 8 || !$('#su-ok').checked) { $('#su-msg').textContent = t('su_err'); return; }
     if (!LIVE) { toast(t('su_demo')); return showDone('exemplo', body.email, '', body.nome); }
     $('#su-btn').disabled = true; $('#su-msg').textContent = t('su_sending');
-    try { const r = await apiPost(body); if (r.error) throw new Error(r.error); showDone(r.slug, body.email, r.ref, body.nome); }
+    try { const r = await Promise.race([apiPost(body), new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 40000))]); if (r.error) throw new Error(r.error); showDone(r.slug, body.email, r.ref, body.nome); }
     catch(err) { $('#su-btn').disabled = false; $('#su-msg').textContent = t('su_fail'); }
   };
 }
