@@ -1682,7 +1682,7 @@ function bindPainelFeed(me){
 /* ---------- ÁREA DO PROFISSIONAL ---------- */
 Object.assign(T.pt, {
   in_eyebrow:'Área do profissional', in_h1:'Entre na sua área', in_lead:'Digite o e-mail do seu cadastro. Mandamos um link de acesso na hora, sem senha para lembrar.',
-  in_email:'Seu e-mail', in_btn:'Receber link de acesso', in_sent:'Pronto! Se esse e-mail tiver um perfil na Trustmore, o link de acesso chega em instantes. Confira também o spam.', link_old:'Esse link de acesso já foi usado ou expirou. Digite seu e-mail para receber um novo e use sempre o e-mail mais recente.',
+  in_email:'Seu e-mail', in_remember:'Lembrar meu e-mail neste aparelho', in_btn:'Receber link de acesso', in_sent:'Pronto! Se esse e-mail tiver um perfil na Trustmore, o link de acesso chega em instantes. Confira também o spam.', link_old:'Esse link de acesso já foi usado ou expirou. Digite seu e-mail para receber um novo e use sempre o e-mail mais recente.',
   in_demo:'Ver painel de exemplo', in_new:'Ainda não tem sua página?', in_new_link:'Criar minha página grátis',
   d_hello:'Olá, {name}!', d_tabs:['Início','Meu perfil','Avaliações','Feed','Conta'], p_manage:'Gerenciar ou cancelar assinatura',
   d_live:'Perfil no ar', d_pend:'Página grátis · fora da vitrine', d_view:'Ver meu perfil público', d_month:'Seus números de {m}',
@@ -1702,12 +1702,15 @@ Object.assign(T.pt, {
 });
 let dTab = 0;
 const DEMO_STATS = {visitas:212, visitas_ant:180, whatsapp:14, whatsapp_ant:9, novas:3, renova:'2026-12-05', desde:'2026-06-05'};
+/* E-mail lembrado no aparelho (login): o último usado para entrar ou, se não houver, o do cadastro feito neste aparelho */
+function rememberedEmail(){ const m = store.get('tm-email'); if (m) return m; if (m === '') return ''; try { const o = JSON.parse(localStorage.getItem('tm-own')||'[]')[0]; return (o && o.email) || ''; } catch(e){ return ''; } }
 function renderEntrar(){
   $('#app').innerHTML = `
   <header class="pagehero"><div class="wrap"><div class="eyebrow">${t('in_eyebrow')}</div><h1>${t('in_h1')}</h1><p class="lead">${t('in_lead')}</p></div></header>
   <section class="band alt"><div class="wrap" style="max-width:520px">
     <form class="box ef" id="inf" style="padding:26px">
-      <label for="in-mail"><b>${t('in_email')}</b><input id="in-mail" type="email" autocomplete="email" required></label>
+      <label for="in-mail"><b>${t('in_email')}</b><input id="in-mail" type="email" autocomplete="email" required value="${esc(rememberedEmail())}"></label>
+      <label style="display:flex;flex-direction:row;gap:10px;align-items:center;font-size:14.5px;font-weight:400;margin-top:-6px"><input id="in-rem" type="checkbox" style="width:18px;height:18px;min-height:0;margin:0;padding:0;flex:none;accent-color:var(--gold)" ${store.get('tm-email') === '' ? '' : 'checked'}><span style="flex:1">${t('in_remember')}</span></label>
       <button class="btn gold" type="submit">${t('in_btn')}</button>
       <p class="hint" id="in-msg" role="status"></p>
       ${LIVE ? '' : `<button class="btn line" type="button" id="in-demo">${t('in_demo')}</button>`}
@@ -1716,6 +1719,7 @@ function renderEntrar(){
   </div></section>`;
   $('#inf').onsubmit = async e => { e.preventDefault();
     if (LIVE) { const btn = $('#inf button[type=submit]'); btn.disabled = true;
+      store.set('tm-email', $('#in-rem').checked ? $('#in-mail').value.trim() : '');
       try { await apiPost({a:'login', email:$('#in-mail').value.trim(), lingua:lang}); } catch(err) { btn.disabled = false; return $('#in-msg').textContent = t('su_fail'); } }
     $('#in-msg').textContent = t('in_sent'); };
   if (LIVE && store.get('tm-s')) location.hash = 'painel';
@@ -1869,7 +1873,7 @@ Object.assign(T.en, {
   pf_photo:'Photo', pf_cap:'Caption', pf_cap_ph:'E.g. After-renovation cleaning of an apartment in Haarlem. Before and after!', pf_btn:'Publish', pf_ok:'Post published!', pf_need:'Choose a photo to publish.',
   pf_mine:'Your posts', pf_del:'Remove', pf_deleted:'Post removed.', pf_none:'You haven’t posted any work yet.', pf_stats:'{l} likes · {c} comments',
   in_eyebrow:'Professional area', in_h1:'Log in to your area', in_lead:'Enter the email you signed up with. We’ll send you an access link right away — no password to remember.',
-  in_email:'Your email', in_btn:'Send me an access link', in_sent:'Done! If this email has a Trustmore profile, the access link will arrive in a moment. Check your spam folder too.', link_old:'This access link was already used or has expired. Enter your e-mail to get a new one and always use the most recent e-mail.',
+  in_email:'Your email', in_remember:'Remember my e-mail on this device', in_btn:'Send me an access link', in_sent:'Done! If this email has a Trustmore profile, the access link will arrive in a moment. Check your spam folder too.', link_old:'This access link was already used or has expired. Enter your e-mail to get a new one and always use the most recent e-mail.',
   in_demo:'See a sample dashboard', in_new:'Don’t have a page yet?', in_new_link:'Create my free page',
   d_hello:'Hi, {name}!', d_tabs:['Home','My profile','Reviews','Feed','Account'], p_manage:'Manage or cancel subscription',
   d_live:'Profile live', d_pend:'Free page · not in the showcase', d_view:'View my public profile', d_month:'Your numbers for {m}',
@@ -1903,7 +1907,7 @@ Object.assign(T.nl, {
   pf_photo:'Foto', pf_cap:'Bijschrift', pf_cap_ph:'Bijv. Opleveringsschoonmaak van een appartement in Haarlem. Voor en na!', pf_btn:'Plaatsen', pf_ok:'Post geplaatst!', pf_need:'Kies een foto om te plaatsen.',
   pf_mine:'Jouw posts', pf_del:'Verwijderen', pf_deleted:'Post verwijderd.', pf_none:'Je hebt nog geen werk geplaatst.', pf_stats:'{l} likes · {c} reacties',
   in_eyebrow:'Omgeving voor professionals', in_h1:'Log in op je omgeving', in_lead:'Vul het e-mailadres van je aanmelding in. We sturen je meteen een toegangslink, zonder wachtwoord.',
-  in_email:'Je e-mailadres', in_btn:'Stuur mij een toegangslink', in_sent:'Klaar! Als dit e-mailadres een Trustmore-profiel heeft, komt de toegangslink zo binnen. Kijk ook in je spam.', link_old:'Deze toegangslink is al gebruikt of verlopen. Vul je e-mailadres in voor een nieuwe en gebruik altijd de nieuwste e-mail.',
+  in_email:'Je e-mailadres', in_remember:'Onthoud mijn e-mailadres op dit apparaat', in_btn:'Stuur mij een toegangslink', in_sent:'Klaar! Als dit e-mailadres een Trustmore-profiel heeft, komt de toegangslink zo binnen. Kijk ook in je spam.', link_old:'Deze toegangslink is al gebruikt of verlopen. Vul je e-mailadres in voor een nieuwe en gebruik altijd de nieuwste e-mail.',
   in_demo:'Voorbeelddashboard bekijken', in_new:'Nog geen pagina?', in_new_link:'Maak mijn gratis pagina',
   d_hello:'Hoi, {name}!', d_tabs:['Start','Mijn profiel','Reviews','Feed','Account'], p_manage:'Abonnement beheren of opzeggen',
   d_live:'Profiel online', d_pend:'Gratis pagina · niet in de etalage', d_view:'Mijn openbare profiel bekijken', d_month:'Jouw cijfers van {m}',
@@ -1937,7 +1941,7 @@ Object.assign(T.es, {
   pf_photo:'Foto', pf_cap:'Descripción', pf_cap_ph:'Ej.: Limpieza de fin de obra de un piso en Haarlem. ¡Antes y después!', pf_btn:'Publicar', pf_ok:'¡Publicado!', pf_need:'Elige una foto para publicar.',
   pf_mine:'Tus publicaciones', pf_del:'Eliminar', pf_deleted:'Publicación eliminada.', pf_none:'Todavía no has publicado ningún trabajo.', pf_stats:'{l} me gusta · {c} comentarios',
   in_eyebrow:'Área del profesional', in_h1:'Entra en tu área', in_lead:'Escribe el correo con el que te registraste. Te enviamos un enlace de acceso al momento, sin contraseña que recordar.',
-  in_email:'Tu correo', in_btn:'Recibir enlace de acceso', in_sent:'¡Listo! Si este correo tiene un perfil en Trustmore, el enlace llegará en unos instantes. Revisa también el spam.', link_old:'Este enlace de acceso ya se usó o caducó. Escribe tu correo para recibir uno nuevo y usa siempre el correo más reciente.',
+  in_email:'Tu correo', in_remember:'Recordar mi correo en este dispositivo', in_btn:'Recibir enlace de acceso', in_sent:'¡Listo! Si este correo tiene un perfil en Trustmore, el enlace llegará en unos instantes. Revisa también el spam.', link_old:'Este enlace de acceso ya se usó o caducó. Escribe tu correo para recibir uno nuevo y usa siempre el correo más reciente.',
   in_demo:'Ver panel de ejemplo', in_new:'¿Todavía no tienes tu página?', in_new_link:'Crear mi página gratis',
   d_hello:'¡Hola, {name}!', d_tabs:['Inicio','Mi perfil','Reseñas','Feed','Cuenta'], p_manage:'Gestionar o cancelar suscripción',
   d_live:'Perfil publicado', d_pend:'Página gratis · fuera de la vitrina', d_view:'Ver mi perfil público', d_month:'Tus números de {m}',
