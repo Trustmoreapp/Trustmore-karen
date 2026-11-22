@@ -1684,7 +1684,7 @@ Object.assign(T.pt, {
   in_eyebrow:'Área do profissional', in_h1:'Entre na sua área', in_lead:'Digite o e-mail do seu cadastro. Mandamos um link de acesso na hora, sem senha para lembrar.',
   in_email:'Seu e-mail', in_btn:'Receber link de acesso', in_sent:'Pronto! Se esse e-mail tiver um perfil na Trustmore, o link de acesso chega em instantes. Confira também o spam.',
   in_demo:'Ver painel de exemplo', in_new:'Ainda não tem sua página?', in_new_link:'Criar minha página grátis',
-  d_hello:'Olá, {name}!', d_tabs:['Início','Meu perfil','Avaliações','Feed','Conta'],
+  d_hello:'Olá, {name}!', d_tabs:['Início','Meu perfil','Avaliações','Feed','Conta'], p_manage:'Gerenciar ou cancelar assinatura',
   d_live:'Perfil no ar', d_pend:'Página grátis · fora da vitrine', d_view:'Ver meu perfil público', d_month:'Seus números de {m}',
   d_k:['Visitas no perfil','Contatos pelo WhatsApp','Novas avaliações','Nota média'], d_vs:'+{n} que no mês passado',
   d_link_h:'Seu link', d_link_p:'Coloque na bio do Instagram, no status do WhatsApp e mande nos grupos.',
@@ -1777,7 +1777,7 @@ async function renderPainel(){
       </form>
       <section class="box"><h2>${t('e_verify_h')}</h2><p class="hint">${t('e_verify_p')}</p>
         <div style="margin-top:12px">${(LIVE && !liveNow && !me.ver) ? `<p class="hint">${t('e_verify_free')}</p>` : me.ver || me.selo === 'ativo' ? `<span class="pill ok">✓ ${t('verified')}</span>` : me.selo === 'conferindo' ? `<p class="hint">${t('e_verify_wait')}</p>` : `${me.selo === 'vencido' ? `<p class="hint" style="margin-bottom:10px">${t('e_verify_late')}</p>` : ''}<button class="cta sec" id="e-ver">${t('e_verify_btn')}</button>`}</div></section>
-    </div>`;
+    </div>${(LIVE && PORTAL_URL && me.assinante && liveNow && !me.vitalicio) ? `<p style="margin:26px 0 0;text-align:center"><button type="button" id="p-manage" style="background:none;border:0;padding:4px;color:var(--muted);text-decoration:underline;font:inherit;font-size:13.5px;cursor:pointer">${t('p_manage')}</button></p>` : ''}`;
   if (dTab === 2) body = `
     <section class="box"><h2>${t('r_h')}</h2><p class="hint">${t('r_p')}</p>
       <div style="margin-top:8px">${me.revs.length ? me.revs.map((r,i)=>`<article class="rev"><header><span><b>${esc(r.n)}</b> <span class="stars">${starStr(r.s)}</span></span><time>${fmtDate(r.d)}</time></header><p>${esc(r.t)}</p>
@@ -1826,6 +1826,7 @@ async function renderPainel(){
   const ff = $('#e-file'); if (ff) ff.onchange = async e => { const f = e.target.files[0]; if (!f) return; const img = await shrink(f);
     try { const r = await apiPost({a:'update', s:S(), foto:img}); if (r.error) throw 0; await loadMe(); toast(t('e_saved')); renderPainel(); } catch(err) { toast(t('su_fail')); } };
   on('#e-ver', async () => { if (LIVE && SELO_URL) { window.open(stripeLink(SELO_URL, me.email, me.ref, ''), '_blank', 'noopener'); return; } if (LIVE) await apiPost({a:'verify', s:S()}).catch(()=>{}); toast(t('e_verify_ok')); });
+  on('#p-manage', () => window.open(stripeLink(PORTAL_URL, me.email, '', ''), '_blank', 'noopener'));
   on('#s-manage', () => (LIVE && PORTAL_URL) ? window.open(stripeLink(PORTAL_URL, me.email, '', ''), '_blank', 'noopener') : toast(t('s_t_manage')));
   on('#s-out', () => { store.set('tm-s', null); ME = null; location.hash = ''; });
   on('#n-on', () => toast(t('n_toast')));
@@ -1870,7 +1871,7 @@ Object.assign(T.en, {
   in_eyebrow:'Professional area', in_h1:'Log in to your area', in_lead:'Enter the email you signed up with. We’ll send you an access link right away — no password to remember.',
   in_email:'Your email', in_btn:'Send me an access link', in_sent:'Done! If this email has a Trustmore profile, the access link will arrive in a moment. Check your spam folder too.',
   in_demo:'See a sample dashboard', in_new:'Don’t have a page yet?', in_new_link:'Create my free page',
-  d_hello:'Hi, {name}!', d_tabs:['Home','My profile','Reviews','Feed','Account'],
+  d_hello:'Hi, {name}!', d_tabs:['Home','My profile','Reviews','Feed','Account'], p_manage:'Manage or cancel subscription',
   d_live:'Profile live', d_pend:'Free page · not in the showcase', d_view:'View my public profile', d_month:'Your numbers for {m}',
   d_k:['Profile visits','WhatsApp contacts','New reviews','Average rating'], d_vs:'+{n} vs last month',
   d_link_h:'Your link', d_link_p:'Add it to your Instagram bio and WhatsApp status, and share it in groups.',
@@ -1904,7 +1905,7 @@ Object.assign(T.nl, {
   in_eyebrow:'Omgeving voor professionals', in_h1:'Log in op je omgeving', in_lead:'Vul het e-mailadres van je aanmelding in. We sturen je meteen een toegangslink, zonder wachtwoord.',
   in_email:'Je e-mailadres', in_btn:'Stuur mij een toegangslink', in_sent:'Klaar! Als dit e-mailadres een Trustmore-profiel heeft, komt de toegangslink zo binnen. Kijk ook in je spam.',
   in_demo:'Voorbeelddashboard bekijken', in_new:'Nog geen pagina?', in_new_link:'Maak mijn gratis pagina',
-  d_hello:'Hoi, {name}!', d_tabs:['Start','Mijn profiel','Reviews','Feed','Account'],
+  d_hello:'Hoi, {name}!', d_tabs:['Start','Mijn profiel','Reviews','Feed','Account'], p_manage:'Abonnement beheren of opzeggen',
   d_live:'Profiel online', d_pend:'Gratis pagina · niet in de etalage', d_view:'Mijn openbare profiel bekijken', d_month:'Jouw cijfers van {m}',
   d_k:['Profielbezoeken','Contact via WhatsApp','Nieuwe reviews','Gemiddelde score'], d_vs:'+{n} t.o.v. vorige maand',
   d_link_h:'Jouw link', d_link_p:'Zet hem in je Instagram-bio en WhatsApp-status en deel hem in groepen.',
@@ -1938,7 +1939,7 @@ Object.assign(T.es, {
   in_eyebrow:'Área del profesional', in_h1:'Entra en tu área', in_lead:'Escribe el correo con el que te registraste. Te enviamos un enlace de acceso al momento, sin contraseña que recordar.',
   in_email:'Tu correo', in_btn:'Recibir enlace de acceso', in_sent:'¡Listo! Si este correo tiene un perfil en Trustmore, el enlace llegará en unos instantes. Revisa también el spam.',
   in_demo:'Ver panel de ejemplo', in_new:'¿Todavía no tienes tu página?', in_new_link:'Crear mi página gratis',
-  d_hello:'¡Hola, {name}!', d_tabs:['Inicio','Mi perfil','Reseñas','Feed','Cuenta'],
+  d_hello:'¡Hola, {name}!', d_tabs:['Inicio','Mi perfil','Reseñas','Feed','Cuenta'], p_manage:'Gestionar o cancelar suscripción',
   d_live:'Perfil publicado', d_pend:'Página gratis · fuera de la vitrina', d_view:'Ver mi perfil público', d_month:'Tus números de {m}',
   d_k:['Visitas al perfil','Contactos por WhatsApp','Nuevas reseñas','Nota media'], d_vs:'+{n} que el mes pasado',
   d_link_h:'Tu enlace', d_link_p:'Ponlo en la bio de Instagram y en el estado de WhatsApp, y compártelo en los grupos.',
