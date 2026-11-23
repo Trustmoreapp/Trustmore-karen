@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /_template/
+Disallow: /*/admin-
+Allow: /
+
+Sitemap: https://trustmore.app/sitemap.xml
